@@ -28,7 +28,7 @@ Nút lá: Là các nút phân loại là Condition, Action. Nút lá quyết đ�
 
 Bạn có thể nhấp chuột phải trong cửa sổ Assets để tạo file cây hành vi. Và bạn có thể quản lý các file cây hành vi trong cửa sổ Assets. Phần mở rộng của file cây hành vi là .xbt.
 
-![image-20240620150729511](.\img\create)
+![image-20240620150729511](./img/image-20240620150729511.png)
 
 ## Gắn cây hành vi
 
