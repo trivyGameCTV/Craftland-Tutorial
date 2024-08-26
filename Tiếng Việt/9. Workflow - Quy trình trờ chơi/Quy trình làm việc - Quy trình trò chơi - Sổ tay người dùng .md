@@ -1,6 +1,3 @@
-Here is the translation of your provided content into Vietnamese, formatted within a single continuous Markdown block:
-
-```markdown
 # Workflow-Quy Trình Trò Chơi
 
 Trong mô-đun này, bạn có thể thiết lập quy trình và thời gian của trò chơi theo đơn vị là giai đoạn và vòng. Đồng thời, bạn cũng có thể gắn script vào các thực thể của giai đoạn và vòng.
@@ -186,6 +183,3 @@ Nếu điểm của bất kỳ đội nào lớn hơn hoặc bằng 3, kết th�
 
 > Vui lòng bỏ qua dấu chấm than màu vàng trong ví dụ.
 > Ví dụ này chỉ để tham khảo, bạn có thể tự do viết logic của riêng mình.
-```
-
-This Markdown block includes the entire content translated into Vietnamese.

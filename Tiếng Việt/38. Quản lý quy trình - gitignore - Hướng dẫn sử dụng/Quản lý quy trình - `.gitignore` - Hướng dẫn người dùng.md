@@ -33,7 +33,6 @@ Libraries/
 Temp/
 *.lock
 ```
-```markdown
 Trong đó:
 
 Tên thư mục + “/” đại diện cho việc bỏ qua tất cả các tập tin trong thư mục đó, “*” + phần mở rộng tên tập tin đại diện cho việc bỏ qua tất cả các tập tin có phần mở rộng đó.
@@ -98,4 +97,3 @@ Sử dụng "!" có thể thêm các tập tin đã bị bỏ qua trước đó 
 3. Nếu tập tin đã được Git theo dõi, thì ngay cả khi thêm vào tập tin `.gitignore` cũng sẽ không bị bỏ qua.
 
 Nếu bạn có nhu cầu thêm, bạn có thể tự tham khảo hướng dẫn sử dụng gitignore và Git.
-```
