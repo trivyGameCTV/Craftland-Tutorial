@@ -45,3 +45,6 @@
 
 ## Quản lý quy trình
 [Quản lý quy trình](./38.%20Quản%20lý%20quy%20trình%20-%20gitignore%20-%20Hướng%20dẫn%20sử%20dụng/Quản%20lý%20quy%20trình%20-%20`.gitignore`%20-%20Hướng%20dẫn%20người%20dùng.md)
+
+## Quản lý dữ liệu
+[Quản lý dữ liệu](https://github.com/trivyGameCTV/Craftland-Tutorial/blob/main/Ti%E1%BA%BFng%20Vi%E1%BB%87t/39.%20H%E1%BB%87%20th%E1%BB%91ng%20qu%E1%BA%A3n%20l%C3%BD%20d%E1%BB%AF%20li%E1%BB%87u/H%E1%BB%87%20th%E1%BB%91ng%20qu%E1%BA%A3n%20l%C3%BD%20d%E1%BB%AF%20li%E1%BB%87u.)
