@@ -50,4 +50,4 @@
 [Quản lý dữ liệu](https://github.com/trivyGameCTV/Craftland-Tutorial/blob/main/Ti%E1%BA%BFng%20Vi%E1%BB%87t/39.%20H%E1%BB%87%20th%E1%BB%91ng%20qu%E1%BA%A3n%20l%C3%BD%20d%E1%BB%AF%20li%E1%BB%87u/H%E1%BB%87%20th%E1%BB%91ng%20qu%E1%BA%A3n%20l%C3%BD%20d%E1%BB%AF%20li%E1%BB%87u.)
 
 ## Chia sẻ dự án
-[Chia sẻ dự án]()
+[Chia sẻ dự án](https://github.com/trivyGameCTV/Craftland-Tutorial/blob/main/Ti%E1%BA%BFng%20Vi%E1%BB%87t/40.%20Chia%20s%E1%BA%BB%20d%E1%BB%B1%20%C3%A1n/Chia%20s%E1%BA%BB%20D%E1%BB%B1%20%C3%A1n.md)
