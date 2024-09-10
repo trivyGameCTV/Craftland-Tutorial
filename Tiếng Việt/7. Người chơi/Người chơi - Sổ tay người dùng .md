@@ -141,30 +141,30 @@ Nếu bạn chỉ muốn thay đổi dữ liệu người chơi cho một ngư�
 Node này có thể thêm dữ liệu người chơi đã chỉ định cho một người chơi cụ thể, có thể được kích hoạt theo yêu cầu của bạn hoặc khi điều kiện thích hợp được thỏa mãn.
 
 #### Cách thêm Texture cho người chơi trong Tệp Dữ liệu Người chơi
-Kéo file FBX vào hoạt cảnh để tạo một vật thể.
+Kéo file FBX vào hoạt cảnh để tạo một vật thể.  
 ![change-texture-step-1](./img/change-texture-step-1.png)  
-Tạo nhánh mẹ trống
+Tạo nhánh mẹ trống.  
 ![change-texture-step-2](./img/change-texture-step-2.png)  
-Tạo một prefab dựa trên nhánh mẹ
+Tạo một prefab dựa trên nhánh mẹ.  
 ![change-texture-step-3](./img/change-texture-step-3.png)
-Tạo tệp vật liệu mới  
+Tạo tệp vật liệu mới.   
 ![change-texture-step-4](./img/change-texture-step-4.png)  
 Chọn loại đổ bóng tùy vào mục đích sử dụng cũng như những texture mà tệp FBX có bao gồm.  
 ![change-texture-step-5](./img/change-texture-step-5.png)  
-Thay đổi bản đồ chủ đạo (thường được đính kèm với tệp FBX) và thay đổi các thuộc tính trong tệp vật liệu nếu cần thiết  
+Thay đổi bản đồ chủ đạo (thường được đính kèm với tệp FBX) và thay đổi các thuộc tính trong tệp vật liệu nếu cần thiết.  
 ![change-texture-step-6](./img/change-texture-step-6.png)
 Vào trình điều chỉnh Prefab đã được tạo từ trước, chọn vào nhân vật, và chọn chỉnh sửa ngoại hình.  
 ![change-texture-step-7](./img/change-texture-step-7.png)
 > Chú ý cấu trức của nhân vật được thêm vào thông qua tệp FBX có thể chứa nhiều thành phần. Trong trường hợp này có thể làm tương tự bước hiện tại.  
 
-Chọn nhóm ngoại hình, sau đó chọn từng thành phần của ngoại hình và điều chỉnh kết xuất thành vật liệu đã được tạo trước đó.
+Chọn nhóm ngoại hình, sau đó chọn từng thành phần của ngoại hình và điều chỉnh kết xuất thành vật liệu đã được tạo trước đó.  
 ![chage-texture-step-8](./img/change-texture-step-8.png)
-> Cấu trúc của nhóm ngoại hình có thể khác so với hình mẫu hiện tại
+> Cấu trúc của nhóm ngoại hình có thể khác so với hình mẫu hiện tại  
 
 Trong tệp Dữ liệu người chơi, điều chỉnh Lưới Mesh nhân vật trở thành Prefab vừa được tạo và điều chỉnh hành động nhân vật hợp lý bằng các hoạt ảnh được đính kèm với tệp FBX.  
 ![change-texture-step-9](./img/change-texture-step-9.png)
 
-Sau đó thêm tệp Dữ liệu người chơi vào Loại bộ chiến thuật nhân vật để điều chỉnh hoặc sử dụng hàm Đặt nhân vật để điều chỉnh model của nhân vật như trên.
+Sau đó thêm tệp Dữ liệu người chơi vào Loại bộ chiến thuật nhân vật để điều chỉnh hoặc sử dụng hàm Đặt nhân vật để điều chỉnh model của nhân vật như trên.  
 ![change-texture-step-10-1](./img/change-texture-step-10-1.png)
 ![change-texture-step-10-2](./img/change-texture-step-10-2.png)
 
