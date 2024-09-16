@@ -440,8 +440,6 @@ func Max(left Number, right Number) Number {
 }
 ``
 
-`
-
 #### Câu Lệnh Lặp
 
 Trong nhiều vấn đề thực tế có nhiều hoạt động lặp lại theo quy tắc, do đó trong chương trình cần lặp lại một số câu lệnh.
