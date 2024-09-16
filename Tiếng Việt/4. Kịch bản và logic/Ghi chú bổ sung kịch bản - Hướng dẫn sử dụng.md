@@ -438,7 +438,7 @@ func Max(left Number, right Number) Number {
         return left
     }
 }
-``
+```
 
 #### Câu Lệnh Lặp
 
