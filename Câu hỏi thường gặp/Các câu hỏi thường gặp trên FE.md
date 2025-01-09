@@ -59,9 +59,49 @@ Các bạn có thể xem chi tiết ở trang web tại liệu chính thức c�
 - Bước 1: Chọn nền trời ở cây phân cấp, nơi hiển thị tất cả các vật thể hiện đang có ở bản đồ.
 - Bước 2: Tùy chỉnh các thuộc tính của Nền trời (Skybox) để thay đổi màu trời, ngày, đêm,...
 
+
+### 4. Cách tạo lệnh checkpoint, endpoint cơ bản để làm map Parkour?
+- Có thể sử dụng trigger có sẵn để làm map parkour.
+
+![image](https://github.com/user-attachments/assets/2fdc9c44-453f-4793-afb0-1872aed9df01)
+
+
+### 5. Có cách nào để dịch chuyển người chơi từ cảnh này sang cảnh khác không?
+- Không thể dịch chuyển người chơi từ trường cảnh này sang một cảnh khác, tuy nhiên có thể sử dụng lệnh **Tải trường cảnh (Load Scene)** để thay thế cảnh hiện tại.
+
+![image](https://github.com/user-attachments/assets/b3eb88b7-dfa7-4011-b29c-4020a5755f42)
+
+
+### 6. Cách để tăng tốc độ chiến cơ, các loại xe trong map?
+- Có thể thay đổi trực tiếp các thuộc tính của xe sau khi đã được kéo thả vào trường cảnh.
+
+![image](https://github.com/user-attachments/assets/a3deebb4-3062-40d9-8fff-606c765d8bfe)
+
+
 ## Model 3D
 ### 1. Cách import model 3D bên ngoài vào FE?
-- Kéo thả file .fbx vào thư mục Assets trong FE để import model 3D. 
+- Hiện tại FE chỉ hỗ trợ import file .fbx, nếu có các kiểu file khác thì bạn phải chuyển nó thành file .fbx
+- Kéo thả file .fbx vào thư mục Assets trong FE để import model 3D.
+
+
+### 2. Cách để thêm texture vào model?
+- Bước 1: Chuẩn bị một file ảnh texture
+- Bước 2: Tạo file Material, sau đó truyền texture vào Main Map.
+  
+![image](https://github.com/user-attachments/assets/22ff34ec-2e32-44b0-a1cf-aa7989265680)
+
+- Bước 3: Kéo thả file .mat vào thuộc tính Render của model 3D.
+  
+![image](https://github.com/user-attachments/assets/ad223c06-3b12-48a6-913a-4b3f56c4f9af)
+
+- Ngoài ra còn có một cách khác, có thể tham khảo [TẠI ĐÂY](https://github.com/trivyGameCTV/Craftland-Tutorial/blob/6e10b9713baeacbe1a0d00d5e12ddb8fd75ae3a5/Ti%E1%BA%BFng%20Vi%E1%BB%87t/7.%20Ng%C6%B0%E1%BB%9Di%20ch%C6%A1i/Ng%C6%B0%E1%BB%9Di%20ch%C6%A1i%20-%20S%E1%BB%95%20tay%20ng%C6%B0%E1%BB%9Di%20d%C3%B9ng%20.md#c%C3%A1ch-th%C3%AAm-texture-cho-ng%C6%B0%E1%BB%9Di-ch%C6%A1i-trong-t%E1%BB%87p-d%E1%BB%AF-li%E1%BB%87u-ng%C6%B0%E1%BB%9Di-ch%C6%A1i).
+
+
+### 3. Mình muốn model import vào có animation khi chơi trong trường cảnh, có cách nào để làm không?
+- Bạn có thể xem hướng dẫn chi tiết [TẠI ĐÂY](https://github.com/trivyGameCTV/Craftland-Tutorial/blob/main/Ti%E1%BA%BFng%20Vi%E1%BB%87t/24.%20H%E1%BB%87%20th%E1%BB%91ng%20ho%E1%BA%A1t%20h%C3%ACnh/H%E1%BB%87%20th%E1%BB%91ng%20ho%E1%BA%A1t%20h%C3%ACnh%20-%20H%C6%B0%E1%BB%9Bng%20d%E1%BA%ABn%20ng%C6%B0%E1%BB%9Di%20d%C3%B9ng.md#m%C3%A1y-tr%E1%BA%A1ng-th%C3%A1i-ho%E1%BA%A1t-h%C3%ACnh).
+
+
+
 
 ## Khác
 ### 1. Sự kiện tùy chỉnh là gì? Cách sử dụng sự kiện tùy chỉnh?
@@ -89,4 +129,7 @@ Các bạn có thể xem chi tiết ở trang web tại liệu chính thức c�
 - Chỉ cần điền tất cả các cột và sử dụng key ở những nơi có text hiển thị thì hệ thống sẽ tự xử lý phần thay đổi nội dung.
 
 
-### 3. 
+### 3. Hiện tại mình muốn gỡ liên kết id game với id FE để liên kết tài khoản khác, có cách nào để làm không?
+- Hiện tại chưa có tính năng này nhé. Nếu bạn đã nối tài khoản FE với tài khoản Free Fire thì hiện tại sẽ không đổi được nhé.
+
+
