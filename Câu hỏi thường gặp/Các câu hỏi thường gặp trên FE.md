@@ -25,6 +25,13 @@ Các bạn có thể xem chi tiết ở trang web tại liệu chính thức c�
 
 ### 2. Không hiển thị giao diện kết quả trận đấu sau khi kết thúc trận trên PC Editor?
 - Giao diện kết quả trận đấu chỉ có thể xem được khi chơi trên bản đã được xuất bản.
+
+
+### 3. Cách tạo giao diện đồng hồ đếm ngược?
+- Dùng HUD đếm ngược có sẵn trong FE để tạo đồng hồ đếm ngược.
+- Lưu ý: Khi gắn script này vào toàn bản đồ thì tất cả người chơi đều thấy. Khi gắn script này vào người chơi thì thêm tham số Mục tiêu là Đơn vị hiện tại.
+
+![image](https://github.com/user-attachments/assets/2f5d52a9-704b-4aae-8e45-18536f9c3570)
   
 
 ## Vũ khí
@@ -41,6 +48,19 @@ Các bạn có thể xem chi tiết ở trang web tại liệu chính thức c�
 - Có thể dùng sự kiện Khi gây DMG (On Deal Damage) để lấy chỉ số sát thương.
 
 ![image](https://github.com/user-attachments/assets/1eb0f5b2-17e7-43bb-b720-e76c17c0aa54)
+
+### 2. Cách tạo vật thể có thể phá hủy bởi sát thương?
+- Dùng sự kiện **Khi bị đạn bắn trúng**, gắn lệnh này vào vật thể trên bản đồ để vật thể này có thể bị phá hủy bởi sát thương.
+  
+![image](https://github.com/user-attachments/assets/2ad62a33-f7ad-4c1f-831b-8fbaa0b9dc8b)
+
+
+### 3. Cách để làm đội này có thể gây sát thương lên đội kia nhưng đội kia không thể gây sát thương lại?
+- Dùng lệnh **Set mục tiêu tấn công của đội** **(SetAttackableTeam)** để thực hiện chức năng này.
+
+![image](https://github.com/user-attachments/assets/03d725e3-eceb-44d7-a6e4-b66d8daa1159)
+
+
 
 
 ## Thiết kế bản đồ
@@ -76,6 +96,15 @@ Các bạn có thể xem chi tiết ở trang web tại liệu chính thức c�
 - Có thể thay đổi trực tiếp các thuộc tính của xe sau khi đã được kéo thả vào trường cảnh.
 
 ![image](https://github.com/user-attachments/assets/a3deebb4-3062-40d9-8fff-606c765d8bfe)
+
+
+### 7. Cách để tùy chỉnh thời gian vô hạn cho trận đấu?
+- Sử dụng trình quản lý module để tăng thời gian cho các giai đoạn trong trận đấu. Đơn vị: giây.
+
+![image](https://github.com/user-attachments/assets/7ffb5a99-538b-4b34-bd85-cf073422f130)
+
+
+### 8. 
 
 
 ## Model 3D
