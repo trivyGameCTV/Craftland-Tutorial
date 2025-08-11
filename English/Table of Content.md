@@ -82,6 +82,7 @@
 
 ## Data Storage
 [Data Storage](https://github.com/trivyGameCTV/Craftland-Tutorial/blob/main/English/29.%20Data%20Storage/Data%20Storage%20-%20User%20Manual.md)
+[Ranking Leaderboard V1.14.1]()
 
 ## Process Management
 [Process Management](https://github.com/trivyGameCTV/Craftland-Tutorial/blob/main/English/38.%20Process%20Management%20-%20.gitignore%20-%20User%20Manual/Process%20Management%20-%20gitignore%20-%20User%20Manual.md)
