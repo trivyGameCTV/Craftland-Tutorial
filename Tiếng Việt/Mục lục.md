@@ -73,7 +73,6 @@
 
 ## Hệ thống nhập liệu
 [Hệ thống nhập liệu](https://github.com/trivyGameCTV/Craftland-Tutorial/blob/main/Ti%E1%BA%BFng%20Vi%E1%BB%87t/21.%20H%E1%BB%87%20th%E1%BB%91ng%20nh%E1%BA%ADp%20li%E1%BB%87u/H%E1%BB%87%20th%E1%BB%91ng%20nh%E1%BA%ADp%20li%E1%BB%87u%20-%20H%C6%B0%E1%BB%9Bng%20d%E1%BA%ABn%20ng%C6%B0%E1%BB%9Di%20d%C3%B9ng.md)
-[Hệ thống bảng xếp hạng V1.14.1]()
 
 ## Vật lý
 [Vật lý](https://github.com/trivyGameCTV/Craftland-Tutorial/blob/main/Ti%E1%BA%BFng%20Vi%E1%BB%87t/22.%20V%E1%BA%ADt%20l%C3%BD/V%E1%BA%ADt%20l%C3%BD%20-%20H%C6%B0%E1%BB%9Bng%20d%E1%BA%ABn%20ng%C6%B0%E1%BB%9Di%20d%C3%B9ng.md)
@@ -92,6 +91,7 @@
 
 ## Lưu trữ dữ liệu
 [Lưu trữ dữ liệu](https://github.com/trivyGameCTV/Craftland-Tutorial/blob/main/Ti%E1%BA%BFng%20Vi%E1%BB%87t/29.%20L%C6%B0u%20tr%E1%BB%AF%20d%E1%BB%AF%20li%E1%BB%87u/L%C6%B0u%20tr%E1%BB%AF%20d%E1%BB%AF%20li%E1%BB%87u%20-%20H%C6%B0%E1%BB%9Bng%20d%E1%BA%ABn%20ng%C6%B0%E1%BB%9Di%20d%C3%B9ng.md)
+[Hệ thống bảng xếp hạng V1.14.1]()
 
 ## Quản lý quy trình
 [Quản lý quy trình](./38.%20Quản%20lý%20quy%20trình%20-%20gitignore%20-%20Hướng%20dẫn%20sử%20dụng/Quản%20lý%20quy%20trình%20-%20`.gitignore`%20-%20Hướng%20dẫn%20người%20dùng.md)
