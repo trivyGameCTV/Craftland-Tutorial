@@ -14,11 +14,11 @@ Example:
 
 Input:  Recreate this image in a 3D chibi style. Remove the gun from the image above, and then provide me 3 images from 3 different angles of the image above. Give me a version of the image above where the model is T-Posing
 
-![]()
+![image-3d-model-1](https://github.com/trivyGameCTV/Craftland-Tutorial/blob/main/English/7.%20Player/img/image-3d-model-1.png)
 
 Output:
 
-![]()
+![image-3d-model-2](https://github.com/trivyGameCTV/Craftland-Tutorial/blob/main/English/7.%20Player/img/image-3d-model-2.png)
 
 ---
 
