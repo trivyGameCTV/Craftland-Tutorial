@@ -1,158 +1,158 @@
-# Mini-Map User Manual
+# Minimap
 
-The mini-map is a thumbnail of the entire game map, showing the player's position and orientation in real-time, helping players locate themselves and gather other map information.
+The minimap is a thumbnail of the entire game map, which can display the player's location and orientation in real time. It is used by players to locate themselves and other map information.
 
-![image-20240906150001413](./img/image-20240906150001413.png)
+![image-20240906150001413](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906150001413.png)
 
-A: Permanent thumbnail mini-map.
+A: The small, always-displayed minimap.
 
-B: Detailed mini-map that expands when A is clicked.
+B: Detailed minimap that expands when you click on A.
 
-1: The player, with the arrow indicating direction and the cone in front of the arrow representing the player's field of view.
+1: The player himself, the direction of the arrow is the direction of facing, and the cone in front of the arrow is the player's field of view.
 
-2: The player's teammates, with the arrow indicating direction.
+2: The player's teammate, the direction of the arrow is the direction of facing.
 
-3: Objects on the map. Colored squares representing objects on the mini-map are called pixels.
+3: Objects on the map. The colored squares on the minimap that represent objects are called pixels.
 
-4: Detected enemies, shown only on the thumbnail.
+4: Detected enemies, only displayed in thumbnail view.
 
-The thumbnail mini-map always keeps the player's current orientation facing up, while the detailed mini-map has a fixed orientation:
+The minimap always remains with the current player facing upwards, while the direction of the detailed minimap is fixed:
 
-![image-20240906152758349](./img/image-20240906152758349.png)
+![image-20240906152758349](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906152758349.png)
 
-After expanding the mini-map, you can zoom in or out using the right-side menu:
+After expanding the minimap, you can zoom in and out using the menu on the right:
 
-![image-20240906151352112](./img/image-20240906151352112.png)
+![image-20240906151352112](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906151352112.png)
 
-You can mark or unmark the mini-map using the button at the bottom right:
+You can mark or unmark the minimap with the button at the bottom right:
 
-![image-20240906151431011](./img/image-20240906151431011.png)
+![image-20240906151431011](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906151431011.png)
 
-## Depth Map
+# Depth map
 
-The default mini-map supports depth map functionality, marking different colors based on object height to distinguish their elevation.
+The default minimap supports the depth map function, which can mark objects with different colors based on their height.
 
-In Module - Mechanism Parameters, you can find the default mini-map category, which includes a depth map toggle function:
+In the Module - Mechanics parameters, you can find the Default Minimap category, which has a Depth Map switch function:
 
-![image-20240906151823850](./img/image-20240906151823850.png)
+![image-20240906151823850](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906151823850.png)
 
-Disabling this option will mark all objects on the map with the same color:
+If this option is deactivated, the objects on the map will be marked with the same color:
 
-![image-20240906152838247](./img/image-20240906152838247.png)
+![image-20240906152838247](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906152838247.png)
 
-Enabling this option will mark objects on the map with different colors based on the highest surface of their collision body:
+With this option enabled, objects on the map are marked with different colors according to the surface with the highest collision body height:
 
-![image-20240906153418258](./img/image-20240906153418258.png)
+![image-20240906153418258](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906153418258.png)
 
-For composite objects made of multiple items, take the highest collision surface.
+For a combination of multiple objects, the object with the highest collision surface is taken.
 
-Combine the highest and lowest from above, treating the lowest as the parent object, resulting in:
+Combine the highest and lowest objects in the above figure, with the lowest object as the parent object, as shown:
 
-![image-20240906153557081](./img/image-20240906153557081.png)
+![image-20240906153557081](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906153557081.png)
 
-> You can see that objects at lower positions are considered higher, and depth judgment is not related to parent-child relationships.
+> You can see that objects in the lower position are considered to be in the upper position, and depth judgments are independent of parent-child relationships.
 
-Maintain the above parent-child relationship but disable collision for the highest block:
+Keep the parent-child relationship above, but turn off the collision of the tallest block:
 
-![image-20240906154136715](./img/image-20240906154136715.png)
+![image-20240906154136715](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906154136715.png)
 
-> The larger the number behind a block, the higher its position. The number only represents ranking, not absolute height.
+> The larger the number behind the block, the higher the position of the block. The numbers only represent the ranking and do not indicate the absolute height.
 
-![image-20240906154308434](./img/image-20240906154308434.png)
+![image-20240906154308434](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906154308434.png)
 
-At this point, it appears as:
+It is displayed as follows:
 
-![image-20240906154330859](./img/image-20240906154330859.png)
+![image-20240906154330859](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906154330859.png)
 
-You can see that blocks with disabled collisions no longer appear on the mini-map, and composite objects of lowest and highest are treated according to the lowest block with collision.
+You can see that the blocks that have been deactivated are no longer displayed on the minimap, and the lowest and highest groups are also handled as if they were the lowest blocks that still collide.
 
-### Supplement
+## Additional
 
-1. The precision of depth maps is 1 meter.
-2. Some objects won't be read by the mini-map, such as basic white model objects:
+1. The accuracy of the depth map is 1 meter.
+2. Some objects will not be read by the minimap, such as basic white model objects:
 
-![image-20240906154632909](./img/image-20240906154632909.png)
+![image-20240906154632909](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906154632909.png)
 
-3. Depth map settings will also affect how objects marked on custom mini-maps are displayed in terms of depth.
+3. The depth map setting will also affect the depth representation of the objects marked on the custom minimap mentioned below.
 
-## Custom Mini-Map
+# Custom minimap
 
-You can customize mini-map backgrounds, other icons, and which objects are displayed.
+You can customize the minimap background, other icons, and which objects to display.
 
-To customize a mini-map, you need to load a custom mini-map module. The custom mini-map module is optional; uninstalling it will invalidate previously used content and elements.
+To customize the minimap, you need to load the custom minimap module. The custom minimap module is an optional module. After uninstallation, the previously used content and blocks will become invalid.
 
-![image-20240906154755924](./img/image-20240906154755924.png)
+![image-20240906154755924](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906154755924.png)
 
-Once you enable custom mini-map module functionality, part of the mini-map will automatically display custom content. If no custom mini-map has been edited yet, it will appear as:
+After enabling the custom minimap module function, the minimap will automatically display the custom minimap content. If the custom minimap has not been edited, it will appear as follows:
 
-![image-20240906155033527](./img/image-20240906155033527.png)
+![image-20240906155033527](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906155033527.png)
 
-### Custom Mini-Map Properties
+## Custom mini-map properties
 
-Custom mini-maps have several properties:
+The custom mini-map has several properties
 
-![image-20240912104416804](./img/image-20240912104416804.png)
+![image-20240912104416804](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240912104416804.png)
 
-**Center and Map Size**: Which world coordinate point serves as the center for displaying content over what area on the map. The UI size of the mini-map from a player's perspective remains unchanged; a larger map size means a larger area is represented within this fixed UI region. If your mini-map background depicts scene terrain, adjust center and map size to match actual scenes.
+**Center and map size**: The minimap is centered on a point in world coordinates and shows how much area is displayed on the map. The UI size of the minimap as seen by the player does not change, and the larger the map size, the larger the area represented by this fixed area of the minimap UI. If you are using a minimap background that depicts the terrain of the scene, the center and map size need to be adjusted to match the actual scene.
 
-**Enable Depth Map**: This property can be modified via module configuration and dynamically within scripts.
+**Whether to enable depth map**: This property can be modified through the module configuration and can be modified dynamically within the script.
 
-### Setting Mini-Map Icons
+## Set mini-map icons
 
-Using elements provided in modules, you can add icons to your mini-map:
+Blocks from the module can be used to add icons to the mini-map:
 
-![image-20240906155247613](./img/image-20240906155247613.png)
+![image-20240906155247613](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906155247613.png)
 
-Icons have these properties:
+The icon has the following properties:
 
-![image-20240906160306780](./img/image-20240906160306780.png)
+![image-20240906160306780](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906160306780.png)
 
-#### Setting Background
+### Setting the background
 
-Adjust icon layering and size; icons can be used as backgrounds.
+By adjusting the depth and size of the icon, it can be used as a background.
 
-We import a plain black image:
+We import a completely black image:
 
-![image-20240906155316259](./img/image-20240906155316259.png)
+![image-20240906155316259](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906155316259.png)
 
-Set this image's layer to -1 and scale it to 10.
+Set the depth of this image to -1 and the scale to 10.
 
-![image-20240906160602647](./img/image-20240906160602647.png)
+![image-20240906160602647](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906160602647.png)
 
-#### Setting High-Priority Units
+### Setting high-interest units
 
-You might want to highlight chests or key players on your map. Use an icon's follow target property to bind it to an object.
+You may want to highlight treasure chests and players of interest on the map. Use the follow target property of the icon to bind the icon to that object.
 
-We add a vending machine to our map:
+We add a vending machine to the map:
 
-![image-20240906160856170](./img/image-20240906160856170.png)
+![image-20240906160856170](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906160856170.png)
 
-Add a shop icon for it:
+and add a shop icon to it:
 
-![image-20240906161046879](./img/image-20240906161046879.png)
+![image-20240906161046879](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906161046879.png)
 
-Then add an icon that follows each other player:
+Then add an icon for each other player that follows the player:
 
-![image-20240906162117256](./img/image-20240906162117256.png)
+![image-20240906162117256](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906162117256.png)
 
-This way, shops and other players will appear on your map:
+This way, the shop on the map and the other players will be displayed:
 
-![image-20240906162304786](./img/image-20240906162304786.png)
+![image-20240906162304786](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906162304786.png)
 
-### Setting Pixels
+## Setting the pixels
 
-As mentioned earlier, objects displayed on a mini-map appear as colored squares called pixels.
+As mentioned above, objects on the map are displayed as colored squares on the minimap. These squares are called pixels.
 
-In custom mini-maps, no pixels are shown by default.
+By default, no pixels are displayed in the custom minimap.
 
-Elements can be used to set which objects are displayed as pixels:
+You can set which objects are displayed as pixels using blocks:
 
-![image-20240906162503178](./img/image-20240906162503178.png)
+![image-20240906162503178](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906162503178.png)
 
-Set pixels for all level objects:
+Set all level objects to have pixels:
 
-![image-20240906164411651](./img/image-20240906164411651.png)
+![image-20240906164411651](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906164411651.png)
 
-![image-20240906164618061](./img/image-20240906164618061.png)
+![image-20240906164618061](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/20-Minimap/image-20240906164618061.png)
 
-> The image shows how it looks with depth map settings enabled.
+> The image shows the effect with the depth map setting enabled.

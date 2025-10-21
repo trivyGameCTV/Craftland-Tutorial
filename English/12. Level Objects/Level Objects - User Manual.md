@@ -1,296 +1,314 @@
-# Level Objects - User Manual
+# Level Object
 
-Level objects are crucial components of a level. To help you build levels more efficiently, we provide templates for some level objects. They are mainly divided into:
+Level objects are important components of a level. In order to make it easier for you to build levels faster, we have provided some templates for level objects. They are divided into the following categories: 
 
-1. Functional level objects, such as tires that can bounce players and portals.
-2. Structural objects.
-3. Decorative objects.
+1. Functional level objects, such as tires and portals that bounce the player. 2.
+2. structural objects.
+3. decorative objects.
 
-An object can have multiple functions mentioned above. For example, a tire can serve as a springboard to reach the second floor and also act as decoration. This depends on your design.
+An object can have more than one of the above functions, for example, a tire can be used as a springboard to reach the second floor as well as a decoration. It depends on your design.
 
-In the object selector, we've categorized and organized level objects for you, making it easier to find what you need:
+In the object selector, we have categorized the level objects for you so that you can find them faster: 
 
-![image-20240730111046567](./img/image-20240730111046567.png)
+![image-20241017184403051](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20241017184403051.png)
 
-Tab 1 contains functional objects with default logic processing, which can be further configured to adjust their functionality.
+1. Basic structures.
+2. Objects with functionality, which come with default logic and can be further configured to adjust the functional performance.
+3. Modular components that can be used to build stylized buildings.
+4. Prefabricated buildings.
+5. Scene props such as furniture and facilities.
+6. Plants, stones and other natural Scene props.
 
-Tab 2 contains general structures and decorations.
+Next, we will introduce some ways to build objects and how to use them in important levels.
 
-Tab 3 contains buildings and furniture.
+# General - Object Building Methods 
 
-Tab 4 contains themed objects, which are also structures or decorations but have distinctive themed appearances.
+This section describes how to build and manage objects. You can also use your own familiar methods for level editing and management.
 
-Next, we'll introduce some methods for building objects and using important level objects.
+## Height Alignment 
 
-## General - Object Building Methods
+When building with infrastructure components, it is recommended to use Scene drag+transform to adjust the position and height of each object.
 
-Here are some methods for building and managing objects. You can also use your preferred methods for level editing and management.
+For example, in the image below, we use a staircase and a platform, but the platform is placed on the ground by default, so we need to raise the platform to the height of the end of the staircase.
 
-### Height Alignment
+![image-20240730112913152](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730112913152.png)
 
-When building with basic structural components, it's recommended to use scene dragging + transform to adjust the position and height of each object.
+First, make the platform a child of the staircase, so that the platform's transform position is relative to the staircase: 
 
-For example, in the image below, we used a staircase and a platform. However, the platform is placed on the ground by default and needs to be raised to the height of the end of the staircase.
+![image-20240730113341339](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730113341339.png)
 
-![image-20240730112913152](./img/image-20240730112913152.png)
+![image-20240730113432881](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730113432881.png)
 
-First, nest the platform as a child object of the staircase so that the platform's transform position is relative to the staircase:
+Adjust platform height to try to align: 
 
-![image-20240730113341339](./img/image-20240730113341339.png)
+![image-20240730113620766](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730113620766.png)
 
-![image-20240730113432881](./img/image-20240730113432881.png)
+Found that the height of the platform relative to the stairs is very close to 1. Guessing that the height of the end of the stairs is 1, set the platform height to 1. Then align the horizontals.
 
-Adjust the platform height and try to align it:
+![image-20240730113845655](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730113845655.png)
 
-![image-20240730113620766](./img/image-20240730113620766.png)
+## Horizontal Plane Editing 
 
-You'll find that the platform's height relative to the staircase is close to 1. Assuming the end height of the staircase is 1, set the platform height to 1. Then align it horizontally.
+When there are multiple heights of planes to edit in the vertical direction, you can use the editor's auto-grounding feature by placing an auxiliary geometry to simplify adjusting the heights.
 
-![image-20240730113845655](./img/image-20240730113845655.png)
+For example, in the stair landing scene just described, if you want to continue editing a plane with height 1, you can add a plane geometry: 
 
-### Horizontal Plane Editing
+![image-20240730114536164](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730114536164.png)
 
-When editing planes at multiple heights in the vertical direction, you can place an auxiliary geometric object to use the editor's auto-grounding feature, simplifying height adjustment operations.
+> It is also possible to use any object with a flat surface as a reference, although you will need to fine-tune the height of the reference when using objects with thickness. The planes in the geometry are planar colliders with no thickness, which are ideal for use as references.
 
-For example, in the previous staircase platform scenario, if you want to continue editing a plane at height 1, you can add a geometric plane:
+Assuming you want to edit an area of 10*10, set the plane's scale to (10,1,10)and its height to 1, then drag the plane horizontally into the area you want to edit: 
 
-![image-20240730114536164](./img/image-20240730114536164.png)
+![image-20240730114856205](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730114856205.png)
 
-> You can also use any object with a plane as a reference. However, when using objects with thickness, you'll need to slightly adjust the reference object's height. Geometric planes have no thickness collision bodies, making them ideal references.
+At this point, a ground of height 1 has been created within the plane, and dragging an object onto this ground or using the Q shortcut key to quickly move an object onto this ground will automatically set the object height to the ground height: 
 
-Assuming the editing range is within 10*10, set the plane scale to (10,1,10), set its height to 1, then drag it horizontally into the area you want to edit:
+![image-20240730115012293](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730115012293.png)
 
-![image-20240730114856205](./img/image-20240730114856205.png)
+Delete this reference or set it to inactive at the end of editing.
 
-At this point, it's equivalent to generating a ground at height 1 within the plane range. Dragging objects onto this ground or using shortcut key Q to quickly move objects onto this ground will automatically set their height to match the ground:
+![image-20240730115103394](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730115103394.png)
 
-![image-20240730115012293](./img/image-20240730115012293.png)
+## Hierarchy Management 
 
-After editing is complete, delete this reference object or set it to inactive.
+Typically, there will be a considerable number of objects on a Scene, and it is recommended to use Hierarchy Management to group objects and improve maintainability.
 
-![image-20240730115103394](./img/image-20240730115103394.png)
+Objects can be organized in a way that is appropriate to their function, region, etc.
 
-### Hierarchical Management
+![image-20240730120020232](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730120020232.png)
 
-Typically, a scene will contain a considerable number of objects. It's recommended to use hierarchical management to categorize objects for better maintainability.
+> Rename objects to more accurately find their counterparts 
 
-You can organize objects based on their function, area, or other suitable criteria.
+# Base Structures 
 
-![image-20240730120020232](./img/image-20240730120020232.png)
+Base Structures are purely structural objects with little to no functionality. They allow you to put together custom level structures to act as blocks, platforms, bunkers, etc. on the map.
 
-> Renaming objects can help you find corresponding items more accurately.
-## Basic Structures
+![image-20241017184854172](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20241017184854172.png)
 
-Basic structures are purely structural components with minimal functionality. They can be used to piece together custom level structures, serving as barriers, platforms, cover, etc., in the map.
-
-![image-20240730111502192](./img/image-20240730111502192.png)
-
-![image-20240730112025437](./img/image-20240730112025437.png)
+![image-20240730112025437](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730112025437.png)
 
 > A simple stair platform.
 
-For an assembled custom structure group, it's recommended to organize the corresponding objects under a parent object in the hierarchy for easier management and fine-tuning:
+For an assembled custom structure group, it is recommended that you stow the corresponding objects under a parent object in the depth for easy management and fine-tuning: 
 
-![image-20240730112557694](./img/image-20240730112557694.png)
+![image-20240730112557694](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730112557694.png)
 
-> Here, the stairs are used as the parent object. You can also create an empty object as the parent, choose any suitable object as the parent, or further manage sub-object hierarchies based on actual needs.
+> Here is the staircase as the parent object. You can also create a new empty object as the parent, choose any suitable object as the parent, or further manage the child objects in the hierarchy as appropriate.
 
-If the structure group will be reused extensively, you can set it as a Prefab by dragging it from the hierarchy to the asset directory:
+If this struct group will be heavily reused, you can set it to Prefab. by dragging it from the depth to the asset directory: 
 
-![image-20240730120334320](./img/image-20240730120334320.png)
+![image-20240730120334320](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730120334320.png)
 
-![image-20240730120342913](./img/image-20240730120342913.png)
+![image-20240730120342913](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730120342913.png)
 
-By dragging the prefab into the scene, you can quickly create a copy of that structure group.
+A group of this structure can be quickly created by dragging the prefab into the Scene.
 
-![image-20240730120413788](./img/image-20240730120413788.png)
+![image-20240730120413788](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730120413788.png)
 
-It's recommended to manage prefabs in dedicated folders within assets. Subfolders can be created for queries and maintenance if necessary:
+> Direct editing of a Prefab affects all objects that use the Prefab, while editing object instances does not affect the Prefab. 
 
-![image-20240730120528201](./img/image-20240730120528201.png)
+# Birth Points 
 
-> Directly editing a prefab affects all objects using that prefab, while editing an object instance does not affect the prefab.
+A birth point is the location where the player is born when they enter the game. If there is no birth point on the Scene or no suitable birth point, the player will be born near (0,0,0).
 
-## Spawn Points
+![image-20240730164820463](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730164820463.png)
 
-Spawn points are where players appear when they enter the game. If there are no spawn points or suitable ones in the scene, players will spawn near (0,0,0).
+The scrolling arrow on the birth point points to the front of the birth point. It is also the orientation of the player born on this birth point.
 
-![image-20240730164820463](./img/image-20240730164820463.png)
+The birth point has two unique configurations that hold the number of people, and the teams they belong to: 
 
-The rotating arrow on a spawn point indicates the front of the spawn point and the player's orientation upon spawning.
+![image-20240730165045467](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730165045467.png)
 
-Spawn points have two unique configurations: capacity and team affiliation:
+**Holding Number:** determines the number of births that the birth point can hold at the same time.
 
-![image-20240730165045467](./img/image-20240730165045467.png)
+**Owned Teams:** determines the teams that the players who can be born at that birth point belong to. If not configured as all teams, only one team can be selected.
 
-**Capacity:** Determines how many players can spawn simultaneously at this point.
+After the affiliation team is configured to a specific team, the birth point will display the configured team in the Scene.
 
-**Team Affiliation:** Determines which team's players can spawn at this point. If not set for all teams, only one team can be chosen.
+![image-20240730165638821](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730165638821.png)
 
-When set for a specific team, the spawn point will display that team's configuration in the scene.
+The birth point supports configuring plural to the Scene.
 
-![image-20240730165638821](./img/image-20240730165638821.png)
+# Combat Props 
 
-Multiple spawn points can be configured in a scene.
+Level Objects There are two ways to generate props at a given location: generators and units.
 
-## Combat Items
+Using generators to generate weapons or props can be set to refresh every round, but only the type can be specified. If the last generated item has not been removed during the refresh, it will be replaced with the newly generated item.
 
-There are two ways to generate items at specified locations: generators and units.
+Use units to place weapons or props, you can set the exact weapon or prop to be generated, by default only one copy of the corresponding prop will be generated.
 
-Using generators to spawn weapons or items allows setting them to refresh each round but only by type. If an item from a previous refresh is not picked up, it will be replaced by a newly generated item.
+## Generator 
 
-Using units to place weapons or items allows precise specification of what is generated. By default, only one of each item is generated.
+![image-20240730180747977](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730180747977.png)
 
-### Generators
+![image-20240730180753598](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730180753598.png)
 
-![image-20240730180747977](./img/image-20240730180747977.png)
+Select the corresponding generator according to the type, take weapons as an example: 
 
-![image-20240730180753598](./img/image-20240730180753598.png)
+![image-20240730181011764](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730181011764.png)
 
-Select the corresponding generator based on type; for example, weapons:
+In the configuration you can choose the type of weapon to generate: 
 
-![image-20240730181011764](./img/image-20240730181011764.png)
+![image-20240730181034487](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730181034487.png)
 
-In configuration, you can choose the weapon type to generate:
+In the reset per round component you can set whether this generation point will be refreshed at the start of each round.
 
-![image-20240730181034487](./img/image-20240730181034487.png)
+![image-20240730181104786](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730181104786.png)
 
-In each round's reset component, you can set whether this generation point refreshes at each round's start.
+In particular, when choosing to generate a weapon, a matching set of ammo and accessories will be generated.
 
-![image-20240730181104786](./img/image-20240730181104786.png)
+## Units 
 
-Notably, when generating weapons, a matching set of ammo and attachments will also be generated.
+![image-20240730175100849](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730175100849.png)
 
-### Units
+Use the weapons and props in the unit to generate a configured weapon or prop at the specified location.
 
-![image-20240730175100849](./img/image-20240730175100849.png)
+![image-20240730175225713](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730175225713.png)
 
-Using weapons and items in units allows generating configured weapons or items at specified locations.
+Props placed in this manner can have their properties modified: 
 
-![image-20240730175225713](./img/image-20240730175225713.png)
+![image-20240730184405465](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730184405465.png)
 
-Items placed this way can have their properties modified:
+![image-20240730184527556](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730184527556.png)
 
-![image-20240730184405465](./img/image-20240730184405465.png)
+# Safe Zone objects 
 
-![image-20240730184527556](./img/image-20240730184527556.png)
+![image-20240730184633593](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240730184633593.png)
 
-## Safe Zone Objects
+Using a Safe Zone object creates both a Safe Zone start object and a Safe Zone end object.
 
-![image-20240730184633593](./img/image-20240730184633593.png)
+![image-20240731102628767](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731102628767.png)
 
-Using safe zone objects creates both a safe zone start object and an end object simultaneously.
+> Safe Zone start point object 
 
-![image-20240731102628767](./img/image-20240731102628767.png)
+![image-20240731102651732](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731102651732.png)
 
-> Safe Zone Start Object
+> Safe Zone endpoint object 
 
-![image-20240731102651732](./img/image-20240731102651732.png)
+The Safe Zone changes from the range and position of the start point to the range and position of the end point at an even rate, as configured. There is no limit to the range or position of the start and end points, and you can make the Safe Zone shrink, expand, or pan as required.
 
-> Safe Zone End Object
+Both Safe Zone start and Safe Zone end objects can be configured with Safe Zone related configurations: 
 
-The safe zone transitions smoothly from the start's range and position to the end's range and position as configured. There are no limits on start and end ranges or positions; you can shrink, expand, or move the safe zone as needed.
+![image-20240731111710404](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731111710404.png)
 
-Both safe zone start and end objects can configure related settings:
+> Their configurations are shared, and modifying one takes effect immediately for the other.
 
-![image-20240731111710404](./img/image-20240731111710404.png)
+**Safe Zone Start Time**: After how long after the start of the round does the effect of the Safe Zone and the constant blood loss outside the Safe Zone take effect, in milliseconds.
 
-> Their configurations are shared; modifying one immediately affects the other.
+**Shrink Duration**: how long after the turn the Safe Zone changes from its starting position and range to its ending position and range, in milliseconds.
 
-**Safe Zone Activation Time:** Time after round start before safe zone effects begin (damage outside zone), measured in milliseconds.
+**Damage Interval**: the interval between every two damages outside the Safe Zone, in milliseconds.
 
-**Shrink Duration:** Time taken for safe zone to transition from start to end range/position, measured in milliseconds.
+**Damage Value**: the amount of damage inflicted each time outside the Safe Zone.
 
-**Damage Interval:** Interval between damage ticks outside safe zone, measured in milliseconds.
+**Safe Zone Close Time**: how long after the start of the round the Safe Zone disappears. If this time is less than the Safe Zone effective time, the Safe Zone will not appear at all, in milliseconds.
 
-**Damage Per Tick:** Amount of damage dealt per tick outside safe zone.
+**Out-of-Zone Initial Radius**: the initial radius size of the Safe Zone in meters. Changing this setting allows you to observe changes in the range of the starting object in the Scene.
 
-**Safe Zone Disappearance Time:** Time after round start when safe zone disappears. If less than activation time, it won't appear at all, measured in milliseconds.
+**Out-of-Zone End Radius**: The final radius size of the Safe Zone in meters. Changing this setting allows you to observe changes in the range of end point objects in the Scene.
 
-**Initial Safe Zone Radius:** Initial radius size of safe zone in meters. Changing this setting allows observing start object's range change in scene.
+**Start Shrink Time**: How long after the start of the round the Safe Zone starts to change, in milliseconds.
 
-**Final Safe Zone Radius:** Final radius size of safe zone in meters. Changing this setting allows observing end object's range change in scene.
+# Triggers 
 
-**Shrink Start Time:** Time after round start when safe zone begins changing, measured in milliseconds.
+Triggers are a class of level objects that will detect entities coming into their own range. They are often used to trigger events with specific conditions.
 
-## Triggers
+We provide some different shapes and basic triggers, and some triggers that are already functional.
 
-Triggers are level objects that detect entities entering their range. They're often used to trigger events under specific conditions.
+![image-20240731145849536](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731145849536.png)
 
-We provide various shapes of basic triggers and some with built-in functions.
+Basic triggers differ only in shape and do not come with any logic. To use triggers to trigger specific events, you need to mount a script for the trigger and use the relevant event detection entity trigger on the trigger's script.
 
-![image-20240731145849536](./img/image-20240731145849536.png)
+![image-20240731150111813](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731150111813.png)
 
-Basic triggers differ only by shape and have no logic. To use triggers for specific events, attach scripts to them and use relevant events on those scripts to detect entity triggers.
+![image-20240731150310863](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731150310863.png)
 
-![image-20240731150111813](./img/image-20240731150111813.png)
+Triggers can detect both entities coming from outside into the trigger area and entities leaving the area. When player enters/leaves trigger events will only be triggered when a player entity enters/leaves the trigger, and when entity enters/leaves trigger events can be triggered by any entity, such as sensing mines.
 
-![image-20240731150310863](./img/image-20240731150310863.png)
+These trigger events need to be used on the script that is mounted on the trigger.
 
-Triggers can detect entities entering or leaving their area. Player entry/exit events trigger only when player entities enter/exit triggers; entity entry/exit events trigger for any entity, like proximity mines.
+The next section describes some triggers with functionality, you can also mount scripts on these triggers to handle additional logic, but they will always implement their own logic: 
 
-These trigger events need to be used on scripts attached to triggers.
+## **Gravity change zone** 
 
-Next are some functional triggers. You can also attach scripts for extra logic on these triggers, but they'll always perform their inherent logic:
+![image-20240731154024959](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731154024959.png)
 
-**Gravity Change Zone**
+Inside the gravity change zone, the gravity acceleration and jump height change to the set values. It is also possible to set whether the zone is visible or not.
 
-![image-20240731154024959](./img/image-20240731154024959.png)
+## **Death/Invincibility Zone** 
 
-Within a gravity change zone, gravity acceleration and jump height change to set values. You can also set whether this area is visible.
+![image-20240731154156220](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731154156220.png)
 
-**Death/Invincibility Zone**
+can be set as a death zone or invincibility zone.
 
-![image-20240731154156220](./img/image-20240731154156220.png)
+Players or AI entities that enter the death zone die immediately, and as with other instant-death logic, players or AI entities that are currently invincible are unaffected.
 
-Can be set as death or invincibility zones.
+A player or AI entity that enters an invincibility zone gains invincibility until it leaves the invincibility zone. Leaving the invincibility zone clears the invincibility status, and even if other invincibility effects were previously gained, leaving the invincibility zone loses the invincibility effect.
 
-Players or AI entities entering death zones die instantly; invincible players or AI entities remain unaffected during invincibility states like other instant-death logic.
+You can set whether the zone is visible or not.
 
-Players or AI entities entering invincibility zones gain invincibility until they leave. Leaving clears invincibility even if gained elsewhere; leaving removes invincibility effects too.
+## **Rollover Trigger** 
 
-You can set whether this area is visible.
+![image-20240731154650753](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731154650753.png)
 
-**Vault Trigger**
+Players can go over the flip trigger when it is entered in reverse. This is mainly used to go over obstacles such as windows.
 
-![image-20240731154650753](./img/image-20240731154650753.png)
+The rollover trigger previews the direction of the rollover in Scene, and the player must be in the same direction as the rollover to trigger the rollover button. For i to achieve a two-way rollover, two of these triggers need to be set.
 
-Players entering vault triggers from reverse directions can vault over them. This is mainly used for obstacles like windows.
+![image-20240731154924113](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731154924113.png)
 
-Vault triggers preview vault directions in scenes; players must align with vault direction to trigger vault keys. For bidirectional vaulting, set two such triggers.
+Allows you to set the height and distance for the rollover.
 
-![image-20240731154924113](./img/image-20240731154924113.png)
+# Zombies 
 
-You can set vault height and distance.
+Zombies are monsters with AI. You can use Zombie Spawn Points to continuously spawn zombies, or use Zombie Units to place specific zombies in the Scene.
 
-## Zombies
+![image-20240731160846972](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731160846972.png)
 
-Zombies are AI-controlled monsters. You can use zombie spawn points for continuous generation or place specific zombies using zombie units in scenes.
+![image-20240731160449497](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731160449497.png)
 
-![image-20240731160846972](./img/image-20240731160846972.png)
+Regardless of which way the zombies are generated, you can set the zombie type and properties.
 
-![image-20240731160449497](./img/image-20240731160449497.png)
+![image-20240731161607670](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731161607670.png)
 
-Regardless of how they're generated, zombies' types and attributes can be configured.
+For an introduction to AI Entities, you can refer to the AI Entities user manual: 
 
-![image-20240731161607670](./img/image-20240731161607670.png)
+[This should be the link to the AI Entities documentation] 
 
-For AI entity information, refer to the AI entity user manual:
+Generators have some special settings compared to units: 
 
-[AI Entity Documentation Link Here]
+![image-20240731162000642](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20240731162000642.png)
 
-Generators have special settings compared to units:
+**Zombies per wave**: number of zombies per generation.
 
-![image-20240731162000642](./img/image-20240731162000642.png)
+**# of waves**: how many waves of zombies are generated per round when not continuously generated.
 
-**Zombies Per Wave:** Number of zombies generated per wave.
+**Continuous**: continuous generation, ignore the number of generation waves setting and keep generating zombies.
 
-**Number of Waves:** Number of waves generated per round if not continuous generation is selected.
+**Start time**: how long after the round starts to start generating the first wave of zombies, in seconds.
 
-**Continuous:** Continuously generates zombies regardless of wave settings.
+**Wave Interval**: the length of time in seconds between every two waves of generated zombies.
 
-**Start Generation Time:** Time after round start before first zombie wave generates, measured in seconds.
+Zombies generated by the generator will all be destroyed at the start of the next round and do not generate drops.
 
-**Wave Interval Time:** Interval between zombie waves' generation times, measured in seconds.
+# Unit Generator
 
-Zombies generated by generators are eliminated at next round's start without dropping loot.
+A unit generator is an object that can continuously generate units or prefabs in the scene according to the settings.
+
+![image-20250122111711523](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20250122111711523.png)
+
+A unit generator can choose to generate zombies, weapons or props on the scene, or it can choose prefabs to generate, but only one of them can be selected.
+
+![image-20250122113035532](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20250122113035532.png)
+
+The zombies, weapons, and props placed on the scene will be automatically added to the template selection panel
+
+![image-20250122113626073](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20250122113626073.png)
+
+![image-20250122113719384](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20250122113719384.png)
+
+Prefabs require you to make or import them in advance. Prefabs for zombies, weapons, and props can all be used as generation templates.
+
+![image-20250122114315229](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20250122114315229.png)
+
+![image-20250122114337513](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/12-LevelObject/image-20250122114337513.png)

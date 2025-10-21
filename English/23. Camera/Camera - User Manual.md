@@ -1,155 +1,169 @@
-# Máy quay - Hướng dẫn sử dụng
+# Camera
 
-Người chơi sử dụng máy quay để quan sát trận đấu trong game, sử dụng các chế độ và thông số khác nhau của máy quay có thể cung cấp trải nghiệm hình ảnh game khác nhau.
+Players use cameras to observe game matches. Using different camera modes and camera parameters can provide different game visual performances.
 
-## Mô-đun máy quay
+# Camera Module
 
-Mô-đun máy quay là mô-đun mặc định, không cần tải thêm.
+The camera module is a default module and does not need to be loaded additionally.
 
-![image-20240911182555100](./img/image-20240911182555100.png)
+![image-20240911182555100](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240911182555100.png)
 
-Bạn có thể cấu hình máy quay chính trong mô-đun máy quay.
+You can configure the main camera in the camera module.
 
-## **Chế độ máy quay**
+# **Camera Mode**
 
-Trong mô-đun máy quay, sau khi chọn chế độ máy quay, bạn có thể thiết lập thêm các thông số cho chế độ đó.
+In the camera module, after selecting a camera mode, you can further set the parameters of the mode.
 
-Trong các thông số, có một số thông số chung cho các chế độ máy quay:
+Among the parameters, there are some common parameters for some camera modes:
 
-![image-20240911182613203](./img/image-20240911182613203.png)
+![image-20240911182613203](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240911182613203.png)
 
-### Cấu hình chung
+## General Configuration
 
-**Loại giới hạn góc xoay ống kính**: Chọn giữ nguyên logic gốc, máy quay sẽ giới hạn góc xoay do người chơi thao tác. Chọn WideRange, giới hạn này sẽ được nới lỏng.
+**Camera rotation angle limit type**: If you choose to keep the original logic, the camera will limit the angle of rotation that the player can operate. If you choose WideRange, this limit will be relaxed.
 
-**Phạm vi tầm nhìn**: Góc mà máy quay có thể nhìn thấy.
+**Field of view**: The angle that the camera can see.
 
-![image-20240910155604898](./img/image-20240910155604898.png)
+![image-20240910155604898](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910155604898.png)
 
-**Chế độ che chắn**: Ngoại trừ camera góc nhìn thứ nhất, cách xử lý khi có vật cản giữa máy quay và nhân vật người chơi. Có ba cách: cố định, đẩy gần và xuyên thấu.
+**Occlusion Mode**: Except for the first-person camera, the way to deal with the situation when there is an occlusion between the camera and the player character. There are three modes: fixed, zoomed in, and perspective.
 
-![image-20240910164055112](./img/image-20240910164055112.png)
+![image-20240910164055112](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910164055112.png)
 
-> Lúc này máy quay tiếp tục xoay sẽ bị tường chắn lại.
+> At this point, if the camera continues to rotate, it will be blocked by the wall.
 
-Trong chế độ cố định, dù có vật cản giữa máy quay và nhân vật người chơi cũng không xử lý.
+In fixed mode, even if there are occluders between the camera and the player character, they will not be processed.
 
-![image-20240910164104396](./img/image-20240910164104396.png)
+![image-20240910164104396](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910164104396.png)
 
-Trong chế độ đẩy gần, máy quay sẽ thay đổi vị trí của mình, như bị vật cản ép sát vào nhân vật người chơi.
+In zoom mode, the camera will change its position and get closer to the player character as if it is squeezed by an obstruction.
 
-![image-20240910164258233](./img/image-20240910164258233.png)
+![image-20240910164258233](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910164258233.png)
 
-Trong chế độ xuyên thấu, nhân vật người chơi sẽ được đánh dấu bằng viền đỏ.
+In perspective mode, the player character will be marked with a red outline.
 
-![image-20240910164454220](./img/image-20240910164454220.png)
+![image-20240910164454220](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910164454220.png)
 
-**Chế độ chiếu**: Trong chế độ xuyên thấu, máy quay xử lý sự vật theo quy tắc gần lớn xa nhỏ như thực tế. Trong chế độ trực giao, máy quay không sử dụng quy tắc gần lớn xa nhỏ khi xử lý sự vật.
+**Projection mode**: In perspective mode, the camera uses the same rule as in reality that objects are larger when they are near and smaller when they are far away. In orthographic mode, the camera does not use the rule that objects are larger when they are near and smaller when they are far away.
 
-![image-20240910173104387](./img/image-20240910173104387.png)
+![image-20240910173104387](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910173104387.png)
 
-> Chế độ xuyên thấu
+> Perspective Mode
 
-![image-20240910173353307](./img/image-20240910173353307.png)
+![image-20240910173353307](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910173353307.png)
 
-> Chế độ trực giao, thường áp dụng cho game đi cảnh ngang có yêu cầu đặc biệt về cảnh quan.
+> Orthogonal mode. Generally speaking, the orthogonal mode is suitable for situations such as horizontal scrolling games that have special requirements for the scene.
 
-**Độ lệch**: Trong camera hỗ trợ thiết lập độ lệch, khi độ lệch là (0, 0, 0) thì đây là vị trí mặc định ban đầu của máy quay. Bằng cách thiết lập tham số này, bạn có thể điều chỉnh vị trí mặc định của camera.
+**Offset**: In cameras that support setting offset, the offset is (0, 0, 0) which is the initial default position of the camera. By setting this parameter, you can adjust the default position of the camera.
 
-### Camera góc nhìn thứ ba
+## Third Person Camera
 
-Camera góc nhìn thứ ba cách nhân vật người chơi một khoảng nhất định và sẽ hiển thị nhân vật người chơi. Trong chế độ camera góc nhìn thứ ba mặc định, người chơi có thể tự do xoay camera và lệnh di chuyển về phía trước của người chơi sẽ khiến nhân vật di chuyển theo hướng mà camera quan sát.
+The third-person camera is a certain distance away from the player, and the player character is rendered. In the default third-person camera mode, the player can rotate the camera freely, and the player's forward movement command will make the player character move in the direction the camera is looking.
 
-![image-20240910170247388](./img/image-20240910170247388.png)
+![image-20240910170247388](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910170247388.png)
 
-![image-20240910170300191](./img/image-20240910170300191.png)
+![image-20240910170300191](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910170300191.png)
 
-> Người chơi sẽ chuyển hướng trước rồi mới tiến lên.
+> The player will turn in the direction of movement before moving forward.
 
-#### FF cổ điển
+###FF Classic
 
-FF cổ điển giống như camera góc nhìn thứ ba trong game FreeFire. Chế độ FF cổ điển không thể thay đổi tham số.
+FF Classic is like the third-person camera in the FreeFire game. The parameters of FF Classic mode cannot be changed.
 
-#### Theo sau lưng
+### Chasing Back
 
-Camera theo sau lưng luôn chú ý đến lưng của người chơi. Trong chế độ này, hướng ngang của nhân vật luôn bằng với hướng ngang của camera và thao tác xoay camera cũng đồng thời xoay nhân vật người chơi.
+The back-chasing camera will always look at the back of the player. In this mode, the horizontal direction of the player character is always equal to the horizontal direction of the camera, and turning the camera will also turn the player character.
 
-### Camera góc nhìn thứ nhất
+## First Person Camera
 
-Vị trí của camera góc nhìn thứ nhất trùng với nhân vật người chơi, như là quan sát thế giới game từ góc nhìn của nhân vật. Camera góc nhìn thứ nhất mặc định không hỗ trợ điều chỉnh phạm vi tầm nhìn.
+The position of the first-person camera overlaps with the player character, as if observing the game world from the player character's perspective. The default first-person camera does not support adjusting the field of view.
 
-#### Tài nguyên mới cho góc nhìn thứ nhất
+### New first-person resources
 
-Ở phần dưới của mô-đun, bạn có thể sử dụng tài nguyên mới cho góc nhìn thứ nhất.
+At the bottom of the mod, you can use the new version of the resources for the first person.
 
-![image-20240911182655142](./img/image-20240911182655142.png)
+![image-20240911182655142](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240911182655142.png)
 
-Khi tài nguyên mới cho góc nhìn thứ nhất được chọn, camera sẽ luôn hiển thị đôi tay thay vì chỉ hiển thị khi thực hiện hành động như trước đây.
+When the new first-person asset is checked, the camera will always show both hands, instead of only showing both hands when performing actions.
 
-#### FF cổ điển
+###FF Classic
 
-Camera góc nhìn thứ nhất FF cổ điển giống với góc nhìn thứ nhất trong game FreeFire. Camera góc nhìn thứ nhất FF cổ điển có hiệu ứng động thay đổi phạm vi tầm nhìn khi di chuyển.
+The FF Classic first-person camera is consistent with the first-person perspective in FreeFire. The FF Classic first-person camera has a dynamic effect that changes the field of view when moving.
 
-### Camera từ trên xuống
+## Top-down camera
 
-Camera từ trên xuống trong trạng thái mặc định luôn hướng về mặt phẳng ngang và sẽ di chuyển theo khi người chơi di chuyển.
+The top-down camera is always facing the horizontal plane by default, and will move with the player when the player moves.
 
-![image-20240910175642062](./img/image-20240910175642062.png)
+![image-20240910175642062](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910175642062.png)
 
-### Camera góc ngang
+## Horizontal camera
 
-Camera góc ngang trong trạng thái mặc định luôn hướng về phía dương của trục Z trong hệ tọa độ thế giới và sẽ di chuyển theo khi người chơi di chuyển.
+By default, the horizontal perspective camera will always face the positive Z axis of the world coordinate system and move with the player.
 
-![image-20240910180227779](./img/image-20240910180227779.png)
+![image-20240910180227779](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910180227779.png)
 
-Camera góc ngang có cấu hình độc đáo:
+The horizontal camera has a unique configuration:
 
-![image-20240911182724156](./img/image-20240911182724156.png)
+![image-20240911182724156](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240911182724156.png)
 
-**Góc nghiêng và góc ngang**: Có thể điều chỉnh góc ban đầu của camera. Sau khi cấu hình, camera sẽ giữ nguyên góc này.
+**Pitch angle and horizontal angle**: You can adjust the initial angle of the camera, and the camera will maintain this angle after configuration.
 
-**Có cho phép người chơi di chuyển trên trục X không**: Khi bật lên, lệnh di chuyển vào trong hoặc ra ngoài màn hình sẽ bị chặn lại. Người chơi chỉ có thể di chuyển sang hai bên trái phải của màn hình.
+**Whether to allow player X-axis movement**: When turned on, the player's movement instructions to the inside and outside of the screen will be blocked, and the player can only move to the left and right sides of the screen.
 
-### Camera tự do
+## Free view camera
 
-Trong chế độ camera tự do, lệnh di chuyển của người chơi sẽ điều khiển camera thay vì nhân vật. Ở trạng thái mặc định, điều khiển góc dọc của camera tự do bị đảo ngược.
+In free-view camera mode, the player's movement commands will operate the camera instead of the player character. By default, the vertical view control of the free-view camera is flipped.
 
-![image-20240910180722654](./img/image-20240910180722654.png)
+![image-20240910180722654](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910180722654.png)
 
-### Camera tùy chỉnh
+## Custom Camera
 
-Camera tùy chỉnh chỉ theo dõi người chơi mà không có chức năng nào khác. Biểu hiện khi người chơi sử dụng camera phụ thuộc vào cấu hình của bạn.
+Custom cameras will only follow the player and have no other functionality. Your configuration determines how the player behaves when using the camera.
 
-![image-20240910181200118](./img/image-20240910181200118.png)
+![image-20240910181200118](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910181200118.png)
 
-## Script
+# script
 
-Ngoài việc cấu hình cho camera chính, sử dụng script có thể điều chỉnh động các tham số của camera hoặc tạo hoặc chuyển đổi camera.
+In addition to configuring the main camera, scripts can be used to dynamically adjust camera parameters, create or switch cameras.
 
-![image-20240910190054154](./img/image-20240910190054154.png)
+![image-20240910190054154](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910190054154.png)
 
-### Tạo & chuyển đổi camera
+## Create & switch camera
 
-![image-20240910190216300](./img/image-20240910190216300.png)
+![image-20240910190216300](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910190216300.png)
 
-Bằng cách tạo camera mới, bạn có thể tạo thêm một camera nhưng nó chưa được sử dụng và camera của người chơi không thay đổi.
+By creating a camera, you can create an additional camera, but it is not put into use and the player's camera will not change.
 
-Sau khi tạo camera mới, bạn có thể điều chỉnh biểu hiện của nó bằng cách thiết lập thuộc tính cho nó.
+After creating a camera, you can adjust the camera's performance by setting its properties.
 
-Sử dụng chức năng chuyển đổi camera để chuyển sang một camera cụ thể thì người chơi mới bắt đầu sử dụng camera mới đó.
+Use Switch Camera to switch to the specified camera, and the player will start using the new camera.
 
-### Mặt nạ
+## Mask
 
-Máy quay có thể chọn lọc render các đối tượng hoặc người chơi trên bản đồ bằng cách thay đổi cấp bậc mặt nạ. Tất cả các đơn vị có thể thấy đều mang thành phần khả kiến.
+The camera can selectively render objects or players on the map by modifying the mask level. All visible units have a visibility component.
 
-![image-20240910190543378](./img/image-20240910190543378.png)
+![image-20240910190543378](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910190543378.png)
 
-Thiết lập cấp bậc trong thành phần này rồi thay đổi cấp bậc render trong mặt nạ của máy quay để quyết định cấp bậc nào sẽ được render bởi máy quay đó.
+Set the levels in the component, then modify the level in the camera's mask that the camera will render.
 
-![image-20240910190647512](./img/image-20240910190647512.png)
+![image-20240910190647512](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20240910190647512.png)
 
-> Theo mặc định, máy quay sẽ render tất cả các cấp bậc (0–15), hình trên là không render các đối tượng ở cấp bậc 1.
+> By default, the camera will render all levels (0-15), and the picture shows that objects at level 1 are not rendered.
 
-Bằng cách thay đổi cấp bậc mặt nạ, bạn có thể đạt được mục đích ẩn khả kiến của đơn vị thuộc loại cụ thể nào đó hoặc tiết kiệm hiệu suất,...
+By modifying the mask level, you can achieve the purpose of hiding the visibility of specified category units, saving performance, etc.
 
-Tuy nhiên, dù đơn vị không khả kiến nhưng các chức năng khác như va chạm vẫn tồn tại. Người chơi vẫn bị chặn hoặc kích hoạt một số sự kiện va chạm bởi các đối tượng không được render.
+However, even if the unit is invisible, other functions such as collision still exist, and the player will still be blocked by non-rendering level objects or trigger certain collision events.
+
+# New custom camera
+
+Different from the existing cameras, we provide a custom camera that is completely controlled by the player:
+
+![image-20250630171808382](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20250630171808382.png)
+
+You can double-click the lower left preview to adjust the camera perspective.
+
+![image-20250630172138151](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20250630172138151.png)
+
+In the script, the camera is controlled using a new API. Different from the old cameras, the new cameras are collectively called custom cameras:
+
+![image-20250630172253596](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/23-Camera/image-20250630172253596.png)

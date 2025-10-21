@@ -1,26 +1,26 @@
-# Workflow Management - Gitignore User Manual
+# Gitignore Process Management
 
-## Introduction
+# Introduction
 
-Git is an open-source distributed version control system that efficiently and swiftly handles version management for projects ranging from very small to very large. This document is primarily aimed at users already using Git for version management, introducing them to the gitignore feature and the official gitignore configuration.
+Git is an open source distributed version control system that can efficiently and quickly handle version management of projects ranging from very small to very large. This article is mainly for users who are already using git for version management, and introduces the gitignore function and the official gitignore configuration for these users.
 
-### What is gitignore
+## What is gitignore
 
-In a project directory, not all files need to be synchronized to the remote repository, such as personal preference configurations and temporary files. Using gitignore allows you to mark files that Git should not track, preventing excessive synchronization and overwriting collaborators' personal settings, thus enhancing the efficiency of project version management.
+Not all files in the project directory need to be synchronized to the remote repository, such as personal preference configurations and temporary files. Using gitignore, you can mark files that do not need to be tracked by Git, avoid excessive synchronization and overwriting of collaborators' personal settings, thereby improving the efficiency of version management of the project.
 
-## .gitignore File
+# .gitignore file
 
-.gitignore is a special plain text configuration file that contains all the files or folders in a project that need to be ignored. Files or folders configured in the .gitignore file will be ignored and not tracked by Git.
+.gitignore is a special plain text configuration file that contains all the files or folders in the project that need to be ignored. Files or folders configured in the .gitignore file will be ignored and not tracked by Git.
 
-We create this file by default in every project and have already configured recommended files and folders to ignore.
+We create this file by default in each project and have already configured recommended ignored files and folders.
 
-You can find this file in your project:
+You can find the file in the project:
 
-![image-20240724153902332](./img/image-20240724153902332.png)
+![image-20240724153902332](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/38-Gitignore/image-20240724153902332.png)
 
-If you are using a Linux system, you need to use the -a flag with the ls command to display hidden files:
+If you are using a Linux system, you need to use the -a flag of the ls command to display hidden files:
 
-```default
+```defalut
 ls -a
 ```
 
@@ -36,63 +36,67 @@ Temp/
 
 Where:
 
-Folder name + "/" indicates ignoring all files under that folder, "*" + file extension indicates ignoring all files with that extension.
+folder name + “/” means to hide all files in that folder, and “*” + file name suffix means to hide all files with that suffix.
 
-.vscode/: This is the configuration folder for VS Code.
+.vscode/: This is the VS Code configuration folder.
 
 Cache/: This is the cache folder.
 
-Libraries/: This is the non-editable official library folder.
+Libraries/: This is the official library folder, which cannot be edited.
 
-Temp/: This is the temporary folder containing runtime logs and other content.
+Temp/: This is the temporary folder, which contains run logs and other content.
 
-*.lock: These are all locked files.
+*.lock: This is all locked files.
 
-The above are the officially recommended files for Git to ignore.
+The above are the files that Git recommends ignoring.
 
-## .gitignore File Editing Rules
+# Editing rules for the .gitignore file
 
-Generally speaking, you do not need to edit the .gitignore file. However, if there are additional files you want to ignore or add as tracked, you can refer to this section. Note that the gitignore file itself needs to be synchronized to the remote repository, so any changes will affect all collaborators in the corresponding repository.
+Normally, you do not need to edit the .gitignore file. However, if you have additional files that you want to ignore or files that you want to add as concerns, you can check this description. However, it should be noted that the .gitignore file itself needs to be synchronized to the remote repository, and all collaborators in the corresponding repository will be affected by changes to the configuration of this file.
 
-### Comments
+## Comments
 
-Lines starting with # are comments.
+Lines beginning with # are comments.
 
-![image-20240724160110626](./img/image-20240724160110626.png)
+![image-20240724160110626](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/38-Gitignore/image-20240724160110626.png)
 
-### Ignoring Files and Directories
+## Ignore files and directories
 
-Entering a string alone will ignore directories and files with the same name:
+A string entered on its own will hide directories and files with the same name:
 
-![image-20240724160343666](./img/image-20240724160343666.png)
+![image-20240724160343666](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/38-Gitignore/image-20240724160343666.png)
 
-> Generally, files have extensions, distinguishing them from directory names.
+> However, files generally have extensions that distinguish them from directory names.
 
-### Ignoring Directories Only
+## Ignore only directories
 
-![image-20240724160709884](./img/image-20240724160709884.png)
+![image-20240724160709884](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/38-Gitignore/image-20240724160709884.png)
 
-Ignore all files under directories with this name, including same-named directories at multiple levels, e.g., */foldername/
+Ignore all files in the directory with this name. This includes directories with the same name in multiple levels, e.g. */foldername/
 
-### Using Wildcards
+## Using wildcards
 
-1. Asterisk "*", matches multiple characters. \*.test means ignoring all files ending with .test.
-2. Question mark "?", matches any single character except "/". t?st means ignoring all four-character names where the 1st, 3rd, and 4th characters are t, s, t for both files or directories.
-3. Square brackets "[]", match any character within the brackets. *.[abc] means all files ending with .a, .b, or .c will be ignored.
-   Using a hyphen within square brackets indicates matching characters within a range; [0-9] matches numbers from 0 to 9 sequentially.
+1. The asterisk “*” matches multiple characters. *.test means to block all files ending in .test.
+2. The question mark “?” matches any character except “/”. t?st means to block all files or directories with a name of four characters and the first, third and fourth characters being t, s or t.
 
-### Reversal Operation
+3. Square brackets “[]” match every character inside the brackets. *.[abc] means that all files ending in .a, .b or .c will be ignored.
 
-Using "!" can add previously ignored files back to the tracking list.
+The use of a dash within square brackets means to match any character within the range of two characters. [0-9] means to match any digit from 0 to 9 in sequence.
 
-![image-20240724161929601](./img/image-20240724161929601.png)
+## Reverse operation
 
-> The filename under foldername will be tracked again.
+The use of “!” can add back to the list of files that have previously been ignored.
 
-### Other Rules
+![image-20240724161929601](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/38-Gitignore/image-20240724161929601.png)
 
-1. Each line in a .gitignore file is a matching pattern; blank lines do not match any files.
+> The filename file in foldername will be retracked.
+
+## Other rules
+
+1. Each line in the .gitignore file is a matching pattern, and empty lines do not match any files.
 2. Git tracks files, not directories.
-3. If a file is already tracked by Git, it will not be ignored even if added to the .gitignore file.
+3. If a file is already tracked by Git, it will not be ignored even if it is added to the .gitignore file.
 
-If you have further needs, you can refer to the gitignore and Git usage guides yourself.
+
+
+If you have further needs, you can refer to gitignore and the Git user guide on your own.

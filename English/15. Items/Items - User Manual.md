@@ -1,176 +1,175 @@
-# Item - User Manual
+# Items
 
-A firearm, a grenade, some bullets—these are all items. In the game, when it comes to equipment or tools, the concept of items is indispensable.
+A firearm, a grenade, some bullets, these are all items, and the concept of items is inseparable from the gameplay when it comes to equipment or props.
 
-Items rely on the player's backpack when they are with the player. The player's backpack holds these items.
+Items depend on the player backpack to exist while they are on the player. The player backpack holds these items.
 
-## Item Categories
+# Classification of Items 
 
-Items are categorized as follows:
+Items possess the following classifications: 
 
-### Equipment
+## Equipment 
 
-Equipment includes weapons, armor, backpacks, attachments, and functional gear.
+Equipment consists of weapons, defenses, backpacks, accessories, and functional equipment.
 
-Here, "backpack" refers to a specific item rather than the concept mentioned earlier of holding items.
+Where backpacks refer to the props of a specific backpack, rather than the concept of holding items as mentioned above.
 
-![image-20240821150846221](./img/image-20240821150846221.png)
+![image-20240821150846221](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240821150846221.png)
 
-> Backpack
+> Backpacks
 
-### Tools
+## Consumables
 
-Tools include grenades, healing items, special items, and various types of bullets.
+Consumables contain grenades, healing props, special props, and various types of bullets.
 
-## Player Backpack
+# Player Backpacks 
 
-The player backpack here differs from the backpack; it refers to the abstract concept of the player's item space. A backpack can increase the space of a player's backpack and provide cosmetic changes.
+Player backpacks here are distinguished from rucksacks by the abstract notion of space for items owned by the player, whereas rucksacks increase the space in the player's backpack and provide variations in appearance skins.
 
-![image-20240821152243567](./img/image-20240821152243567.png)
+![image-20240821152243567](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240821152243567.png)
 
-> Player Backpack
+> Player Backpacks 
 
-### Backpack Content Categories
+## Backpack Contents Category 
 
-#### Equipment Slot
+### Equipment Bar 
 
-Part 1 in the image above is the equipment slot in the player's backpack. The equipment slot contains the player's currently equipped weapons, armor, backpack, and functional gear.
+The 1. part of the image above is the equipment bar in the player's backpack. Inside the equipment bar are the player's currently equipped weapons, defenses, backpacks, and functional equipment.
 
-#### Tool Slot
+### Consumable Bar 
 
-Part 2 in the image above is the tool slot button in the player's backpack. The area directly below displays tools.
+The 2. part of the image above is the consumable bar button in the player's backpack, with the area directly below it displaying the consumable.
 
-![image-20240821152456167](./img/image-20240821152456167.png)
+![image-20240821152456167](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240821152456167.png)
 
-> When there are tools
+> When with consumables
 
-All visible tools are stored here.
+all visible consumables are stored here.
 
-#### Device Slot
+### Device Bar 
 
-Part 3 in the backpack image is the device slot button. For editors, currently only an ice wall generator is available as a device.
+The 3. part of the backpack image, is the device bar button. For the editor, there is currently only one device, the Ice Wall Generator.
 
-![image-20240821154645057](./img/image-20240821154645057.png)
+![image-20240821154645057](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240821154645057.png)
 
-Devices can be activated by scripts. Once activated, equipment appears under this category in the backpack.
+Devices can be turned on by the script to be turned on, and the equipment that is turned on is shown in the backpack under that category.
 
-![image-20240821154756422](./img/image-20240821154756422.png)
+![image-20240821154756422](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240821154756422.png)
 
-#### Black Hole Space
+### Black Hole Space 
 
-Equipment and tools not displayed in the backpack interface exist in black hole space. Players cannot directly view these items in their backpacks.
+Equipments and consumables that are not displayed in the backpack interface will exist in Black Hole Space, and players will not be able to view the consumable directly in the backpack.
 
-### Using Items in the Backpack
+### Using items in the backpack 
 
-Generally speaking, most items can be used or automatically used outside of the backpack, including weapons, attachments, grenades, etc.
+Generally speaking, most items can be used outside of the backpack or automatically. This includes weapons, accessories, grenades, etc.
 
-However, certain operations can still be performed within the backpack.
+But it is still possible to perform certain actions in the backpack.
 
-Using specific items:
+To use a given item: 
 
-![image-20240821160116244](./img/image-20240821160116244.png)
+![image-20240821160116244](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240821160116244.png)
 
-Detach/Replace/Install attachments:
+Remove/ Replace/Install attachments: 
 
-![image-20240821160157425](./img/image-20240821160157425.png)
+![image-20240821160157425](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240821160157425.png)
 
-![image-20240821160207806](./img/image-20240821160207806.png)
+![image-20240821160207806](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240821160207806.png)
 
-> Detach Attachment
+> Remove attachments
 
-Discard items inside the backpack:
+Discard the items in your backpack: 
 
-![image-20240821160306511](./img/image-20240821160306511.png)
+![image-20240821160306511](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240821160306511.png)
 
-## Placing Items in Scenes
+# Arranging items in the scene 
 
-There are two ways to generate items at a designated location: generators and units.
+There are two ways to generate items at a given location: generators and units.
 
-Using a generator to spawn items can be set to refresh each round but can only specify types. If an item from a previous spawn isn't taken before refreshing, it will be replaced with newly generated items.
+Using generators to generate items can be set to refresh every turn, but only the type can be specified. If the last generated item is not taken when it is refreshed, it will be replaced with the newly generated item.
 
-Using units to place items allows for precise specification of weapon or tool types generated. By default, only one corresponding item will be generated.
+Using units to place items allows you to set the exact type of weapon or item to be generated, by default only one copy of the corresponding item will be generated.
 
-### Generator
+## Generator 
 
-![image-20240730180747977](./img/image-20240730180747977.png)
+![image-20240730180747977](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240730180747977.png)
 
-![image-20240730180753598](./img/image-20240730180753598.png)
+![image-20240730180753598](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240730180753598.png)
 
-Select a generator based on type; take weapons as an example:
+Depending on the type Select the corresponding generator, take weapons for example: 
 
-![image-20240730181011764](./img/image-20240730181011764.png)
+![image-20240730181011764](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240730181011764.png)
 
-In configuration, you can choose the type of weapon generated:
+In configuration In the configuration you can choose the type of weapon to generate: 
 
-![image-20240730181034487](./img/image-20240730181034487.png)
+![image-20240730181034487](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240730181034487.png)
 
-In each round's reset component, you can set whether this spawn point refreshes at each round's start.
+This generator can be set per turn in the reset component. In the reset component you can set whether this generation point will refresh at the start of each turn.
 
-![image-20240730181104786](./img/image-20240730181104786.png)
+![image-20240730181104786](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240730181104786.png)
 
-Notably, when choosing to generate weapons, a matching set of ammo and attachments will also be generated.
+Special. When choosing to generate a weapon, a matching set of ammo and accessories will be generated.
 
-### Unit
+## Unit 
 
-![image-20240730175100849](./img/image-20240730175100849.png)
+![image-20240730175100849](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240730175100849.png)
 
-Using weapons and tools from units allows you to generate configured weapons or tools at specified locations.
+Using the units in the unit to generate a configured weapon or prop at the specified location.
 
-![image-20240730175225713](./img/image-20240730175225713.png)
+![image-20240730175225713](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240730175225713.png)
 
-Items placed this way can have their properties modified:
+Items that are placed in this Items placed in this way can have their properties modified: 
 
-![image-20240730184405465](./img/image-20240730184405465.png)
+![image-20240730184405465](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240730184405465.png)
 
-![image-20240730184527556](./img/image-20240730184527556.png)
+![image-20240730184527556](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/15-Items/image-20240730184527556.png)
 
-## Item Events
+# items Events 
 
-You can listen to certain item-related events to implement your desired logic.
+You can listen to some item-related events to implement the logic you want.
 
-Here are some common events:
+Here are some common events: 
 
-| Name           | Script Name  | Description                                                              | Parameter 1                                    | Parameter 2                                                         | Parameter 3                                                                                            | Dependent Entity |
-| -------------- | ------------ | ------------------------------------------------------------------------ | ---------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------------- |
-| On Obtain Item | OnObtainItem | Triggered when a player obtains an item from any source                  | Item ID, ID of the obtained item by the player | Item entity, entity of the obtained item by the player, can be null |                                                                                                        | Player           |
-| On Use Item    | OnUseItem    | Triggered when a player uses an item                                     | Item ID, ID of the used item by the player     | Item entity, entity of the used item by the player, can be null     | New item entity created after use. Items like portable turrets can be accessed through this parameter. | Player           |
-| On Drop Item   | OnDropItem   | Triggered when a player drops an item                                    | Item ID, ID of the dropped item by the player  | Item entity, entity of the dropped item by the player, can be null  |                                                                                                        | Player           |
-| On Pickup      | OnPickup     | Triggered when an item is picked up; must be attached to the item entity | Player picking up the item                     |                                                                     |                                                                                                        | InventoryBase    |
-| On Used        | OnUsed       | Triggered when an item is used; must be attached to the item entity      |                                                |                                                                     |                                                                                                        | InventoryBase    |
-| On Drop        | OnDrop       | Triggered when an item is dropped; must be attached to the item entity   | Player dropping the item                       |                                                                     |                                                                                                        | InventoryBase    |
+| Name                   | Script Name  | Description                                                  | Parameter 1                                         | Parameter 2                                                  | Parameter 3 | Dependent Entity |
+| ---------------------- | ------------ | ------------------------------------------------------------ | --------------------------------------------------- | ------------------------------------------------------------ | ----------- | ---------------- |
+| When acquiring an item | OnObtainItem | Triggered when the player acquires an item from any source   | Item ID, the ID of the item acquired by the player  | Item Entity, the entity of the item acquired by the player, can be null |             | Player           |
+| When using the item    | OnUseItem    | Triggered when the player uses the item                      | Item ID, the ID of the item used by the player      | Item Entity, the entity of the item used by the player, can be null | Player      |                  |
+| When dropping props    | OnDropItem   | Triggered when the player drops an item                      | Item ID, the ID of the item that the player dropped | Item Entity, the entity of the item that the player dropped, can be null |             | Player           |
+| When Picked Up         | OnPickup     | Triggered when the item is picked up, need to be mounted on the Item Entity |                                                     |                                                              |             |                  |
+| When used              | OnUsed       | Triggered when the item is used, needs to be mounted on the item entity |                                                     |                                                              |             | InventoryBase    |
+| When discarded         | OnDrop       | Triggered when the item is discarded, needs to be mounted on the item entity |                                                     |                                                              |             |                  |
 
-## Item API
+# Item APIs 
 
-Use the Item API to perform operations on items.
+Items can be manipulated using the item APIs.
 
-Here are some common APIs categorized:
+Some common APIs are categorized below: 
 
-**Add Items**
+**Add items**
 
-| Name        | Script Name     | Description                           | Input 1                    | Input 2       | Input 3           | Return 1                                                        |
-| ----------- | --------------- | ------------------------------------- | -------------------------- | ------------- | ----------------- | --------------------------------------------------------------- |
-| Add Item    | AddItemToPlayer | Sends items to player's inventory     | Player receiving the items | Items added   | Quantity of items | List of added items. Regardless of quantity, returns as a list. |
-| Create Item | AddItemInScene  | Creates items at a specified location | Item location              | Items created | Quantity of items |
+| Name                 | ScriptName     | Description                            | Input Parameter 1 | Input Parameter 2 | Input Parameter 3 | Return Parameter 1                                           |
+| -------------------- | -------------- | -------------------------------------- | ----------------- | ----------------- | ----------------- | ------------------------------------------------------------ |
+| Add Item             | AddItem        | Send items to player's backpack        | Player            | Item              | Quantity of items | List of added items. Returned as a list, regardless of the quantity |
+| Create Item In Scene | AddItemInScene | Create items in the specified location | Position of items | Item              | Quantity of items |                                                              |
 
-**Remove Items**
+**Delete Items** 
 
-| Name              | Script Name      | Description                                                                 | Input 1             | Input 2       | Input 3           | Return 1       |
-| ----------------- | ---------------- | --------------------------------------------------------------------------- | ------------------- | ------------- | ----------------- | -------------- |
-| Remove Item       | PlayerRemoveItem | Removes items from a player's inventory                                     | Player losing items | Items removed | Quantity of items |
-| Destroy Equipment | DeleteEquipment  | Destroys equipped items based on slot; only equippable items can be removed | Player losing items | Slot          | Quantity of items | Success status |
-| Clear Inventory   | ClearInventory   | Clears all items from a player's inventory, including equipped ones         | Player losing items |               |                   |                |
+| Name              | ScriptName      | Description                                               | Input Parameter 1 | Input Parameter 2 | Input Parameter 3 | Return Parameter 1 |
+| ----------------- | --------------- | --------------------------------------------------------- | ----------------- | ----------------- | ----------------- | ------------------ |
+| Destroy Item      | DestroyItem     | Remove items from player                                  | Player            | Item              | Quantity of items |                    |
+| Destroy Equipment | DeleteEquipment | Destroys a player's equipped item(s)according to its slot | Player            | Slot              | Quantity of items | Success or not     |
+| Clear Backpack    | ClearBackpack   | Empty all items from the player, including equipped items | Player            |                   |                   |                    |
 
 **Query Items**
 
-| Name                    		| Script Name    	| Description                        		| Input 1         		| Input 2  		| Return 1          		| Return 2            	|
-| ----------------------------		| -----------------	| ----------------------------------------		| ---------------------		| ------ 		| ---------------------		| ---------------------|
-| Get Equipments in Inventory Slot   	| GetEquipments    	| Retrieves equipped items based on slot   		| Player with items   		| Slot   		| Equipped item entity  		| List of attachments for that item |
-| Get Item Count             			| GetItemCount     	| Retrieves quantity of a specific item in player's inventory 		| Player with items   		| Item ID 		| Quantity of this item  	 |
+| Name           | ScriptName    | Description                                          | Input Parameter 1 | Input Parameter 2 | Return Parameter 1   | Return Parameter 2                     |
+| -------------- | ------------- | ---------------------------------------------------- | ----------------- | ----------------- | -------------------- | -------------------------------------- |
+| Get Equipments | GetEquipments | Get the equipment according to the slot              | Player            | Slot              | Equipment entity     | List of attachments for this equipment |
+| Get Item Count | GetItemCount  | Get the quantity of an item in the player's backpack | Player            | Item ID           | Quantity of the item |                                        |
 
 **Modify Items**
 
-| Name                  			| Script Name     			| Description                              			| Input 1 		| Input 2 		| Input 3      		| Return 1    	 		|Return 2    	 	 |  
-|------------------------------	|	 ------------    |		 ----------------------------------	|	 ----- 	|	 ----- 	|	 ---------- 	|	 -------- 	|	 --------|
-Grant Weapon Attachments to Player| 	 AddAttachments |		 Grants attachments for weapons in specified slots to a player 		| Player 	|	 Slot 	|	 AttachmentItem ID 	|	 Success status 	|	 Attachment entity
-Switch Player Weapon |			 SwitchWeapon 		|	 Switches weapon in specified slot to player's current weapon 		|	 Player 	|	 Slot 		|	 	|		 Success status|
-II
+| Name            | ScriptName     | Description                                                  | Input Parameter 1 | Input Parameter 2 | Input Parameter 3  | Return Parameter 1 | Return Parameter 2 |
+| --------------- | -------------- | ------------------------------------------------------------ | ----------------- | ----------------- | ------------------ | ------------------ | ------------------ |
+| Add Attachments | AddAttachments | Give the player an attachment for the weapon in certain slot | Player            | Slot              | Attachment item ID | Success or not     | Attachment entity  |
+| Switch Weapon   | SwitchWeapon   | Switch weapon in slot to player's current weapon             | Player            | Slot              |                    | Success or not     |                    |

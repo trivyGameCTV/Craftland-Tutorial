@@ -1,411 +1,405 @@
-# Combat - User Manual
+# Combat
 
-The combat system is a crucial component of the game.
+The combat system is a crucial system in the game.
 
-By default, players, AI zombies, and defense towers are combat entities, inherently possessing attributes like health and damage capability.
+By default, players, AI zombies, and defensive towers are combat entities that naturally have combat properties such as health and damage capabilities.
 
-Custom combat targets rely on targetable entities and are closely related to concepts such as aim assist and attackability.
+Custom combat objectives rely on entities that can be targeted and are closely related to concepts such as assisted targeting and whether they can be attacked.
 
-By flexibly using the combat system, you can create a custom combat setup that even surpasses the limits of shooting games. However, using FF's native firearms for shooting combat is well-supported. If you wish to create combat without firearms (like sword and magic battles), it may require more effort and resources. This document mainly introduces the combat system under the premise of using officially provided firearms, but you might gain further inspiration.
+By using the combat system flexibly, you can create a custom combat system that even goes beyond the limitations of shooting games. However, shooting combat using FF's native firearms is more comprehensively supported, and if you want to create a combat system that does not use firearms (such as a sword and magic combat), it may require more effort and resources. So this article mainly introduces the combat system under the premise of using the officially provided firearms combat, but you may get more inspiration.
 
-This document will introduce the following topics in sequence:
+In this article, the following content will be introduced in turn:
 
-1. Combat Entities
-2. Custom Combat Entities
-3. How to Create Combat Entities
-4. How to Create a Combat Instance
-5. Expansion: Custom Targets and Firearms with AOE Ammunition
+1. Combat entities
+2. Custom combat entities
+3. How to create combat entities.
+4. How to create a combat example.
+5. Extension: self-made targets and guns that fire AOE ammunition.
 
-## Combat Entities
+# Combat entities
 
-Combat entities are those that participate in battles by default; currently, only players, AI zombies, and defense towers are combat entities.
+Combat entities are entities that will participate in combat by default. Currently, only players, AI zombies, and defensive towers are combat entities.
 
-You can use events and interfaces related to combat; the combat entity component does not support custom additions.
+Combat-related events and interfaces can be used, but the combat entity component does not support custom additions.
 
-All combat entities can inflict damage and have health attributes; when health reaches zero, they die or are destroyed.
+Combat entities all have the ability to cause damage and have a health property. If their health is zero, they will die/be destroyed.
 
-### Scripts
+## Scripts
 
 Combat entities can use some events and interfaces that depend on themselves.
 
-By flexibly using these script contents, you can customize and expand FF's combat content to some extent.
+By using these scripting contents flexibly, you can customize and extend the FF combat content to a certain extent.
 
-![image-20240813164330675](./img/image-20240813164330675.png)
+![image-20240813164330675](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813164330675.png)
 
-![image-20240813164343647](./img/image-20240813164343647.png)
+![image-20240813164343647](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813164343647.png)
 
-Players, AI zombies, and defense towers can also use other entity components' events and interfaces that depend on themselves.
+Players, AI zombies, and defensive towers can also each use events and interfaces that rely on other entity components that they have.
 
-![image-20240813163037984](./img/image-20240813163037984.png)
+![image-20240813163037984](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813163037984.png)
 
-> Add a temporary shield for yourself before taking damage; the damage value is before amplification or reduction, so it cannot fully block headshot damage.
+> Adds a temporary shield before each damage, and the amount of damage is the value before damage amplification and reduction, so it cannot completely prevent headshot damage.
 
-![image-20240814151439653](./img/image-20240814151439653.png)
+![image-20240814151439653](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240814151439653.png)
 
-> Recover 10 health points for the player after being hit.
+> After being hit, the player's health is restored by 10 points
 
-### Firearms and Items
+## Guns and props
 
-Combat relies on firearms and items; most of the damage dealt by players depends on them.
+Weapons and props are indispensable in combat, and the vast majority of the damage dealt by players relies on them.
 
-In battle, only players can directly use firearms and items.
+Only players can directly use weapons and props in combat.
 
-#### Distribution of Firearms and Items
+### Weapons and props distribution
 
-You can distribute firearms and items to players through the script's add item interface. Each player can carry two primary weapons, one secondary weapon, one melee weapon, and several items by default.
+Weapons and props can be distributed to players through the scripted add-item interface. Each player can carry two primary weapons, one secondary weapon, one melee weapon, and several items by default.
 
-Items exceeding the carry limit will drop at the player's location by default when distributed.
+Items exceeding the carrying limit will fall to the player's location by default when distributed.
 
-![image-20240813164451166](./img/image-20240813164451166.png)
+![image-20240813164451166](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813164451166.png)
 
-![image-20240813164801221](./img/image-20240813164801221.png)
+![image-20240813164801221](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813164801221.png)
 
-> Adding a weapon to a slot already occupied will replace the currently used weapon.
->
-> If the player's discard item attribute is disabled, extra weapons or items will disappear.
+> If the player already has a weapon in their hand, adding a weapon to the corresponding location will replace the currently used weapon.
+> If the player's discard item property is turned off, the extra weapons or props will disappear.
 
-![image-20240816113624270](./img/image-20240816113624270.png)
+![image-20240816113624270](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240816113624270.png)
 
-> Note that the add item interface returns a list of added items.
+> It should be noted that the interface for adding props returns a list of added props.
 
-Additionally, you can place weapons and items or their generators directly on the field using level objects. You can also sell weapons or items to players through shops. The method of distributing items to players depends on game design needs.
+In addition, you can use level objects to place weapons and props or their generators directly on the field. You can also sell weapons or props to players through the store. Which method is used to issue props to players depends on the needs of the game design.
 
-#### Attribute Configuration
+### Property configuration
 
-For firearms and items placed in the scene through generators and level objects, you can configure their attributes directly in the panel.
+For firearms and props placed in the scene through generators and level objects, you can configure the properties directly in the panel.
 
-![image-20240813164821996](./img/image-20240813164821996.png)
+![image-20240813164821996](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813164821996.png)
 
-> Firearm units and their configuration
+> Gun units and their configuration
 
-For adjusting firearm and item attributes after game launch, you can achieve this through script settings.
+The need to adjust the properties of guns and props after the game has started can be achieved by setting properties in the script.
 
-![image-20240813154120654](./img/image-20240813154120654.png)
+![image-20240813154120654](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813154120654.png)
 
-> Modify player primary weapon attributes
+> Modifying the properties of the player's main weapon
 
-When attempting to modify firearm attributes via script, pay attention to correctly targeting the firearm entity.
+When attempting to modify the properties of a firearm via script, care must be taken to obtain the correct target for the firearm.
 
-For example, after adding firearms to a player using the add item interface, note that it returns an entity list that requires processing to obtain specific firearm entities.
+For example, after adding a firearm to the player using the add item interface, care must be taken that a list of entities is returned, and certain processing is required to obtain the specific firearm entity.
 
-![image-20240816113802474](./img/image-20240816113802474.png)
+![image-20240816113802474](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240816113802474.png)
 
-> Adjust the base damage of the M4A1 numbered 0 from a batch of three added at once to 10.
+> Adjust the base damage of the M4A1 to 10 for the one with the number 0 among the three added at once.
 
-Weapons themselves also support some script events:
+The weapon itself also supports some script events:
 
-![image-20240813163401140](./img/image-20240813163401140.png)
+![image-20240813163401140](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813163401140.png)
 
-When using these events, this script needs to be mounted on the weapon entity. Practical explanations will be provided in the explosive projectile example below.
+To use these events, the script needs to be attached to the weapon entity. A practical example is given in the following example of an explosive bomb.
 
-### Players
+## Player
 
-For players in combat, the player module provides the following configurations:
+For the player in combat, the player module provides the following configuration:
 
-![image-20240813154955756](./img/image-20240813154955756.png)
+![image-20240813154955756](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813154955756.png)
 
-This determines the ratio of damage dealt and received by players.
+This determines the ratio of damage dealt and received by the player.
 
-Besides combat configuration, basic player attribute configurations also impact combat, such as health, energy, movement speed, and respawn capability.
+In addition to the combat configuration, the player's basic property configuration also has an impact on combat, such as health, energy, movement speed, and whether or not they can be resurrected.
 
-![image-20240813155108014](./img/image-20240813155108014.png)
+![image-20240813155108014](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813155108014.png)
 
-Similarly, during gameplay, you can modify player attributes via setting properties methods.
+Similarly, the properties of the player can also be modified by setting properties while the game is running.
 
-![image-20240813155205326](./img/image-20240813155205326.png)
+![image-20240813155205326](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813155205326.png)
 
-You can also use combat-specific events to receive trigger signals from participating players or execute damage operations on them.
+You can also use combat-specific events to receive trigger signals from players participating in combat or to perform damage operations on players.
 
-> Modifying health via setting properties differs from dealing damage; it does not trigger damage-related events nor respects invincibility or damage reduction states.
+> Setting properties in this way modifies the player's health, and unlike dealing damage, cannot trigger damage-related events, and ignores invincibility, damage reduction and other statuses.
 
-Further player-related information can be found in their respective documentation.
+For other descriptions of players, please refer to the corresponding documentation.
 
-[Link should redirect to player documentation]
+[Player - User Manual](/en/tutorial/13)
 
-### AI Zombies
+## AI Zombie
 
-AI zombies are monsters with a unique set of AI entity attributes.
+The AI zombie is a monster that has a set of properties specific to AI entities.
 
-![image-20240813160108842](./img/image-20240813160108842.png)
+![image-20240813160108842](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813160108842.png)
 
-AI zombies actively attack players from different factions but do not attack other zombies or defense towers.
+AI zombies will actively attack players with different lineups, but will not attack other zombies or defensive towers.
 
-For more information about AI zombies, refer to their respective documentation.
+## Defense towers
 
-[Link should redirect to AI documentation]
+Defense towers are similar to AI zombies in that they also have their own unique property configuration.
 
-### Defense Towers
+![image-20240813161549497](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813161549497.png)
 
-Similar to AI zombies, defense towers have their own unique attribute configurations.
+The defensive tower will only attack players with different lineups, and will not attack another defensive tower or zombies.
 
-![image-20240813161549497](./img/image-20240813161549497.png)
+# Custom combat entities
 
-Defense towers also only attack players from different factions and do not attack other towers or zombies.
+In addition to the default combat entities, you may need to add some shootable targets to the map, such as a target.
 
-## Custom Combat Entities
+![image-20240812171755227](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812171755227.png)
 
-Besides default combat entities, you may need to add shootable targets like targets in your map.
+> How to create a target with functions will be introduced later.
 
-![image-20240812171755227](./img/image-20240812171755227.png)
+To create a custom combat entity, you must add the **Targetable Entity** component to it, and you can also add the **Assistible Target** component to it to add the function of being able to be assisted in targeting.
 
-> Instructions on creating a functional target will be provided later.
+## Targetable Entity
 
-To create a custom combat entity, you must add a **Targetable Entity** component. You may also add an **Aim Assist Entity** component for aim assist functionality if needed.
+Without considering the complete customization of a combat system from scratch, using officially provided firearms to fight, units that can be hit in battle need to be equipped with the **Targetable Entity** component.
 
-### Targetable Entity
+![image-20240812162828766](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812162828766.png)
 
-Without considering completely customizing a combat system from scratch, using official firearms requires units that can be hit in battle to have a **Targetable Entity** component attached.
+Units equipped with the **Targetable Entity** component can trigger related events to complete the combat logic.
 
-![image-20240812162828766](./img/image-20240812162828766.png)
+![image-20240812162928108](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812162928108.png)
 
-Units with this component can trigger related events to complete combat logic.
+> Players, zombies, and defensive towers are combat entities that naturally come with this component.
 
-![image-20240812162928108](./img/image-20240812162928108.png)
+The implementation of the event for targeting entities is actually dependent on collision. Please make sure that the collision component is added and enabled.
 
-> Players, zombies, and defense towers naturally have this component as combat entities.
+![image-20240812165344576](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812165344576.png)
 
-The implementation of targetable entity component events relies on collisions; ensure collision components are added and enabled.
+## Aiming assist entities
 
-![image-20240812165344576](./img/image-20240812165344576.png)
+For players, an aiming assist function is provided in the game. When firing, the crosshair will automatically be attracted to the targetable entity.
 
-### Aim Assist Entity
+The aiming assist entity component depends on the **targetable entity** component.
 
-For players, an aim assist feature is available in-game. When firing, crosshairs automatically lock onto targetable entities.
+![image-20240812170825084](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812170825084.png)
 
-The aim assist entity component relies on the **Targetable Entity** component.
+However, for the assistible targeting entity component to take effect, the target entity must be an entity that the player can attack. For AI zombies, other players, and defensive towers, as long as the **faction** is different, they are entities that the current player can attack. For other entities that can be targeted, the targeting relationship needs to be manually set in the script.
 
-![image-20240812170825084](./img/image-20240812170825084.png)
+![image-20240812170416462](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812170416462.png)
 
-However, for this component to work effectively, the target entity must be an **Attackable Entity by Player**. For AI zombies, other players, and defense towers with different factions from current players are considered attackable entities; for other targetable entities, manual attack relationships need setting via scripts.
 
-![image-20240812170416462](./img/image-20240812170416462.png)
 
+## Example
 
+Using a basic sphere as an example, after creating this object, you need to add the targetable entity component to it and ensure that collisions take effect.
 
-### Example
+![image-20240812171913379](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812171913379.png)
 
-Using a basic sphere as an example: after creating this object, add a targetable entity component ensuring collision is active:
+![image-20240812172006605](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812172006605.png)
 
-![image-20240812171913379](./img/image-20240812171913379.png)
+If the object is needed to trigger the player's secondary targeting function, you need to add an additional entity that can assist in targeting, and handle its attack relationship with the player in the script.
 
-![image-20240812172006605](./img/image-20240812172006605.png)
+![image-20240812172201279](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812172201279.png)
 
-If you want this object capable of triggering player's aim assist functionality: additionally add an aim assist entity while handling its attack relationship with players via scripts:
+![image-20240812172304190](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812172304190.png)
 
-![image-20240812172201279](./img/image-20240812172201279.png)
+![image-20240813111631911](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813111631911.png)
 
-![image-20240812172304190](./img/image-20240812172304190.png)
+# Example battle
 
-![image-20240813111631911](./img/image-20240813111631911.png)
+The following is a simple example of how to create a battle.
 
-![Asset Aim](./img/Asset Aim.gif)
-## Battle Example
+1.**Create a project**
 
-Here's a simple example to introduce how to create battle content.
+![image-20240812174733615](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812174733615.png)
 
-1. **Create Project**
+2.**Set up the Scene objects**
 
-![image-20240812174733615](./img/image-20240812174733615.png)
+We need a spawn point to specify the player's spawn location, some zombies, and some custom combat objects. Here, cones, cylinders, and cubes are used as custom combat objects.
 
-2. **Set Scene Objects**
+![image-20240812175451608](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812175451608.png)
 
-We need a spawn point to designate the player's starting position, some zombies, and some custom battle objects. Here, cones, cylinders, and cubes are used as custom battle objects.
+Add the AimableEntity component to the custom combat object.
 
-![image-20240812175451608](./img/image-20240812175451608.png)
+![image-20240812175112073](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812175112073.png)
 
-Add a targetable entity component to the custom battle objects.
+Use the weapon and prop units to place a gun and ammunition in front of the player's spawn point.
 
-![image-20240812175112073](./img/image-20240812175112073.png)
+![image-20240812175247402](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812175247402.png)
 
-Place a gun and ammo in front of the player's spawn point using weapon and item units.
+Adjust the properties of the gun so that it can only deal 1 damage per shot.
 
-![image-20240812175247402](./img/image-20240812175247402.png)
+![image-20240812175327766](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812175327766.png)
 
-Adjust the gun's properties so that each shot only deals 1 point of damage.
+Adjust the properties of the zombie so that it is neutral in faction, has a long tracking range, and has a high health value of 200.
 
-![image-20240812175327766](./img/image-20240812175327766.png)
+![image-20240812175556046](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812175556046.png)
 
-Adjust the zombies' properties to be neutral faction, with a long tracking distance and 200 health points.
+> Neutral zombies will actively attack players in range
 
-![image-20240812175556046](./img/image-20240812175556046.png)
+At this point, you should have noticed that players cannot eliminate zombies with firearms. We will now add some features to the custom combat entities:
 
-> Neutral faction zombies will actively attack players within range.
+Cone: When targeted by a player, it will destroy itself after adjusting the current main weapon damage of the player to 500.
 
-At this point, you should notice that players can't eliminate zombies with firearms. We now need to add some functions to the custom battle entities:
+Cube: When attacked by a bullet, it will make all players invincible and destroy itself.
 
-Cone: When aimed at by the player, it adjusts the player's current main weapon damage to 500 and then destroys itself.
-
-Cube: When hit by bullets, it grants all players invincibility and then destroys itself.
-
-Cylinder: When attacked, it deals 500 barrel explosion-type damage to all **combat entities** and then destroys itself.
+Cylinder: When attacked, it will cause 500 barrel explosion damage to all **combatable entities** and destroy itself.
 
 **Cone Script**:
 
-![image-20240812181331111](./img/image-20240812181331111.png)
+![image-20240812181331111](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812181331111.png)
 
-**Cube Script**:
+**Cube script**:
 
-![image-20240812181458376](./img/image-20240812181458376.png)
+![image-20240812181458376](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812181458376.png)
 
-**Cylinder Script**:
+**Cylinder script**:
 
-![image-20240813104435940](./img/image-20240813104435940.png)
+![image-20240813104435940](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813104435940.png)
 
-**Add Scripts to Custom Battle Objects**:
+**Add script to custom combat object**:
 
-![image-20240814153824445](./img/image-20240814153824445.png)
+![image-20240814153824445](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240814153824445.png)
 
-![image-20240814153840232](./img/image-20240814153840232-1723621120933-1.png)
+![image-20240814153840232](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240814153840232-1723621120933-1.png)
 
-![image-20240814153858204](./img/image-20240814153858204.png)
+![image-20240814153858204](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240814153858204.png)
 
-**Directly Attack Zombies**:
+**Directly attack the zombies**:
 
-![image-20240812182829477](./img/image-20240812182829477.png)
+![image-20240812182829477](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812182829477.png)
 
-**Combat Method 1**:
+**Actual combat method 1**:
 
-Gain damage boost by aiming at the cone and kill all zombies.
+Gain damage boost through the aiming cone and kill all zombies.
 
-![image-20240812182911259](./img/image-20240812182911259.png)
+![image-20240812182911259](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812182911259.png)
 
-> The cone has been destroyed by aiming
+> The cone has been destroyed by aiming at it
 
-![image-20240812182050467](./img/image-20240812182050467.png)
+![image-20240812182050467](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812182050467.png)
 
-![image-20240812182106335](./img/image-20240812182106335.png)
+![image-20240812182106335](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812182106335.png)
 
-> Easily kill zombies after damage boost
+> Easily kill zombies after increasing damage
 
-**Combat Method 2**:
+**Actual combat method 2**:
 
-Gain invincibility by attacking the cube and eliminate all zombies by attacking the cylinder.
+Become invincible by attacking the cubes and destroy all the zombies by attacking the cylinders.
 
-![image-20240812183012114](./img/image-20240812183012114.png)
+![image-20240812183012114](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812183012114.png)
 
-> Gain invincibility after destroying the cube.
+> Destroy the cube to become invincible.
 
-![image-20240812183034398](./img/image-20240812183034398.png)
+![image-20240812183034398](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812183034398.png)
 
-> Eliminate all zombies after destroying the cylinder.
+> Destroy the cylinder to eliminate all zombies.
 
-## Expansion Example
+# Expansion example
 
-### Simple Target
+## Basic target
 
 Create a target in the scene.
 
-![image-20240812171755227](./img/image-20240812171755227.png)
+![image-20240812171755227](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812171755227.png)
 
-Create a parent object and drag in five basic spheres below it, representing rings 2, 4, 6, 8, and 10 respectively.
+Create a parent object and drag five basic spheres below it to represent the 2, 4, 6, 8, and 10 rings.
 
-![image-20240812183316438](./img/image-20240812183316438.png)
+![image-20240812183316438](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812183316438.png)
 
-Scale the spheres to X=0.01, Y and Z as 1, 0.8, 0.6, 0.4, 0.2 respectively. This creates five discs for detecting which ring a bullet hits.
+Scale the sphere to X=0.01, and Y and Z are successively 1, 0.8, 0.6, 0.4, and 0.2. This gives five circles, which are used to detect the number of rings hit by the bullet.
 
-Adjust the X position so that higher ring numbers are further forward.
+Adjust the X value of the position so that the rings with a large number are closer to the front.
 
-![image-20240812183418348](./img/image-20240812183418348.png)
+![image-20240812183418348](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812183418348.png)
 
-> Transform of ring 2 sphere
+> Transform of 2-ring
 
-![image-20240812183533443](./img/image-20240812183533443.png)
+![image-20240812183533443](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812183533443.png)
 
-> Transform of ring 10 sphere
+> Transform of 10-ring
 
-Modify the sphere rendering so adjacent rings appear different.
+Modify the sphere rendering so that the two adjacent rings are rendered differently.
 
-![image-20240812183656728](./img/image-20240812183656728.png)
+![image-20240812183656728](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812183656728.png)
 
-Change all child objects' collision type to Mesh for collision to closely fit the object's shape.
+Modify the collision type of all child objects to Mesh, which makes the collision adhere closely to the object shape.
 
-![image-20240812183826045](./img/image-20240812183826045.png)
+![image-20240812183826045](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812183826045.png)
 
-Add targetable entity components to all child objects.
+Add the Aimable entity component to all child objects.
 
-![image-20240812183903903](./img/image-20240812183903903.png)
+![image-20240812183903903](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812183903903.png)
 
-This gives us a target object where higher ring number collisions are detected first when hit by bullets.
+This gives us a target object, and the larger the number of rings, the higher the collision detection will be. When the bullet hits, it will first detect the collision body with the largest number of rings at its current position.
 
-![image-20240812183924000](./img/image-20240812183924000.png)
+![image-20240812183924000](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812183924000.png)
 
-Place a large background behind the target, disable its visibility but keep collision and targetable entity for miss detection.
+Place a huge background behind the target, turn off its visibility, and only keep the collision and targetable entities as the off-target detection.
 
-![image-20240812184318718](./img/image-20240812184318718.png)
+![image-20240812184318718](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812184318718.png)
 
-![image-20240812184352396](./img/image-20240812184352396.png)
+![image-20240812184352396](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812184352396.png)
 
-Create a UI to display the current player's score.
+Create a UI that displays the current player's score.
 
-![image-20240812184551799](./img/image-20240812184551799.png)
+![image-20240812184551799](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812184551799.png)
 
-Add three custom attributes for players: current target score, total target score, and whether they are the active player.
+Add three custom properties for players: current target score, total target score, and whether the player is active.
 
-![image-20240812184844522](./img/image-20240812184844522.png)
+![image-20240812184844522](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812184844522.png)
 
-> The active player attribute determines which player is currently shooting when multiple players are present; non-active players' actions won't count towards scores.
+> Whether it is used by the active player to determine which player is shooting at the target when there are multiple players, and the shooting actions of other non-active players will not be counted in the score.
 >
 
-Add scripts to all target child objects and miss detection objects; their script structure is similar but modifies different player score attributes:
+Add scripts to all target objects and objects used to determine misses. Their script structures are similar, the only difference is that the value of the property that modifies the player's shooting points is different:
 
-![image-20240812185042887](./img/image-20240812185042887.png)
+![image-20240812185042887](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812185042887.png)
 
-> Script for ring 2 object
+> Script for the 2-ring object
 
-![image-20240812185237825](./img/image-20240812185237825.png)
+![image-20240812185237825](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812185237825.png)
 
-> Script for miss background
+> Script for the off-target background
 
-Add scripts to global modules to set active players when they join matches and create custom UI.
+Add a script to the global module to set the player to active when they join a match and create a custom UI.
 
-![image-20240812190821415](./img/image-20240812190821415.png)
+![image-20240812190821415](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812190821415.png)
 
-> In practice, you can modify active players based on conditions.
+> In practice, the player can be activated based on conditions.
 
-When targets or backgrounds are hit by bullets, an event is sent to players.
+When the target or background is hit by a bullet, an event is sent to the player.
 
-![image-20240812185120193](./img/image-20240812185120193.png)
+![image-20240812185120193](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812185120193.png)
 
-Add scripts for players to update their custom UI text upon receiving target hit events.
+Add a script for the player that modifies the text on its own custom UI when it receives the event that the target has been hit.
 
-![image-20240812185143837](./img/image-20240812185143837.png)
+![image-20240812185143837](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240812185143837.png)
 
-Place firearms in the scene and test in-game.
+Place the gun in the Scene and enter the game to test it.
 
-![image-20240913111656143](./img/target.gif) 
+![image-20240813111656143](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813111656143.png)
 
-> In this example, misses caused by hitting the ground are not handled.
+> In this example, the miss caused by attacking the ground is not handled.
 
-### Explosive Bullets
+## Explosive bullet
 
-Here's how to create guns that fire AOE damage bullets with explosion effects.
+Here's how to make a gun that fires bullets with AOE damage and has an explosion effect.
 
-First analyze: damage and hit effects should occur when bullets actually hit targets, so use bullet hit events.
+First, analyze the situation: the damage and hit effects should occur when the bullet actually hits the target, so use the bullet hit event.
 
-![image-2040813105723682](./img/image-2040813105723682.png)
+![image-20240813105723682](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813105723682.png)
 
-This event relies on weapon entities so scripts should be attached to weapons .
+This event depends on the weapon entity, so the script should be attached to the weapon.
 
-Add explosion effects on hit .
+Add an explosion effect when hit
 
-![image-2040813110534368](./img/image-2040813110534368.png)
+![image-20240813110534368](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813110534368.png)
 
-> For each player , this effect is visible .
+> This effect is visible to each player
 
-Add AOE damage .
+Adds AOE damage
 
-![image-2040813110613308](./img/image-2040813110613308.png)
+![image-20240813110613308](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813110613308.png)
 
-> Calculate distances between hit points & combat entities , dealing damage within range .
+> Calculate the hit point and the distance to the combatable entity, and deal damage to combatable entities within range.
 >
-> Only AI zombies & players take damage here .
+> Here, only AI zombies and players will be damaged
 
-Weapon scripts complete , attach them onto corresponding weapons .
+This completes the weapon script, which is then attached to the corresponding weapon.
 
-![image-2040813110733878](./img/image-2040813110733878.png)
+![image-20240813110733878](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813110733878.png)
 
-> Player scripts here , any player equipping weapons gains AOE ability .
+> Here is the player script. When any player equips the weapon, the weapon will gain AOE ability.
 
-Add some AI zombies into scenes & test multi-client .
+Add some AI zombies to the scene and test with multiple ends.
 
-![explode](./img/explode.gif )
+![image-20240813111117612](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/14-Combat/image-20240813111117612.png)

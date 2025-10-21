@@ -1,204 +1,208 @@
-# Scene Editor - User Manual
+# Scene Editor
 
-This article will provide instructional references related to the scene editor.
+This article will provide an instructional reference related to the Scene Editor.
 
-## Overview
+# Overview 
 
-![image-20240725155010417](./img/image-20240725155010417.png)
+![image-20240725155010417](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725155010417.png)
 
-1. Object Selector: Choose objects from the object selector to place in the scene.
-2. Hierarchy Menu: Displays all editable objects in the scene in layers.
-3. Overview: Displays the current editing file type in the project. In this context, it shows all scene files.
-4. Scene Editor: Canvas for scene editing, adjust object placement, preview scene performance.
-5. Attribute Menu: Edit specific object attributes.
+1. Objects Selector: Select the objects to be placed in the Scene from the Object Selector.
+2. Hierarchy Menu: displays all editable objects in the Scene in a hierarchical manner. 3.
+3. Overview: Displays the files of the current editable file type in the project. In the context of this article, all Scene files are displayed.
+4. Scene Editor: the canvas for scene editing, adjusting object placement, and previewing scene performance.
+5. Properties Menu: Edit the properties of specific objects.
 
-## Object Placement
+# Object placement 
 
-### Placing a Single Object
+## Placing a single object 
 
-Drag an object from the object selector to the scene to create a corresponding object at the specified location:
+Drag an object from the Object Selector to the Scene to create a corresponding object at the specified location: 
 
-![image-20240725164124627](./img/image-20240725164124627.png)
+![image-20240725164124627](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725164124627.png)
 
-Right-click on an object to create an object in the scene. Objects created this way will be placed at world coordinates (0,0,0).
+Right-click on the object. You can also create an object to the Scene. Objects created this way are placed at world coordinates (0,0,0).
 
-### Placing Objects Continuously
+## Continuous Object Placement 
 
-Click on an object in the object selector and then move the mouse to the scene editor.
+Click in the Object Selector and move the mouse to the Scene Editor.
 
-According to the instructions below:
+Follow the instructions below: 
 
-![image-20240725164648315](./img/image-20240725164648315.png)
+![image-20240725164648315](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725164648315.png)
 
-1. Clicking once will place the object at the current position.
-2. Dragging while holding down the left mouse button will continuously create the object. It can only be created along the X and Z axes.
+1. each time. click will place one of the objects at the current location. 2.
 
-   ![image-20240725164807468](./img/image-20240725164807468.png)
+2. Holding down the left mouse button and dragging will create the object continuously. Can only be created on the X and Z axes.
 
-3. Use the ZXC shortcut keys to quickly rotate the object along three axes. It rotates 90 degrees each time.
+![image-20240725164807468](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725164807468.png)
 
-   ![image-20240725164859270](./img/image-20240725164859270.png)
+3. Use the ZXC shortcut to quickly flip the object along all three axes. Flip 90 degrees along that axis at a time.
 
-4. Right-click to exit the current object placement mode.
+![image-20240725164859270](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725164859270.png)
 
-Pressing Ctrl+D allows you to duplicate a selected object with identical transform information.
+4. Press the right button to to exit the current object placement mode.
 
-![image-20240725173803096](./img/image-20240725173803096.png)
+With Ctrl+D, you can make a copy of the currently selected object with the same transform information as the current object.
 
-### Deleting Objects
+The transform information is the same as the current object. 
+[image-20240725173803096](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725173803096.png)
 
-Select the object to delete in the scene or hierarchy menu, then use the Delete shortcut key:
+## Delete Objects 
 
-![image-20240725165024202](./img/image-20240725165024202.png)
+Select the object you want to delete in the Scene or Hierarchy menu, use the shortcut Delete to delete it: 
 
-![image-20240725165036256](./img/image-20240725165036256.png)
+![image-20240725165024202](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725165024202.png)
 
-Alternatively, you can right-click on a specified object in the hierarchy menu to delete it:
+![image-20240725165036256](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725165036256.png)
 
-![image-20240725165150327](./img/image-20240725165150327.png)
+You can also delete a specific object via the Hierarchical menu right-click to delete the specified object: 
 
-![image-20240725165123917](./img/image-20240725165123917.png)
+![image-20240725165150327](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725165150327.png)
 
-## Camera Operations
+![image-20240725165123917](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725165123917.png)
 
-Camera operations allow you to view the placement of objects in the scene.
+# Lens Manipulation
 
-1. Holding down the middle mouse button allows you to move the camera on the current plane.
-2. Using the mouse scroll wheel enables you to zoom in and out with the camera.
-3. Holding down the right mouse button lets you move the camera.
-   1. Dragging with the right mouse button pressed allows you to rotate the camera view.
-   2. Holding down the right mouse button and using WASD keys allows you to move the camera.
-   3. Holding down the right mouse button and using QE keys lets you raise or lower the camera.
-   4. Holding down Shift while moving with the right mouse button accelerates camera movement.
+You can view the placement of objects in the Scene through lens manipulation.
 
-![image-20240725165703729](./img/image-20240725165703729.png)
+1. Hold down the middle mouse button to move the camera in the current plane. 2.
 
-> Permanent instructions for adjusting the camera while holding down the right mouse button.
+2. Use the mouse wheel to zoom the camera. 3.
 
-In the top-right menu, you can adjust the default movement speed of the camera:
+3. Hold down the right mouse button, you can operate the camera to move.
+1. Hold down the right mouse button and drag the mouse to rotate the camera view. 2.
+2. Hold down the right mouse button and use the WASD shortcut to move the camera.
+3. Hold down the right mouse button and use the QE shortcut key to raise or lower the camera.
+4. Holding down the right mouse button and holding SHIFT will allow the camera to move faster.
 
-![image-20240725165748269](./img/image-20240725165748269.png)
+![image-20240725165703729](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725165703729.png)
 
-## Adjusting Objects
+> Holding down the mouse Resident instructions when adjusting the camera with the right mouse button.
 
-### Adjustment Modes
+In the menu in the upper right corner, you can adjust the camera's default shift speed: 
 
-![image-20240725172213806](./img/image-20240725172213806.png)
+![image-20240725165748269](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725165748269.png)
 
-Use shortcut keys QWER or select from the menu to enter four adjustment modes for objects.
+# Adjust objects
 
-Q: Select - clicking on an object selects it, dragging it will automatically place it on a plane directly below.
+## Adjust mode 
 
-![image-20240725170104849](./img/image-20240725170104849.png)
+![image-20240725172213806](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725172213806.png)
 
-![image-20240725170140116](./img/image-20240725170140116.png)
+Using the shortcut keys QWER or select it in the menu to access the four modes of adjusting objects.
 
-W: Move - dragging along a coordinate axis moves objects only along that axis. Dragging on a plane moves objects only within that plane.
+Q: Selected, clicking on an object selects it and dragging it automatically places it on the first plane directly below it.
 
-![image-20240725170246647](./img/image-20240725170246647.png)
+![image-20240725170104849](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725170104849.png)
 
-E: Rotate - dragging along an axis rotates objects only in that direction.
+![image-20240725170140116](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725170140116.png)
 
-![image-20240725170541650](./img/image-20240725170541650.png)
+W: Move. Select an axis to drag and the object will only move along that axis. Drag on a plane and the object will only move on that plane.
 
-![image-20240725170553003](./img/image-20240725170553003.png)
+![image-20240725170246647](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725170246647.png)
 
-R: Scale - dragging along a coordinate axis scales objects only on that axis.
+E: Rotate. Select an axis and drag, the object will only rotate in that direction.
 
-![image-20240725170647373](./img/image-20240725170647373.png)
+![image-20240725170541650](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725170541650.png)
 
-![image-20240725170659136](./img/image-20240725170659136.png)
+![image-20240725170553003](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725170553003.png)
 
-When adjusting objects, if a parent or multiple objects are selected, they will all be affected. If a child object is selected, its parent will not be affected.
+R: Scale. By selecting an axis and dragging, the object will only be scaled in that axis dimension.
 
-![image-20240725171547275](./img/image-20240725171547275.png)
+![image-20240725170647373](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725170647373.png)
 
-![image-20240725171316745](./img/image-20240725171316745.png)
+![image-20240725170659136](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725170659136.png)
 
-### Auxiliary Icon Control
+When resizing an object , if the selection is a parent object or plural objects, then they are all affected. If a child object is selected, the parent object is not affected.
 
-![image-20240725172150602](./img/image-20240725172150602.png)
+![image-20240725171547275](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725171547275.png)
 
-Placing two cubes in the scene for illustration purposes:
+![image-20240725171316745](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725171316745.png)
 
-![image-20240725170806866](./img/image-20240725170806866.png)
+## Auxiliary Icon control 
 
-In the hierarchy, merge two cubes into one object, with one on the left as a parent and one on the right as a child.
+![image-20240725172150602](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725172150602.png)
 
-![image-20240725170845962](./img/image-20240725170845962.png)
+In Scene Place two cubes for easy illustration: 
 
-#### Pivot/Center
+![image-20240725170806866](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725170806866.png)
 
-In pivot mode, auxiliary icons appear on selected objects.
+In the hierarchy combine the Merge the two cubes into one object, with the left side as the parent and the right side as the child.
 
-![image-20240725171103534](./img/image-20240725171103534.png)
+![image-20240725170845962](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725170845962.png)
 
-![image-20240725171639319](./img/image-20240725171639319.png)
+### pivot /Center 
 
-When selecting multiple objects, auxiliary icons appear on the first selected object.
+In pivot mode, the secondary icon appears on the selected object.
 
-![image-20240725171141407](./img/image-20240725171141407.png)
+![image-20240725171103534](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725171103534.png)
 
-In center mode, auxiliary icons appear at the center of objects, automatically calculated by the program for multiple objects:
+![image-20240725171639319](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725171639319.png)
 
-![image-20240725171623072](./img/image-20240725171623072.png)
+When you select plural objects, the helper icon will appear on the first selected object.
 
-> When selecting a parent object
+![image-20240725171141407](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725171141407.png)
 
-![image-20240725171709327](./img/image-20240725171709327.png)
+In center mode In center mode, the helper icon appears at the center of the object, which is automatically calculated by the program for multiple objects: 
 
-> When selecting a child object
+![image-20240725171623072](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725171623072.png)
 
-## Game Object/World Space
+> when the parent object is selected
 
-When in game object mode, the coordinate axis of the auxiliary icon is in local coordinates and will change orientation with the game object.
+ ![image-20240725171709327](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725171709327.png)
 
-![image-20240725171908914](./img/image-20240725171908914.png)
+> When the child object is selected 
 
-![image-20240725171926946](./img/image-20240725171926946.png)
+### Game Object/World Space 
 
-When in world space mode, the coordinate axis of the auxiliary icon is always in world coordinates and will not change orientation with the object.
+When in game object mode, the axis of the helper icon is local, and will change orientation with the game object.
 
-![image-20240725172056567](./img/image-20240725172056567.png)
+![image-20240725171908914](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725171908914.png)
 
-### Grid
+![image-20240725171926946](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725171926946.png) 
 
-![image-20240725172130102](./img/image-20240725172130102.png)
+When in world space mode, the axis of the secondary icon will always be the world axis, and will not change orientation with the object.
 
-The grid only affects official provided objects and has no effect on pure models or imported resources.
+![image-20240725172056567](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725172056567.png)
 
-After enabling the grid, moving objects will snap to the green grid center on the current horizontal plane.
+## Grid 
 
-![image-20240725172411452](./img/image-20240725172411452.png)
+![image-20240725172130102](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725172130102.png)
 
-### Alignment
+Grids are only available for the It has no effect on pure models and imported resources.
 
-![image-20240725172507155](./img/image-20240725172507155.png)
+When mesh is enabled, moving an object will cause the mesh to appear at the current level and the object will automatically attach to the center of the green mesh.
 
-With alignment enabled, you can configure the granularity of movement, rotation, and scaling. Objects will only change according to the configured scale.
+![image-20240725172411452](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725172411452.png)
 
-![image-20240725172611754](./img/image-20240725172611754.png)
+## Align 
 
-**Move:** Use the buttons on the right to enable or disable axis alignment. When enabled, you can specify the distance moved on each axis, in meters. This setting only affects movement mode, quick movement in selection mode is not affected.
+![image-20240725172507155](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725172507155.png)
 
-**Rotate:** The angle of rotation for each change.
+Alignment Options When turned on, you can configure the granularity of movement, rotation, and scaling. Objects will only change the configured scale one at a time.
 
-**Scale:** The multiplier for each scaling adjustment.
+![image-20240725172611754](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725172611754.png)
 
-### Attribute Adjustment
+**Movement: **The axial configuration can be turned on or off with the button on the right, on to specify the distance to move each time on each axis, off to move in any direction. The unit is meters. This configuration only takes effect for move mode, fast moves in selected mode are not affected.
 
-In addition to the above functions, the transform component in the attribute menu records specific data for the current object's position, rotation, and scale. You can directly adjust these component parameters to precisely adjust the object.
+**Rotation:** The angle of change per rotation.
 
-![image-20240725173052651](./img/image-20240725173052651.png)
+**Scale:** The magnification of the zoom change per adjustment.
 
-## Scene File Management
+## Property Adjustment 
 
-In the overview, you can view all scene files.
+In addition to the above functions, the transform component at the property menu records the specific data of the current object's position, rotation, and scaling. You can adjust the parameters of this component directly to achieve the precise adjustment of the object.
 
-![image-20240725173111010](./img/image-20240725173111010.png)
+![image-20240725173052651](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725173052651.png)
 
-The name of a scene file is used as its reference name when included in a scene, without the .scene extension.
+# Scene Files Manage 
 
-Right-clicking on a non-default scene allows you to set it as the default scene. The default scene is loaded when entering the game and there must always be a default scene.
+In the Overview, you can view all Scene files.
 
-![image-20240725173540067](./img/image-20240725173540067.png)
+![image-20240725173111010](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725173111010.png)
+
+The name of the Scene file, i.e. the name of the Scene file that references it. name, i.e. the name of the scene when it is referenced, without the .scene suffix. 
+
+Right-click on a non-default Scene to set a Scene as the default Scene, which is the one that is loaded by default when you enter the game, and the game always needs a default Scene.
+
+![image-20240725173540067](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725173540067.png)

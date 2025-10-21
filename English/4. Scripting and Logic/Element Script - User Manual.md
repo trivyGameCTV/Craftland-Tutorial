@@ -1,290 +1,329 @@
-# Element Script - User Manual
+# Block Script
 
-This document introduces the editing methods for element scripts.
+This article introduces how to edit Block Scripts.
 
-## Interface Description
+# Interface Description
 
-![image-20240719154714450](./img/image-20240719154714450.png)
+![image-20240719154714450](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719154714450.png)
 
 1. Canvas, the main editing area
 2. The file currently being edited
-3. Node categories; clicking any node will expand the node selection interface
-4. Property panel
+3. Element classification, click any element to expand the element selection interface
+4. Properties panel
 
-## Node Category Description
+# Element classification description
 
-The node categories corresponding to area 3 are:
+3. The graphic element categories corresponding to the regions are:
 
-1. Search: Nodes found by entering keywords.
-2. Common: Nodes set as commonly used will appear here.
-3. Event: Triggers when conditions are met, marking the start of logic.
-4. Condition: Used for script flow control.
-5. Action: Actual operations on entities/data.
-6. Module: Actions specific to certain modules.
+1. Search: Enter keywords to search for graphics.
+2. Commonly used: The graphics set as commonly used graphics will be here.
+3. Event: It will be triggered when the conditions are met, which is the beginning of logic.
+4. Conditions: used for script flow control.
+5. Behavior: actual operation on entities\data.
+6. Modules: Some module-specific behaviors.
 7. Data: Processing of data.
-8. Variable: Use existing variables or add new ones.
-9. Function: Use or create custom functions.
-10. External Call: Invoke custom functions from other scripts.
+8. Variables: Use existing variables or add variables.
+9. Function: Use or create a custom function.
+10. External call: call custom functions of other scripts.
 
-## **Node Usage**
+# **Use of graphics**
 
-### Node Description
+## Block Description
 
-The protrusion below a node indicates that other nodes can be linked after it.
+The bulge under the primitive indicates that other primitives can be linked to it.
 
-![image-20240719162414368](./img/image-20240719162414368.png)
+![image-20240719162414368](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719162414368.png)
 
-The indentation above a node indicates that other nodes can be linked before it, and it will only run after the preceding node runs.
+The depression above the primitive means that other primitives can be linked before this primitive, and it will only run after the preceding primitives run.
 
-![image-20240719162458868](./img/image-20240719162458868.png)
+![image-20240719162458868](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719162458868.png)
 
-If there is no indentation above but a protrusion below, it indicates the node is the starting point of a logic sequence, usually an event node.
+If there is no depression on the top but a bulge on the bottom, it means that the primitive is the starting point of a logic segment, usually an event primitive.
 
-![image-20240719162532230](./img/image-20240719162532230.png)
+![image-20240719162532230](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719162532230.png)
 
-If there are no protrusions or indentations above or below, it indicates the node is a piece of data that can be applied to other nodes.
+If there is no convexity or concaveness above or below, it means that the primitive is a piece of data and can be applied to other primitives.
 
-![image-20240719162637872](./img/image-20240719162637872.png)
+![image-20240719162637872](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719162637872.png)
 
-Nodes come with input and output parameters:
+The primitives will have input and output parameters:
 
-**Input Parameters**:
+**Input parameters**:
 
-Input parameters are blank by default, with the required parameter type indicated inside.
+The input parameter is blank by default, and the type marked inside it is the type of the required parameter.
 
-![image-20240719163219101](./img/image-20240719163219101.png)
+![image-20240719163219101](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719163219101.png)
 
-> The script name is also a required parameter, but it uses a resource selector, allowing you to directly select resources within the project without considering type matching.
+> The script name in this element is also a required parameter, but using the resource selector, you can directly select the corresponding resource in the project without considering type matching.
 
-**Output Parameters**:
+**Output parameters**:
 
-Output parameters are colorful blocks by default; you can drag this block into the required input parameter box:
+The output parameters are colored squares by default, which can be dragged to fill in the required input parameter boxes:
 
-![image-20240719163455421](./img/image-20240719163455421.png)
+![image-20240719163455421](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719163455421.png)
 
-### Node Usage
+## Use of primitives
 
-After selecting the desired node from the category, click or drag it onto the canvas to use the corresponding node.
+After selecting the element you want to use in the category, click or drag it to the canvas to use the corresponding element.
 
-![image-20240719161426471](./img/image-20240719161426471.png)
+![image-20240719161426471](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719161426471.png)
 
-![image-20240719161444643](./img/image-20240719161444643.png)
+![image-20240719161444643](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719161444643.png)
 
-Using nodes with grooves on top allows you to connect two nodes together:
+Using the primitive with the groove on top, you can join the two primitives together:
 
-![image-20240719161910607](./img/image-20240719161910607.png)
+![image-20240719161910607](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719161910607.png)
 
-![image-20240719161930593](./img/image-20240719161930593.png)
+![image-20240719161930593](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719161930593.png)
 
-A set of nodes always follows a top-to-bottom logic:
+The logic of a group of primitives is always from top to bottom:
 
-![image-20240719162112429](./img/image-20240719162112429.png)
+![image-20241105153444063](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20241105153444063.png)
 
-![image-20240719162305301](./img/image-20240719162305301.png)
+![image-20241105153522814](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20241105153522814.png)
 
-For a series of connected nodes, necessary input parameters need suitable data to ensure the script works properly. Inappropriate variables will cause errors; clicking on the error with your mouse will display error information:
 
-![image-20240719163823327](./img/image-20240719163823327.png)
+For a group of graphics elements connected in series, the necessary input parameters need to be filled with appropriate data to ensure the normal operation of the script. Inappropriate variables will result in an error. Click the error to see the error message:
 
-![image-20240719163854644](./img/image-20240719163854644.png)
+![image-20240719163823327](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719163823327.png)
 
-Dragging an element will also drag along elements below it:
+![image-20240719163854644](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719163854644.png)
 
-![image-20240906110832061](./img/image-20240906110832061.png)
+When you drag an element, the elements below it will be dragged away as well:
 
-![image-20240906110844840](./img/image-20240906110844840.png)
+![image-20240906110832061](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240906110832061.png)
 
-Holding down the Ctrl key while dragging allows you to move only the current node, with lower nodes automatically connecting to the upper one:
+![image-20240906110844840](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240906110844840.png)
 
-![image-20240906110855565](./img/image-20240906110855565.png)
+Hold down the Ctrl key and drag to only drag the current element, and the elements below will automatically connect to the ones above:
 
-## Flow Control
+![image-20240906110855565](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240906110855565.png)
 
-The default execution order for element scripts is top-to-bottom; you may often need flow control in code to achieve complex logic.
+## Element Properties Panel
 
-Please refer to the link below for detailed instructions on element script flow control:
+Click on the element and it will be selected.
 
-[Script Additional Instructions - User Manual.md](./脚本附加说明-用户手册.md) 
+![image-20241122190755370](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20241122190755370.png)
 
-## Variables
+In the Inspector panel on the right, you can view detailed information of the selected element, including its name, description, parameter name, parameter type, return value type, return value description, etc.
 
-You can define or modify three types of variables:
+![image-20241122190944942](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20241122190944942.png)
 
-1. Global Entity Properties: Attributes of global components, customizable. They can be accessed or modified in any script.
-2. Script Variables: Variables used only within the current script; other scripts can access and modify them externally.
-3. Local Variables: Variables used only within the current code block; they are invalid outside of it.
+# Flow Control
 
-### Global Entity Properties
+The default execution order of Block Scripts is from top to bottom. You may often need code flow control to implement complex logic.
 
-You can add global entity properties through entity component properties in component settings.
+Please refer to the following link for detailed instructions:
 
-![image-20240719170731723](./img/image-20240719170731723.png)
+[Script Additional Notes](/zh-cn/tutorial/fe/1-10/)
 
-![image-20240719170751222](./img/image-20240719170751222.png)
+# Variables
 
-![image-20240719170812335](./img/image-20240719170812335.png)
+Three types of variables can be defined or modified at the variable location:
 
-Once global entity properties are created, you can use "Get Global Node" to obtain these properties:
+1. Global entity attributes: global component attributes, support customization. You can obtain or modify customized global entity attributes in any script.
+2. Script variables: variables used only in the current script, other scripts can obtain and modify them externally.
+3. Local variables: variables that are only used in the current code block and are invalid outside the code block.
 
-![image-20240719170915428](./img/image-20240719170915428.png)
+## Global entity properties
 
-Use "Set Global Node" to set these properties:
+Global entity properties can be added via the entity component properties in the component settings.
 
-![image-20240719170953632](./img/image-20240719170953632.png)
+![image-20240719170731723](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719170731723.png)
 
-### Script Variables
+![image-20240719170751222](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719170751222.png)
 
-In the variable category, there's a button to create a variable:
+![image-20240719170812335](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719170812335.png)
 
-![image-20240719171622005](./img/image-20240719171622005.png)
+After creating the global entity attribute, you can use Get Global Entity to obtain the attribute:
 
-![image-20240719171647910](./img/image-20240719171647910.png)
+![image-20240719170915428](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719170915428.png)
 
-Variables created this way are script variables, used for the current script's data processing.
+Use the Set Global Entity to set this property:
 
-In other scripts, you can access and set these variables through external references:
+![image-20240719170953632](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719170953632.png)
 
-![image-20240719171819031](./img/image-20240719171819031.png)
+## Script variables
 
-> Note when referencing externally in other scripts: You need to specify the entity where the referenced script is mounted when getting and setting.
+In the Variables category, there is a Create Variable button:
 
-### Local Variables
+![image-20240719171622005](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719171622005.png)
 
-You can create variables available only within the current code block using local variable nodes:
+![image-20240719171647910](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719171647910.png)
 
-![image-20240719171508081](./img/image-20240719171508081.png)
+The variables created in this way are script variables and are used for data processing in the current script.
 
-You can rename the variable by double-clicking its name:
+In other scripts, you can get and set this variable through external references:
 
-![image-20240719171540482](./img/image-20240719171540482.png)
+![image-20240719171819031](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719171819031.png)
 
-A code block refers to a continuous section of nodes. It's important to note that the "If-Else" nodes in the condition category are by default two code blocks. Each segment of If, Else, and Else If is an independent code block.
+> Please note when referencing other scripts externally: when getting and setting, you need to specify the corresponding entity mounted by the referenced script.
 
-![image-20240722192115698](./img/image-20240722192115698.png)
+## Local variables
 
-![image-20240722192055277](./img/image-20240722192055277.png)
+The local variable primitive allows you to create variables that are only available in the current code block:
 
-## Custom Functions and Usage
+![image-20240719171508081](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719171508081.png)
 
-In node scripts, both functions with return values and those without are supported.
+You can rename a variable by double-clicking the variable name:
 
-Functions with return values cannot link to other nodes when called; the call node itself is the return value.
+![image-20240719171540482](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719171540482.png)
 
-![image-20240719180031043](./img/image-20240719180031043.png)
+A code block is a continuous sequence of primitives. It is worth noting that the "if-else" primitive in the conditional classification is two code blocks by default. Each "if", "else", and "else-if" is an independent code block.
 
-![image-20240719180117743](./img/image-20240719180117743.png)
+![image-20240722192115698](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240722192115698.png)
 
-Functions without return values can link to other nodes when called.
+![image-20240722192055277](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240722192055277.png)
 
-![image-20240719180039563](./img/image-20240719180039563.png)
+# Custom functions
 
-![image-20240719180134147](./img/image-20240719180134147.png)
+Both functions with and without return values are supported in Block Scripts.
 
-Wait: This node blocks when it's an asynchronous function, waiting for it to complete before executing the next node.
+A function with a return value cannot be linked to other entities when called. The calling entity is the return value.
 
-Execute: This node does not block when it's an asynchronous function, continuing to execute the next node.
+![image-20240719180031043](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719180031043.png)
 
-Asynchronous functions use nodes that handle asynchronous processing within their implementation, like "Wait."
+![image-20240719180117743](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719180117743.png)
 
-![image-20240722105341566](./img/image-20240722105341566.png)
+Functions without return values can be linked to other primitives when called.
 
-**Note**: Asynchronous nodes are not supported in functions with return values.
+![image-20240719180039563](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719180039563.png)
 
-![image-20240806115625031](./img/image-20240806115625031.png)
+![image-20240719180134147](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719180134147.png)
 
-If you need a return value from an asynchronous function, use a function without a return value and utilize output variables.
+Wait: When the primitive is an asynchronous function, it will be blocked and the next primitive will be executed after the asynchronous function is executed.
 
-![image-20240806115658582](./img/image-20240806115658582.png)
+Execution: If the primitive is an asynchronous function, it will not be blocked and the following primitive will continue to be executed.
 
-Regardless of whether there is a return value, custom functions can use output variables below the call node to obtain outputs.
+An asynchronous function is a function that uses primitives that perform asynchronous processing, such as "wait".
 
-![image-20240806113746376](./img/image-20240806113746376.png)
+![image-20240722105341566](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240722105341566.png)
 
-![image-20240806121329099](./img/image-20240806121329099.png)
+**Note**: Using asynchronous primitives in functions with return values is not supported.
 
-## Node Search and Common Use
+![image-20240806115625031](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240806115625031.png)
 
-Enter keywords to search for corresponding nodes.
+If you need an asynchronous function to return a value, use a void function and use an output variable.
 
-![image-20240719181845696](./img/image-20240719181845696.png)
+![image-20240806115658582](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240806115658582.png)
 
-Right-click a node in the node selection interface to set it as a common node, allowing quick access in the common node category.
+Regardless of whether a custom function has a return value or not, you can use the function's output variable below the calling primitive to obtain the output.
 
-![image-20240719182033312](./img/image-20240719182033312.png)
+![image-20240806113746376](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240806113746376.png)
 
-![image-20240719182130450](./img/image-20240719182130450.png)
+![image-20240806121329099](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240806121329099.png)
 
-## Example
+# Custom Events
 
-Demonstrating script usage with a simple example:
+In addition to the various events officially provided, you can also trigger logic through custom events.
 
-Design as follows:
+![image-20250630114130051](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20250630114130051.png)
 
-1. Each player receives an M4A1 upon joining the match.
-2. Each time a player fires, they lose 1 health point.
+Click the button to perform custom event management:
+
+<img src="https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20250630114142109.png" alt="image-20250630114142109" style="zoom: 67%;" />
+
+Right-click in the custom events list to manage custom events:
+
+![image-20250630114340277](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20250630114340277.png)
+
+Click the + button to create a new custom event:
+
+![image-20250630114208389](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20250630114208389.png)
+
+Here you need to set the name of the custom event, the object type to which the custom event signal is sent, and the parameters. Only the specified object type can receive the signal that triggers the event.
+
+![image-20250121181204861](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20250121181204861.png)
+
+> Send a custom event to all players at the start of their turn
+
+![image-20250121181429023](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20250121181429023.png)
+
+> The player triggers the logic after receiving the custom event signal
+
+# Search and common use of graphics elements
+
+Enter keywords to search for corresponding elements
+
+![image-20240719181845696](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719181845696.png)
+
+In the element selection interface, right-click an element to set it as a frequently used element, and then you can quickly use the element in the frequently used element category.
+
+![image-20240719182033312](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719182033312.png)
+
+![image-20240719182130450](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719182130450.png)
+
+# Example
+
+Let's use a simple example to demonstrate the use of the script:
+
+The design is as follows:
+
+1. Each player will be given an M4A1 when joining the game.
+2. When a player fires, 1 health point will be deducted from his own health each time he fires.
 
 **Create Script**:
 
-Requirement 1 is global, while 2 targets each player individually. Therefore, scripts need to be mounted globally and on each player. Both item distribution and health deduction require server awareness, so both are created as server scripts.
+1. The requirement is global, 2. is for each player. So you need to mount a script globally and for each player. The server needs to know about the distribution of props and the deduction of life, so both are created as server scripts.
 
-![image-20240719183317332](./img/image-20240719183317332.png)
+![image-20240719183317332](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719183317332.png)
 
-![image-20240719183333435](./img/image-20240719183333435.png)
+![image-20240719183333435](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719183333435.png)
 
-**Edit Script**:
+**Edit Script:**
 
-For 1, each player joining the match triggers item distribution once:
+For 1, each player who joins the game needs to issue props once:
 
-![image-20240719183627320](./img/image-20240719183627320.png)
+![image-20240719183627320](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719183627320.png)
 
-The item addition node requires three parameters: target for item addition, item to be added, and quantity of items added.
+For adding props primitives, three parameters are required: the target for adding props, the props to be added, and the number of props to be added.
 
-The target for item addition is the player triggering the event upon joining the match. The item is selected as M4A1 from the resource manager, with a quantity of 1.
+The target of adding props is the player who triggered the event when the player joins the game. The prop is selected as M4A1 through the resource manager, and the quantity is 1.
 
-![image-20240719183756275](./img/image-20240719183756275.png)
+![image-20240719183756275](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719183756275.png)
 
-For 2, each time firing occurs, health points need to be deducted once:
+For 2, a health deduction needs to be performed every time a shot is fired:
 
-We find there isn't actually a node for health deduction:
+We find that the primitives do not actually have their health deducted:
 
-![image-20240719183925677](./img/image-20240719183925677.png)
+![image-20240719183925677](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719183925677.png)
 
-> Entering negative numbers in the Restore Health node won't deduct health points
+> Filling in negative numbers in the health recovery primitive's parameters will not deduct health
 
-However, since health is a player attribute, it can be adjusted by setting attributes:
+However, as a player attribute, health can be adjusted by setting properties:
 
-![image-20240719184034769](./img/image-20240719184034769.png)
+![image-20240719184034769](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719184034769.png)
 
-The Set Attribute node requires parameters for the entity whose attribute is being set, the attribute being set, its value, and operation type.
+To set the attribute primitive, you need the entity to be set, the attribute and value to be set, and several parameters to be calculated.
 
-The entity whose attribute is being set is the current player; hence you can use this entity. Double-clicking this parameter position quickly fills it with this entity.
+The entity whose attributes are set is the current player, so you can use this entity and double-click the parameter position to quickly fill in this entity.
 
-![image-20240719184236329](./img/image-20240719184236329.png)
+![image-20240719184236329](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719184236329.png)
 
-The attribute value needing change is current health; select current health.
+The attribute value that needs to be changed is the current health value, select the current health value.
 
-The set value is current health minus 1, so you need to obtain current health.
+The set value is the current health value minus 1, so the current health needs to be obtained.
 
-![image-20240719184443713](./img/image-20240719184443713.png)
+![image-20240719184443713](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719184443713.png)
 
-Use subtraction from the data category to subtract one and fill in parameters:
+Use the subtraction method in data classification to reduce it by one and add parameters:
 
-![image-20240719184604249](./img/image-20240719184604249.png)
+![image-20240719184604249](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719184604249.png)
 
-![image-20240719184622223](./img/image-20240719184622223.png)
+![image-20240719184622223](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719184622223.png)
 
-You can also directly use operations in the Set Attribute node to achieve this logic:
+You can also use the operation of setting attribute primitives directly to implement this logic:
 
-![image-20240719184700828](./img/image-20240719184700828.png)
+![image-20240719184700828](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719184700828.png)
 
-Run debugging to view results:
+Run the debugger to view the results:
 
-![image-20240719184826220](./img/image-20240719184826220.png)
+![image-20240719184826220](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719184826220.png)
 
-> Everyone received an M4A1.
+> Everyone was issued an M4A1.
 
-![image-20240719184935284](./img/image-20240719184935284.png)
+![image-20240719184935284](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719184935284.png)
 
-> Firing 8 times resulted in losing 8 health points.
+> Fired 8 times and lost 8 health points.
 >
-> The firing trigger activates every time a firing command is executed. Continuous fire weapons count all shots before putting down as one firing event and only trigger this event once.
+> When firing, it is triggered every time a firing command is executed. The shooting of a burst weapon before the weapon is lowered is considered as one firing, and this event can only be triggered once.

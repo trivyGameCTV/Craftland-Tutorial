@@ -1,155 +1,157 @@
-# Terrain Editor - User Manual
+# Terrain Editor
 
-This article provides instructional references related to the Terrain Editor.
+This post will provide instructional references related to the Terrain Editor.
 
-## Terrain Objects
+# Terrain Objects 
 
-Terrain is a special scene object that allows you to create a custom surface. It is a plane with collision properties but no thickness.
+A terrain is a special Scene object that creates a customized piece of ground. Terrain is a flat surface with collision, but no thickness.
 
-If placed in mid-air, the terrain will be invisible from below, but its shadow will be visible.
+If you choose to place it floating, you can't see the terrain from the bottom up, but you can see the shadow of the terrain.
 
-![image-20240725181644841](./img/image-20240725181644841.png)
+![image-20240725181644841](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725181644841.png) 
 
-![image-20240725181631290](./img/image-20240725181631290.png)
+![image-20240725181631290](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725181631290.png) 
 
-As a scene object, terrain can be edited in the scene interface, but only its position can be changed.
+As Scene object, terrain can also be edited in the Scene interface, but only the position can be changed.
 
-![image-20240725181608654](./img/image-20240725181608654.png)
+![image-20240725181608654](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725181608654.png) 
 
-## Creating and Deleting Terrain
+# Create and Delete terrain 
 
-Select "New" in the terrain edit menu to enter pre-creation mode:
+Select new in terrain edit menu to enter pre-built mode: 
 
-<img src="./img/image-20240725183119794.png" alt="image-20240725183119794" style="zoom:67%;" />
+<img src="https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725183119794.png" alt="image-20240725183119794" style="zoom:67%;" /> 
 
-A blue terrain preview will appear in the scene:
+A blue preview of the terrain appears in Scene: 
 
-![image-20240725183211959](./img/image-20240725183211959.png)
+![image-20240725183211959](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725183211959.png) 
 
-You can adjust parameters in the pre-creation interface or drag the blue sphere to adjust the size and position of the terrain:
+The preview is available in the preview interface. You can adjust the parameters in the preview screen or by dragging the blue orb to adjust the size and position of the terrain: 
 
-![image-20240725183258302](./img/image-20240725183258302.png)
+![image-20240725183258302](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725183258302.png) 
 
-The position of the terrain can be changed later, but its size and aspect ratio cannot be altered once set.
+ Terrain Position The terrain position can be changed later, but the size and aspect ratio cannot be changed once they have been determined.
 
-Select the terrain area and use the Delete shortcut key or the hierarchy menu to delete the selected terrain area.
+Selected terrain areas can be deleted using the shortcut Delete or in the hierarchy menu.
 
-![image-20240725183456268](./img/image-20240725183456268.png)
+![image-20240725183456268](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725183456268.png) 
 
-## Sculpting
+# Carve 
 
-![image-20240725183543134](./img/image-20240725183543134.png)
+![image-20240725183543134](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725183543134.png) 
 
-Sculpting modifies the undulations of the terrain with four options: Raise, Lower, Smooth, and Flatten.
+Engraving is a modification of the modification of terrain relief, there are four carving options: 
 
-### **Raise**
+Raise, Lower, Smooth, Flat.
 
-![image-20240725185050088](./img/image-20240725185050088.png)
+## **Raise** 
 
-The brush raises the terrain it passes over. Continuously clicking a spot will keep raising it. Brush size affects the area raised per click or drag. Brush strength determines how quickly the terrain rises. Each piece of terrain has a maximum height limit; brush strength only affects how fast it reaches this limit.
+![image-20240725185050088](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725185050088.png) 
 
-![image-20240725183957835](./img/image-20240725183957835.png)
+The terrain that the brush passes over will rise. terrain will be raised, and continually clicking on a spot will cause that spot to continue to be raised. Brush size affects how much the terrain is raised each time you click or drag it. Brush strength determines how fast the terrain is raised. There is a limit to how far each piece of terrain can be raised, and brush strength only affects the speed at which the maximum height is reached.
 
-### **Lower**
+![image-20240725183957835](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725183957835.png) 
 
-![image-20240725185105397](./img/image-20240725185105397.png)
+## ** Lower** 
 
-Opposite to Raise, the brush lowers the terrain it passes over. Similarly, there is a lower limit for how much the terrain can descend. Brush size affects the area impacted per click or drag, while brush strength influences how quickly it reaches the lowest depth.
+![image-20240725185105397](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725185105397.png) 
 
-![image-20240725184202194](./img/image-20240725184202194.png)
+As opposed to raise , the terrain that the brush passes through is lowered. Again, there is a lower limit for terrain descent. Brush size affects how far it affects when clicking or dragging, and brush strength affects how fast the minimum depth is reached.
 
-### **Smooth**
+![image-20240725184202194](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725184202194.png) 
 
-![image-20240725185121445](./img/image-20240725185121445.png)
+## ** ** Smooth** 
 
-This option adjusts the height of the affected area to match the average height of its surroundings for a smoothing effect. Brush size affects the area impacted per click or drag, while brush strength influences how quickly it reaches target height.
+![image-20240725185121445](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725185121445.png) 
 
-![image-20240725184503733](./img/image-20240725184503733.png)
+Makes the brush affect the the height of the area is raised or lowered to the average of the surrounding heights to achieve a smooth effect. Brush size affects how far the area is affected when clicked or dragged, and brush strength affects how quickly the target height is reached.
 
-![image-20240725184556242](./img/image-20240725184556242.png)
+![image-20240725184503733](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725184503733.png) 
 
-> As moving the brush affects terrain height, previously smoothed areas may generate new target heights. Repeated smoothing results in overall height changes, equal to all raised and lowered parts combined.
+![image-20240725184556242](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725184556242.png) 
 
-### **Flatten**
+> Because brush moves affects the height of the terrain, so terrain that has previously reached the smoothing target height generates a new target height, so the end result of repeated use of smoothing is a change in the overall height of the ground, with a value that is the sum of all the raised and landed parts.
 
-![image-20240725185135051](./img/image-20240725185135051.png)
+## **Flat** 
 
-Flattening sets affected terrain to a target height. The flatten target is this height. Brush size affects impact range per click or drag. Additionally, Flatten offers three modes:
+![image-20240725185135051](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725185135051.png) 
 
-![image-20240725185316005](./img/image-20240725185316005.png)
+Flat causes the the terrain affected by the brush becomes the target height, the leveling target is the target height, and the brush size affects the area affected when clicking or dragging. In addition, Flat provides three modes: 
 
-The first mode processes all terrain, the second only those above target height, and the third only those below target height.
+![image-20240725185316005](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725185316005.png) 
 
-![image-20240725185503304](./img/image-20240725185503304.png)
+The first will handle all terrain, the second will only handle those above the target height, and the third will only handle those below the target height.
 
-![image-20240725185516968](./img/image-20240725185516968.png)
+![image-20240725185503304](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725185503304.png) 
 
-## Painting
+![image-20240725185516968](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725185516968.png) 
 
-Painting offers two editing options: Vegetation Brush and Texture.
+# Drawing 
 
-### Vegetation Brush
+Drawing Two types of editing are available: vegetation brush and texture.
 
-![image-20240725190347859](./img/image-20240725190347859.png)
+## Vegetation Brush 
 
-Place decorative plants or rocks on the terrain.
+![image-20240725190347859](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725190347859.png) 
 
-Brush size affects grass and erasure, determining impact range per click or drag.
+On the terrain Place some decorative plants or rocks.
 
-Brush density affects grass generation rate per click and during dragging.
+Brush size takes effect for turf and erasure, and determines how much each click or drag affects.
 
-![image-20240725190450551](./img/image-20240725190450551.png)
+Brush density works on turf, and determines the amount of turf generated per click, and the rate of turf generation when dragging.
 
-For trees and rocks, each click generates one object; dragging continuously generates objects.
+![image-20240725190450551](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725190450551.png) 
 
-![image-20240725190429926](./img/image-20240725190429926.png)
+For trees and rocks, generate one corresponding object per click, and continuously generate the object when dragging.
 
-Hold Ctrl while using brush to erase selected plants from terrain; hold Shift to erase all vegetation or rocks touched by brush.
+![image-20240725190429926](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725190429926.png) 
 
-![image-20240725190509888](./img/image-20240725190509888.png)
+When using brushes Ctrl will erase selected plants from the terrain, Shift will erase any vegetation or rocks the brush touches.
 
-Each type of decoration has a quantity limit with Vegetation Brush.
+![image-20240725190509888](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725190509888.png) 
 
-![image-20240725190534771](./img/image-20240725190534771.png)
+The vegetation brush has a limit on the amount of There is a limit to the number of each decoration.
 
-### Texture
+![image-20240725190534771](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725190534771.png) 
 
-![image-20240725190548955](./img/image-20240725190548955.png)
+## Materials 
 
-Texture determines the appearance of the terrain itself.
+![image-20240725190548955](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725190548955.png) 
 
-![image-20240725190626742](./img/image-20240725190626742.png)
+The material determines how the appearance of the terrain itself.
 
-Edit alternative terrain textures through import, replace, or delete options.
+![image-20240725190626742](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725190626742.png) 
 
-![image-20240725190711520](./img/image-20240725190711520.png)
+With the Import, Replace, and Delete options to edit alternative terrain materials.
 
-Brush size affects impact range per click or drag. Checking "Fill Entire Terrain" fills entire area with texture.
+![image-20240725190711520](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725190711520.png) 
 
-![image-20240725190736248](./img/image-20240725190736248.png)
+Brush Size Affects the area affected when clicking or dragging. Cover All Check this box to fill the entire terrain.
 
-Using new textures will overwrite old ones.
+![image-20240725190736248](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725190736248.png) 
 
-![image-20240725190918758](./img/image-20240725190918758.png)
+Using a new material will overwrite the old one.
 
-## Terrain Property Settings
+![image-20240725190918758](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725190918758.png) 
 
-![image-20240725191508655](./img/image-20240725191508655.png)
+# Terrain Properties Setting 
 
-Terrain has several properties:
+![image-20240725191508655](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725191508655.png)
 
-**Position**: Overall position of the terrain.
+Terrain has several properties: 
 
-**Decimation Ratio**: Reduces face count to improve performance, range 0.1–1; 1 means no decimation, 0.1 means faces reduced to 1/10th of default.
+**Position**: where the terrain as a whole is located.
 
-**Terrain File**: Each edited piece generates a file; modify files to apply settings from other blocks directly.
+**Mesh Decimation**: you can improve the performance by reducing the number of surfaces of the terrain, the range is 0.1-1, 1 means no surface reduction, 0.1 means the number of surfaces is reduced to 1/10 of the default 
 
-**Texture Pixels**: Pixels for each texture; changing one axis value alters another. Larger values mean denser terrain. For example:
+**Terrain File**: a terrain file will be generated for each terrain after editing, you can modify the terrain file to directly fetch the settings of the other terrains.
 
-In (1,1) case:
+**Material pixels**: pixels of each material, change the value of any axis and the other axis will follow. The larger the value, the denser the terrain. Take the tablecloth material for example: 
 
-![image-20240725192200222](./img/image-20240725192200222.png)
+(1,1) case: 
 
-In (3,3) case:
+![image-20240725192200222](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725192200222.png) 
 
-![image-20240725192303777](./img/image-20240725192303777.png)
+(3,3) case:
+
+![image-20240725192303777](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/11-Scene/image-20240725192303777.png)

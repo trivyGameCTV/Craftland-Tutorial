@@ -1,171 +1,172 @@
 # Global
 
-The global entity is a unique abstract entity representing the entire game. As an abstract entity, it can only be edited in the mod menu within the game editor. You can also use scripts to access its properties or modify those that support changes.
+A global entity is a unique abstract entity that represents the entire game. As an abstract entity, it can only be edited in the module menu in the game editor. You can also use scripts to get the value of its properties or modify those that support modification.
 
-This article will introduce the global entity properties that can be modified in the mod menu and how to use the global module in element scripts.
+In this article, we will introduce the global entity properties that you can modify in the module menu, and how to use global modules in block scripts.
 
-## Module
+# Modules
 
-You need to edit the global entity under the Module - Global menu.
+You need to edit global entities under the Module - Global menu.
 
-![image-20240704143528399](./img/image-20240704143528399.png)
+![image-20240704143528399](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704143528399.png)
 
-### Static ECA and Scripts
+## Static ECA and script
 
-![image-20240704143555568](./img/image-20240704143555568.png)
+![image-20240704143555568](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704143555568.png)
 
-Both static ECA and scripts mounted on the global entity can be considered global scripts. Once the game starts, the mounted scripts will run.
+Both static ECAs and scripts attached to global entities can be considered global scripts. That is, as soon as the game starts, the attached script will run.
 
-The difference is that once a static ECA is created, it will always be mounted on the global entity.
+The difference is that once a static ECA is created, it will definitely be attached to a global entity.
 
-![image-20240704145113663](./img/image-20240704145113663.png)
+![image-20240704145113663](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704145113663.png)
 
-![image-20240704145152046](./img/image-20240704145152046.png)
+![image-20240704145152046](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704145152046.png)
 
-Scripts, however, can freely choose which to use or unload any mounted scripts.
+The script can freely choose which one to use or unmount the mounted script.
 
-Mounting:
+Mount:
 
-![image-20240704145405919](./img/image-20240704145405919.png)
+![image-20240704145405919](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704145405919.png)
 
-![image-20240704145455936](./img/image-20240704145455936.png)
+![image-20240704145455936](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704145455936.png)
 
-> Static ECA will not appear in the script selection interface
+> Static ECA will not be displayed in the Select Script interface
 
-![image-20240704145508122](./img/image-20240704145508122.png)
+![image-20240704145508122](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704145508122.png)
 
-Unloading:
+Uninstall:
 
-![image-20240704145543549](./img/image-20240704145543549.png)
+![image-20240704145543549](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704145543549.png)
 
-![image-20240704145555812](./img/image-20240704145555812.png)
+![image-20240704145555812](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704145555812.png)
 
-Unloaded scripts remain in your project and can be mounted on any supported entity or component.
+Unloaded scripts are still in your project and can be attached to any supported entity or component.
 
-In global scripts, we recommend performing initialization tasks, such as setting global variables and defining common functions.
+In global scripts, we recommend that you perform initialization work, such as setting global variables and setting public functions.
 
-### Custom Room Parameters
+## Custom room parameters
 
-![image-20240704151437651](./img/image-20240704151437651.png)
+![image-20240704151437651](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704151437651.png)
 
-Custom room parameters are a special type of custom attribute. They can be used as custom attributes for the global entity and modified after creating a room but before starting the game. For example, you can set enemy health between 50%-100% by customizing a health parameter and setting its value before entering the game.
+Custom room parameters are a special type of custom property. They can be used as custom properties for global entities, and they can be modified after the room has been created but before the game starts. For example, this map can set the enemy's health to 50%-100%. You can customize a health parameter and set its value before entering the game.
 
-Since custom room parameters are a type of custom attribute, creating a new room parameter is consistent with creating a custom attribute for the global entity, both located in the game entity section of components:
+Because custom room parameters are a type of custom property, creating a new room parameter is the same as creating a custom property for a global entity. They are both located in the game entity in the component:
 
-![image-20240704151633519](./img/image-20240704151633519.png)
+![image-20240704151633519](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704151633519.png)
 
-![image-20240704151709435](./img/image-20240704151709435.png)
+![image-20240704151709435](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704151709435.png)
 
-![image-20240704151808250](./img/image-20240704151808250.png)
+![image-20240704151808250](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704151808250.png)
 
-After creating a custom attribute in the game entity component, it will first appear in the lower part of the game entity:
+After you create a new custom property for a game entity component, it will first appear in the game entities below:
 
-![image-20240704152004938](./img/image-20240704152004938.png)
+![image-20240704152004938](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704152004938.png)
 
-Clicking the plus sign in custom room parameters allows you to set this attribute as a custom room parameter:
+Click the plus sign to the right of the Custom Room Parameters to set the property as a custom room parameter:
 
-![image-20240704152052468](./img/image-20240704152052468.png)
+![image-20240704152052468](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704152052468.png)
 
-Selecting this attribute will bring up the attribute settings interface:
+Select the property and the property settings screen will appear:
 
-![image-20240704152243864](./img/image-20240704152243864.png)
+![image-20240704152243864](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704152243864.png)
 
-1. Attribute Name: Cannot be edited in this interface.
-2. Room Parameter Name: The name you want displayed in the room and used for multilingual translation (KEY).
-3. Parameter Display Method: How you want this parameter displayed in the room; in this case, we want it to select an integer from 50 to 100.
+1. The property name, which cannot be edited in this screen.
+2. The room parameter name, the name you want it to display in the room and the KEY for multilingual translation.
+3. The parameter display method, the way you want this parameter to be displayed in the room. In this case, we want it to be an integer selected from 50 to 100.
 
-![image-20240704152701834](./img/image-20240704152701834.png)
+![image-20240704152701834](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704152701834.png)
 
-![image-20240704152715077](./img/image-20240704152715077.png)
+![image-20240704152715077](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704152715077.png)
 
-You can right-click on custom room parameters to reopen the edit interface or remove this parameter:
+You can right-click on the custom room parameter to reopen the editing screen or remove the parameter:
 
-![image-20240704152746233](./img/image-20240704152746233.png)
+![image-20240704152746233](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704152746233.png)
 
-Custom attributes added as custom room parameters will no longer appear in the game entity section, while removing them will return them to that section.
+Adding a custom property as a custom room parameter will prevent it from appearing in the game entity bar, while deleting a custom room parameter will cause the property to reappear in the game entity bar.
 
-### Frame Rate
+## Frame rate
 
-![image-20240704153934174](./img/image-20240704153934174.png)
+![image-20240704153934174](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704153934174.png)
 
-The frame rate section has only one option: whether to enable low logic frame mode.
+The frame rate bar only has one option: whether to enable low logic frame mode.
 
-Our game defaults to 30 logic frames per second, primarily affecting "on update" events in scripts.
+Our game's default logic frame is 30, which means that a logic check is performed 30 times per second, mainly affecting the “when updating” event in the script.
 
-Enabling low logic frame mode means "on update" events will only execute 15 times per second.
+When low logic frame mode is enabled, the “when updating” event will only be executed 15 times per second.
 
-> The "on fixed frame update" node is unaffected by this setting and always runs 30 times per second.
+> The “On Fixed Updates” node is not affected by this configuration and will always run 30 times per second
 
-### Dynamic Navmesh
+## Dynamic Navmesh
 
-Navmesh is an auto-pathfinding system that only affects units needing pathfinding, such as monsters, NPCs, or skills relying on pathfinding.
+Navmesh is an automatic pathfinding system. It only takes effect on units that need to find a path, such as monsters, NPCs, or some skills that rely on pathfinding.
 
-![image-20240704173040080](./img/image-20240704173040080.png)
+![image-20240704173040080](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704173040080.png)
 
-When disabled, paths on the scene are automatically confirmed at game start, and added or removed obstacles won't change paths. If obstacles are dynamically created on paths, units may pass through them directly.
+When it is disabled, the path on the scene is automatically confirmed when the game starts, and the path will not be changed by the addition or removal of obstacles afterwards. If obstacles are dynamically created on the path, units may appear to pass through the obstacles directly.
 
-When enabled, the game recognizes changes in obstacles in real-time and dynamically modifies pathfinding routes.
+When it is enabled, the game will identify the addition or removal of obstacles in the scene in real time, and dynamically modify the path of the automatic pathfinding.
 
-Disabling this setting saves performance costs.
+Disabling this configuration means saving performance overhead.
 
-### Matching
+## Match
 
-![image-20240704173643976](./img/image-20240704173643976.png)
+![image-20240704173643976](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704173643976.png)
 
-Match Start Number: The number of players needed to start a match.
+Initial player number: the game will start when the number of players matches the number of players in the match.
 
-Prioritize Full Match Start: When checked, even if player numbers meet match start criteria during an initial period (about 10 seconds), the game will wait for a full room. After this period, reaching match start numbers will immediately start the match.
+Prioritize Start with Full Team: If this box is ticked, the game will wait for the room to be full even if the number of players matches the number required for the game to start, for a certain period of time (around 10 seconds) after the match has started. After this time, the game will start as soon as the number of players matches the number required for the game to start.
 
-Mid-game Player Addition: Allows players to join during gameplay. If checked, further settings unfold:
+Mid-game joining: Whether to allow players to join the game during play. If this is selected, further settings will be displayed:
 
-![image-20240704182638421](./img/image-20240704182638421.png)
+![image-20240704182638421](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704182638421.png)
 
-​	Limit Match Addition Time: Whether to limit time for adding players mid-game; if enabled, next configuration unfolds for addition duration.
-​	Addition Duration: Time allowed for adding players after match start.
-​	Limit Addition Quantity: Whether to limit number of players added; if enabled, next configuration unfolds for cumulative addition quantity.
-​	Cumulative Addition Quantity: Maximum number of players that can be added.
+Time limit of mid-game joining: whether to limit the time for matchmaking. If enabled, the next configuration will be expanded to match the duration of matchmaking.
+Duration of mid-game joining: how long is allowed for matchmaking after the game starts.
+Mid-game joining player limit: whether to limit the number of matchmaking. If enabled, the next configuration will be expanded to accumulate the number of matchmaking.
+Quota of joining mid-game: the maximum number of matchmaking supported.
 
-Allow Mid-game Exit: Allows players to exit voluntarily without penalty when enabled.
+Withdrawal
+ allowed: Withdrawal is an action taken by the player. When enabled, the player will not be punished for withdrawing.
 
-Disable Reconnect: When enabled, prevents reconnecting after disconnection. When disabled, allows reconnecting; closing and reopening game defaults to automatic reconnection to current match.
+Disconnect reconnection disabled: When enabled, reconnection is disabled. When disabled, reconnection is enabled. When the game is closed and then opened again, the game will automatically reconnect by default.
 
-### AFK and Cheating
+## AFK & cheating
 
-![image-20240704182345879](./img/image-20240704182345879.png)
+![image-20240704182345879](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240704182345879.png)
 
-AFK Detection Time: Duration of inactivity before a player is considered AFK. AFK players will be kicked from the game.
+Time of AFK: How long a player must remain inactive before being considered to have hung up. A player who is considered to have hung up will be kicked out of the game.
 
-Enable Anti-cheat: Whether to enable anti-cheat features.
+Turn on anti-hack feature: whether to enable anti-cheating.
 
-## Script Global Module
+# Script global module
 
-In element scripts, there is a global module that allows certain operations on global mechanisms.
+In the block script, there is a global module that can perform certain operations on global mechanisms.
 
-### Manipulating Safe Zones
+## Manipulate the poison circle
 
-Rather than manipulating toxic zones, it's more about manipulating safe zones.
+It is more like manipulating the safe zone than manipulating the poison circle.
 
-![image-20240705150705190](./img/image-20240705150705190.png)
+![image-20240705150705190](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240705150705190.png)
 
-Move Safe Zone: The safe zone moves smoothly from start point to end point over duration, with radius changing from initial to final radius. Players outside take damage equal to damage amount per second.
-Enable Safe Zone: Initially generates at center point with set radius size. After waiting duration, moves smoothly towards midpoint over duration until disappearing. Players outside take damage equal to damage amount per second.
-Disable Safe Zone: Cancels ongoing damage from toxic zones; this function only closes system-generated toxic zones and is ineffective against those generated by [custom safe zone objects]. However, it creates a large safe zone so players remain safe from other toxic zones. It's not recommended to use system toxic zones with custom safe zone objects simultaneously.
+Enable Moving Safe Zone: The safe area smoothly moves to the focus from the starting point within the duration, and the radius gradually changes from the initial radius to the final radius. Players outside the safe area will take damage equal to the damage amount every second.
+Turn on out-of-zone damage: The safe area is initially generated with a center point as the center and a set radius. After waiting for the configured duration, it smoothly moves towards the center point within the duration until it disappears. Players outside the safe area will take damage equal to the damage amount every second.
+Turn off out-of-zone damage: Cancel the poison circle that continuously loses blood. This interface only closes the poison circle generated by the system and is invalid for the poison circle generated by the [custom safe area object] in the scene. However, the implementation of this interface is to create a huge safe area, so the player will be in the safe area and will not be harmed by other poison circles. Therefore, it is not recommended to use the system poison circle and custom safe area object at the same time.
 
-> Both move and enable safe zone functions set a new safe zone replacing previous ones.
-> Once executed in script, move and enable safe zone functions continue executing; ensure logical continuity between steps.
+Both the Move Poison Circle and Open Poison Circle interfaces set a new safety zone, replacing the previous one.
+Both the Move Poison Circle and Open Poison Circle interfaces continue to execute downward once they start executing in the script. Please pay attention to the logic of the connection.
 
-### Pause and Resume Game
+## Pause and resume the game
 
-![image-20240705153104180](./img/image-20240705153104180.png)
+![image-20240705153104180](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240705153104180.png)
 
-These nodes only affect triggering of "on fixed frame update" events.
+These two nodes only affect the triggering of events when the fixed frame is updated.
 
-![image-20240705153140762](./img/image-20240705153140762.png)
+![image-20240705153140762](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240705153140762.png)
 
-After pausing, "on fixed frame update" events stop triggering; they resume after resuming gameplay.
+After suspending the game, the event is no longer thrown when the fixed frame is updated, and it continues to be thrown after the game resumes.
 
-Pausing and resuming also trigger "on game pause" and "on game resume" events respectively:
+Pausing and resuming the game also trigger two separate events: one when the game is paused and one when the game is resumed:
 
-![image-20240705153617815](./img/image-20240705153617815.png)
+![image-20240705153617815](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/06-Global/image-20240705153617815.png)
 
-> Pause commands are ineffective during pause; same applies for resume commands during resume.
+> The pause game command is invalid during a pause, and the same applies to resuming the game.

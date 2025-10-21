@@ -1,133 +1,133 @@
-# AI Zombie - User Manual
+# AI Zombie
 
-Strictly speaking, AI refers to the AI entity component. Like other functional components, when attached to any entity, that entity becomes an AI unit.
+Technically speaking, AI refers to the AI entity component, which can be mounted on supported entities.
 
-![image-20240805115827496](./img/image-20240805115827496.png)
+![image-20240805115827496](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805115827496.png)
 
-Currently, however, AI entities are only attached to zombie entities and cannot be customized. Therefore, this article will introduce AI from the perspective of configuring and controlling zombies.
+Currently, the AI component is only mounted on the zombie entity and cannot be customized to be mounted or not. Therefore, this article will mainly introduce how to configure and control zombies.
 
-## Configuring AI Zombies
+# Configure AI zombies
 
-You can configure individual zombies through unit settings, periodically generate and configure zombies via the zombie generator, or batch generate pre-set zombie templates using the unit generator.
+You can configure individual zombies through units, generate and configure zombies periodically through the zombie generator, or generate a set of zombie templates in batches through the unit generator.
 
-![image-20240805181341592](./img/image-20240805181341592.png)
+![image-20240805181341592](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805181341592.png)
 
-![image-20240805181354860](./img/image-20240805181354860.png)
+![image-20240805181354860](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805181354860.png)
 
-Both generators and zombies can configure zombie attributes. Generators have additional configurations for how zombies are generated.
+For both Generators and Zombies, they can configure the properties of the zombies. And for Generators, there are some additional configurations on how to generate zombies.
 
-### **Unit Zombie Configuration**
+## **Unit Zombie Configuration**
 
-These entries also appear in the zombie generator.
+![image-20240805142930290](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805142930290.png)
 
-![image-20240805142930290](./img/image-20240805142930290.png)
+**HP**: The health of the AI zombie.
 
-**Health**: The health of the AI zombie.
+**Damage**: basic attack damage. Skill damage is calculated separately and is not affected by this configuration.
 
-**Attack Damage**: Base attack damage. Skill damage is calculated separately and is not affected by this configuration.
+**Enemy scan distance**: the basic range of AI zombies to detect enemies. If there is a bonus, it will be modified on this basic value.
 
-**Enemy Detection Range**: The base range for AI zombies to detect enemies. Modifiers will adjust this base value.
+**Speed**: basic movement speed. If there is a bonus, it will be modified on this basic value.
 
-**Movement Speed**: Base movement speed. Modifiers will adjust this base value.
+**Turn on/off loot drop**: Whether to drop loot after being killed. The type of loot drop cannot be configured.
 
-**Enable Loot Drop**: Whether loot drops upon being killed. The type of loot dropped cannot be configured.
+**Damage Ratio**: The percentage of damage received, ranging from 10 to 10000, with 10 being the lowest, meaning that only 10% of the original damage is received when taking damage.
 
-**Damage Multiplier**: Percentage of damage taken, ranging from 10-10000. A minimum of 10 means only 10% of the original damage is taken.
+**Type**: The type of zombie.
 
-**Type**: AI type, i.e., the type of zombie.
+**Auto Scan Enemies**: Whether to automatically detect enemies within the enemy detection range.
 
-**Auto Enemy Detection**: Whether to automatically detect enemies within range.
+**Faction**: The faction of the zombie.
 
-**Faction**: The faction of the AI zombie.
+**Attack type**: Active attack: actively attacks detected enemies. Passive attack: attacks enemies only when attacked. No attack: will not attack.
 
-**Attack Mode**: Aggressive: Actively attacks detected enemies. Passive: Attacks only when attacked. No Attack: Does not attack.
-
-> Zombies with skills may not strictly follow detection and attack configurations but will always use skills to attack enemies within range.
+> For zombies with skills, they do not necessarily strictly adhere to the enemy detection and attack configuration, and may always attack the enemy with their skills.
 >
-> BOSS-type zombies come with skills: Butcher, Mr.V, Samurai.
+> BOSS types of zombies all come with their own skills: such as the butcher, Mr. V, and the samurai.
 
-**Pathing**: Default pathing route used with waypoints.
+**Path**: the default movement route, used in conjunction with path points.
 
-Set up the path in the scene using waypoint objects:
+Use the path point object to set the path of travel in the Scene:
 
-![image-20240805164208658](./img/image-20240805164208658.png)
+![image-20240805164208658](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805164208658.png)
 
-![image-20240805164359571](./img/image-20240805164359571.png)
+![image-20240805164359571](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805164359571.png)
 
-Once the path is set, you can select it in the AI zombie configuration.
+After setting the path, you can select the corresponding path in the AI zombie configuration.
 
-![image-20240805164502169](./img/image-20240805164502169.png)
+![image-20240805164502169](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805164502169.png)
 
-### **Zombie Generator Specific Configuration**
+## **Zombie generator-specific configuration**
 
-![image-20240805143319276](./img/image-20240805143319276.png)
+![image-20240805143319276](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805143319276.png)
 
-**Zombies per Wave**: Number of zombies generated each time.
+**Zombies per wave**: the number of zombies generated each time.
 
-**Number of Waves**: In non-continuous generation, how many waves of zombies are generated per round.
+**# of waves**: when generating is not continuous, how many waves of zombies are generated per round.
 
-**Continuous**: Continuously generates zombies, ignoring wave settings.
+**Continuous**: Zombies will be generated continuously, regardless of the number of waves set.
 
-**Start Generation Time**: Time after round start to generate the first wave of zombies, in seconds.
+**Start time**: The number of seconds after the start of the round that the first wave of zombies will be generated.
 
-**Interval Between Waves**: Time interval between each wave of generated zombies, in seconds.
+**Wave interval**: The number of seconds between each wave of zombies.
 
-> Zombies generated by the generator will be eliminated at the start of the next round and do not drop loot.
+> Zombies generated by the spawner will be destroyed at the start of the next round and will not drop any items.
 
-### Unit Generator Configuration
+## Unit spawner configuration
 
-![image-20240805181625600](./img/image-20240805181625600.png)
+![image-20240805181625600](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805181625600.png)
 
-**Units per Wave**: Number of configured units generated per wave.
+**# of units per wave**: How many units of the configured unit will be generated per wave.
 
-**Number of Waves**: Total number of waves generated.
+**# of waves**: the total number of waves to generate.
 
-**Template**: Select a unit template from the scene to generate. Mutually exclusive with Prefab.
+**Template**: select a unit template from the scene to generate. Mutually exclusive with Prefab.
 
-**Start Generation Time**: Time after game start to generate the first wave of units, in seconds.
+**Start time**: how long after the game starts to generate the first wave of units, in seconds.
 
-**Continuous Generation**: When checked, continuously generates units per wave regardless of wave settings.
+**Continuous**: if checked, regardless of the wave configuration, continue to generate units in each wave.
 
-**Interval Between Waves**: Interval between each wave generation, in seconds.
+**Wave interval**: the interval between each two waves of generated units, in seconds.
 
-**Prefab Template (Prefab)**: Select a unit to generate from Prefab. Mutually exclusive with Template.
+**Template (Prefab)**: Select the unit to be generated from the Prefab. Mutually exclusive with Template.
 
-## Controlling AI Zombies via Primitives
+# Controlling AI Zombies via Blocks
 
-After statically configuring AI zombies or their generators in a scene, you can control them during gameplay via scripts.
+After the AI Zombie or its generator is statically configured in the Scene, it can also be controlled during the game process via a script.
 
-This section mainly introduces primitive scripts; code scripts can use corresponding APIs and events for similar operations.
+This mainly introduces the block script. The code script can use the corresponding API and events of the block script to perform the same operation.
 
-### Generator Operations
+## Generator operations
 
-Not limited to AI zombies; generator APIs and events can operate on all generators.
+is not limited to AI zombies. The Generator API and events can be used to operate on all generators.
 
-![image-20240805154514283](./img/image-20240805154514283.png)
+![image-20240805154514283](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805154514283.png)
 
-> Use this combination to obtain entities generated by each wave from a generator
+> Using this combination, you can obtain the unit entity generated by the generator each wave
 
-![image-20240805154533069](./img/image-20240805154533069.png)
+![image-20240805154533069](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805154533069.png)
 
-### AI Zombie Operations
 
-Besides being an AI entity, a zombie is also a combat entity, targetable entity, etc.
 
-Use corresponding events to monitor AI zombie behaviors and APIs to control their actions.
+## AI Zombie Operation
 
-![image-20240805154634808](./img/image-20240805154634808.png)
+In addition to AI entities, zombies are also combat entities, targetable entities, entities, etc.
+
+You can monitor the corresponding behavior of AI zombies using the corresponding events, and use the API to control the actions of AI zombies.
+
+![image-20240805154634808](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805154634808.png)
 
 > Events for AI entities
 
-### Example
+## Example
 
-A simple example illustrating how to use primitive scripts to control AI zombies:
+A simple example of how to control an AI zombie using a block script.
 
-Assume the requirement is that whenever a player targets a zombie, it dodges.
+The requirement is that the zombie should dodge whenever the player aims at it.
 
-![image-20240805180544337](./img/image-20240805180544337.png)
+![image-20240805180544337](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805180544337.png)
 
 Attach this script to the zombie entity.
 
-![image-20240805180604321](./img/image-20240805180604321.png)
+![image-20240805180604321](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/17-AI/image-20240805180604321.png)
 
-This allows the zombie to randomly move horizontally when targeted.
+This will cause the zombie to move randomly in the horizontal direction when targeted.

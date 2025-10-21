@@ -1,203 +1,241 @@
-# Debugging
+# Debug
 
-Debugging is a way to intuitively view game content and confirm if its performance meets expectations. Using debugging will open at least one game process, allowing you to check if the game is running as expected.
+Debugging is a way to visually inspect the contents of a game and verify that the behavior is as expected. Using Debug will open at least one game process, and you can see if the game is running as expected.
 
-The entire project is automatically saved when debugging is used.
+The entire project is automatically saved when using Debug.
 
-## Debugging Entry
+# Debug Entry
 
-You can debug from the top of the project editing interface.
+Debugging can be accessed from the top of the project editing screen.
 
-![image-20240628160655311](./img/image-20240628160655311.png)
+![image-20240628160655311](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240628160655311.png)
 
-## Settings
+# Settings
 
-Click the button on the right to configure debugging settings.
+Click the button on the right to set up debugging.
 
-![image-20240628160817580](./img/image-20240628160817580.png)
+![image-20240628160817580](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240628160817580.png)
 
-### Multi-client Debugging
+## Multi-client debugging
 
-![image-20240628162155122](./img/image-20240628162155122.png)
+![image-20240628162155122](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240628162155122.png)
 
-Click the client area to choose how many clients to start this debugging session with. Multi-client debugging helps test interactions between different players in multiplayer games.
+Clicking on the client area allows you to select how many clients the debugging should start with. Multi-client debugging is useful for debugging interactions between multiple players in multiplayer games.
 
-Supports up to eight clients simultaneously.
+Up to eight clients can be started at the same time.
 
-> Multi-client debugging may put performance stress on your device.
+> Multi-client debugging may place a performance strain on your device
 
-If debugging has already started, this button will change to add new clients.
+If debugging has already started, the button here will change to Add New Client.
 
-![image-20240628162415833](./img/image-20240628162415833.png)
+![image-20240628162415833](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240628162415833.png)
 
-You can add up to eight clients for simultaneous debugging. After adding new clients, the topmost client will update to show the current number of open clients, and the number of additional clients you can add will decrease accordingly. As shown in the image above, adding three clients will change it to:
+You can add up to **eight clients** to debug at the same time. After you add a new client, the number of clients currently opened will be updated at the top, and the number of clients that can be added will be reduced accordingly.
+If you add three clients as shown in the figure above, it will become:
 
-![image-20240628163951483](./img/image-20240628163951483.png)
+![image-20240628163951483](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240628163951483.png)
 
-Newly added clients are considered players joining mid-session. This may affect your design validation for players joining mid-game.
+Newly added clients are considered as players joining the game mid-way. This may affect your design verification regarding players joining mid-way.
 
-Closing a debug window is considered as the corresponding player exiting mid-session. The current and additional client numbers will also change. When the last debug window is closed, this debugging session ends.
+Closing a debugging window is considered as the corresponding player quitting mid-way. The current number of clients that can be added will also change. When the last debugging window is closed, this debugging will also end.
 
-Clicking the stop button on the project editor will close all open debug windows, ending this debugging session.
+Clicking the stop button on the project editor will close all open debugging windows and end this debugging.
 
-![image-20240628164832777](./img/image-20240628164832777.png)
+![image-20240628164832777](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240628164832777.png)
 
-### Debugging Settings
+## Debug Settings
 
-Click the menu key on the far right of debugging to open the debug menu.
+You can open the System Settings by clicking on the right side of the Debug button or through the System Menu, which has a section for the Debug Menu.
 
-![image-20240628165847587](./img/image-20240628165847587.png)
+![image-20240628165847587](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240628165847587.png)
 
-#### Launch Language
+![image-20250122171913517](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20250122171913517.png)
 
-![image-20240701163740181](./img/image-20240701163740181.png)
+### Launch Language
 
-The launch language determines the language displayed in your debug window.
+The launch language determines your debug client language (not the language of the Craftland Studio PC editor), and different launch languages ​​will return different values ​​using the "Get Client Language" API.
 
-#### Teaming
+### Team
 
----------------------------------To be clarified--------------------------------------------
+Determines the teaming method during debugging, whether to automatically assign teams or assign teams according to settings.
 
-#### Debugging Tools
+### Debugging tools
 
-![image-20240701163828935](./img/image-20240701163828935.png)
+#### Strict mode
 
-##### Strict Mode
+In strict mode, once an error occurs in the process, the debug mode will be exited. The problem can be located more accurately.
 
-In strict mode, if an error occurs in the process, it will exit debug mode. This helps pinpoint issues more accurately.
+#### Debug mode
 
-##### Debug Mode
+Breakpoints will only take effect in Debug mode.
 
-Breakpoints only take effect in Debug mode.
+#### Performance
 
-Breakpoints will be introduced later in the text.
+Shows how much local storage space the current UI image cache uses. You can free up space by clearing the cache, but the UI image will need to be reloaded the next time it is used.
 
-##### Performance
+It is recommended to clean up when there are many projects opened and there are a lot of content in the cache that will no longer be used.
 
-Displays how much local storage space is used by current UI image cache. You can clear cache to free up space, but UI images will need to reload next time they are used.
+# Debugging windows
 
-It's recommended to clear cache when multiple projects are open and there is a lot of unused content in cache.
+## Game window
 
-## Debug Window
+![image-20240701141340740](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701141340740.png)
 
-### Game Window
+In the debug window, you can simulate playing your map. By default, your mouse is free to move, and you can simulate actions on the phone screen by clicking or holding down the left mouse button (this may be a bit awkward). Press the right mouse button in the screen area to enter the simulator operation mode, at which point your mouse movements will operate the camera rotation, the left button will become the attack command, and you can also use the keyboard to operate. For specific keyboard shortcuts, please refer to the “Keyboard” botton in the upper left corner:
 
-![image-20240701141340740](./img/image-20240701141340740.png)
+![image-20240701141910941](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701141910941.png)
 
-In the debug window, you can simulate playing your created map. By default, your mouse can move freely, and you can simulate actions on a mobile screen by clicking or holding down the left mouse button (this might be a bit clunky). Pressing the right mouse button in the screen area enters simulator operation mode, where mouse movement rotates the view, left-click becomes an attack command, and keyboard controls can be used. Refer to the "Key Bindings" interface on the top left for specific keyboard shortcuts:
+Click the right mouse button again to exit the simulator operation mode.
 
-![image-20240701141910941](./img/image-20240701141910941.png)
+## Menu
 
-Clicking the right mouse button again exits simulator operation mode.
+We have provided some default instructions and GM functions for you to use:
 
-### Menu
+![image-20240701142202769](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701142202769.png)
 
-We provide some default instructions and GM functions for you to use:
+**Keyboard:** Prompt for the shortcut key for emulator operation.
+**Invulnerable:** Toggles the invincibility status. An invincible player cannot be harmed, and the player will turn gold as a prompt that the status is turned on. Note that this command toggles the invincibility status. When the player is in the invincible state, using this command can cancel the invincibility status.
+**Recover HP:** Directly sets the player's health to the upper limit. Not effective for dead players.
+**Suicide:** Kills the current player.
+**Teleport to Spawn Point:** Teleports the player to the location where they spawned. If you have configured spawn points on the map that are available to the current player, the player will spawn at the spawn point by default. If no spawn points have been configured or the configured spawn points are not available to the current player (e.g. the team required by the spawn point does not match the player), the player will spawn near (0,0,0) and the Y-axis coordinate may be slightly adjusted.
+**Add a bot:** Adds a bot to the current player's team. This command cannot be executed if the current player's team is full.
 
-![image-20240701142202769](./img/image-20240701142202769.png)
+## Console and performance monitoring
 
-**Key Bindings:** Shortcuts for simulator operations.
-**Invincibility:** Toggle invincibility status; invincible players do not take damage and turn gold as a status indicator. Note that this command toggles invincibility; using it while invincible cancels invincibility.
-**Heal:** Directly set player health to maximum value. Ineffective for dead players.
-**Suicide:** Kill the current player.
-**Teleport to Spawn Point:** Teleport player to their spawn location. If spawn points available for current player are configured in scene, player will spawn there by default. If no spawn points are configured or available (e.g., team mismatch), player spawns near (0,0,0) with slight Y-axis adjustment.
-**Add Bot:** Add a bot to current player's team; command fails if team is full.
+You can switch between the console and performance monitoring displays using the buttons in the top right and bottom centre:
 
-### Console and Performance Monitoring
+![image-20240701145712280](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701145712280.png)
 
-You can switch console or performance monitoring display using buttons at top right and middle bottom:
-
-![image-20240701145712280](./img/image-20240701145712280.png)
-
-![image-20240701145730590](./img/image-20240701145730590.png)
+![image-20240701145730590](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701145730590.png)
 
 **Console:**
 
-View server logs, warnings, and errors here. Supports search for displayed information:
+Here you can view server logs, warnings and errors. The displayed information can be searched:
 
-![image-20240701145933480](./img/image-20240701145933480.png)
+![image-20240701145933480](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701145933480.png)
 
-Click button on right to filter displayed information types:
+The type of information displayed can be filtered by clicking the button on the right:
 
-![image-20240701151005982](./img/image-20240701151005982.png)
+![image-20240701151005982](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701151005982.png)
 
-> Show errors only
-> Searching changes number of displayed items; filtering does not. Their interaction may prevent finding desired information.
+> Only display errors
+> Searching changes the number of displayed items, while filtering does not. The interaction of the two may prevent you from finding the information you are looking for.
 
-Use print nodes in scripts to output desired information into corresponding categories.
+Use the print node in the script to output the information you want in the corresponding category.
 
-![image-20240701151502670](./img/image-20240701151502670.png)
+![image-20240701151502670](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701151502670.png)
 
-![image-20240701151533376](./img/image-20240701151533376.png)
+![image-20240701151533376](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701151533376.png)
 
-**Performance Monitoring:**
+**Performance monitoring:**
 
-![image-20240701161522175](./img/image-20240701161522175.png)
+![image-20240701161522175](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701161522175.png)
 
-Click top right button to start performance testing.
+Click the button in the upper right corner to start the performance test.
 
-Once testing starts, various performance data are displayed in real-time for monitoring resource consumption while editing maps.
+After starting the test, various performance data will be displayed in real time, allowing you to monitor the resource consumption of editing maps.
 
-You can manually adjust game latency and packet loss rate to test game performance under weak network conditions.
+You can also artificially adjust the game's latency and packet loss rate to test the game's performance in a weak network environment.
 
-![image-20240701161851614](./img/image-20240701161851614.png)
+![image-20240701161851614](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701161851614.png)
 
-> The latency and packet loss rate entered here are additional values; actual game latency and packet loss rate equal original values plus those entered here.
+> The latency and packet loss rates entered here are additional values. The actual latency and packet loss rates of the game are equal to your original latency and packet loss rates plus the values entered here.
 
-Supports exporting debug logs; click log button next to test to open exported csv file locally.
+Debugging log export is supported. Click the Log button next to the test to open the exported csv file locally.
 
-![image-20240701164246937](./img/image-20240701164246937.png)
+![image-20240701164246937](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701164246937.png)
 
-![image-20240701164323987](./img/image-20240701164323987.png)
+![image-20240701164323987](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701164323987.png)
 
-## Logic and Scene Debugging Window
+# Logic and Scenario Debug Window
 
-When you start debugging, both the debugging window and a logic and scene debugging window will open simultaneously. By default, it is minimized:
+After starting debugging, a Logic and Scenario Debug window will open at the same time as the Debug window. It is minimized by default:
 
-### Logic Debugging
+![image-20240701153533847](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701153533847.png)
 
-You can monitor specific script segments by setting breakpoints. By adding breakpoints to nodes in the script editor or in the logic debugging area, your game process will pause at the breakpoint and output the node's variable values to the context list below.
+## Logic debugging
 
-For nodes with breakpoints already set, you can disable or remove them via the right-click menu.
+You can monitor the scripting process by setting breakpoints. You can add breakpoints to nodes in the script editor or in the logic debugger to pause the game process when it reaches the breakpoint and output the variable values of the node to the context list below.
 
-Disabling a breakpoint means it won't be active, but you'll still see a gray breakpoint icon on the node.
+![image-20240701154716393](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701154716393.png)
 
-Edits made to scripts during debugging won't immediately reflect in the game; you'll need to restart debugging for changes to apply. Edits to breakpoints in logic debugging don't affect the script; they're for verifying temporary content during that debug session.
+![image-20240701154829188](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701154829188.png)
 
-When a breakpoint is active, the game will enter a paused state.
+For nodes with added breakpoints, you can close or delete the breakpoints via the right-click menu.
 
-The logic debugging window will default to displaying the current script at the breakpoint with highlighted variables.
+![image-20240701154920644](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701154920644.png)
 
-Clicking "Step" will advance the game one node at a time.
+Closing a breakpoint means that it will not take effect, but you can still see a gray breakpoint symbol on the node.
 
-Clicking "Continue" will run the game to the next breakpoint. If no further breakpoints exist, it will proceed with normal gameplay.
+![image-20240701155119604](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701155119604.png)
 
-You can also browse all breakpoints in the breakpoint list, arranged by script name and node name where the breakpoint is located.
+Edits made to the script during debugging will not be immediately reflected in the game. You need to restart debugging to apply the new changes.
+Edits to breakpoints during logic debugging will also not affect the script. Breakpoints are used during logic debugging to test temporarily required confirmations during debugging.
 
-You can quickly toggle a breakpoint's active status using the checkbox before it (applies only to that debug session).
+When a breakpoint takes effect, the game will pause.
 
-The dot before a breakpoint: red indicates it's currently stopped at this breakpoint, gray means it hasn't been triggered.
+![image-20240701155614772](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701155614772.png)
 
-### Scene Debugging
+The logic debug window will display the script where the current breakpoint is located and highlight the variable by default.
 
-In scene debugging, you can view nearly all entities within the game.
+![image-20240701160057599](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701160057599.png)
 
-The hierarchy panel in scene debugging displays not only custom entities you've added but also abstract entities (like global or turn-based) and hidden entities.
+Clicking on the step will cause the game to run down one node at a time.
 
-You can modify entity properties in real-time via the inspector panel on the right and observe corresponding behavior in the debug window. This helps confirm design behavior in real-time.
+![image-20240701160431891](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701160431891.png)
 
-Clicking the dot next to an entity in the left hierarchy panel adds it to the watch list.
+![image-20240701160447394](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701160447394.png)
 
-Entities added to the watch list are easy to find there. You can click the minus sign in the watch list to stop watching an entity.
+Click to continue, the game will run to the next breakpoint. If there is no breakpoint next, it will run normally.
 
-The watch list is only effective for that debug session.
+![image-20240701160707713](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701160707713.png)
 
-Clicking the restart button at the top right of scene debugging restarts the game. This is equivalent to closing and starting a new debug session, meaning all content relevant to that session will be refreshed.
+![image-20240701160725022](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701160725022.png)
 
-**Console and Performance:**
+You can also view all breakpoints in the breakpoint list, which is arranged according to the rule of script name-node name where the breakpoint is located.
 
-Similar to the console and performance monitoring interface of the debugging window.
+![image-20240701160911720](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701160911720.png)
 
-The console and performance monitoring in scene debugging mainly target client information.
+You can quickly change the enable state of a breakpoint (only for the current debugging) by checking the box in front of the breakpoint.
 
-Starting monitoring in performance allows real-time observation of entity count, network data throughput, and memory usage.
+Dot in front of breakpoint: red means currently stopping at this breakpoint, gray means the breakpoint is not triggered.
+
+## Scenario debugging
+
+In scenario debugging, you can view the list of almost all entities in the game.
+
+![image-20240701162119266](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701162119266.png)
+
+The hierarchical panel for scene debugging not only displays the custom entities you have defined in the scene, but also abstract entities (e.g. global, turn) and hidden entities.
+
+You can modify the properties of entities in real time in the viewing panel on the right and view the corresponding display in the debugging window. This helps you to confirm the display of some designs in real time.
+
+Click the dot to the right of an entity in the hierarchical panel on the left to add the entity to the monitoring list.
+
+![image-20240701162544573](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701162544573.png)
+
+![image-20240701162611557](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701162611557.png)
+
+Entities added to the watchlist can be easily found in the watchlist. You can click the minus sign in the watchlist to stop monitoring this entity.
+
+![image-20240701162811719](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701162811719.png)
+
+![image-20240701162823537](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701162823537.png)
+
+The watch list only works for the current debugging session.
+
+Click the restart button in the upper right corner of the scene debugging, and the game will restart. This is equivalent to closing debugging and starting it again. This means that all content that affects the current debugging session will be refreshed.
+
+![image-20240701162904668](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701162904668.png)
+
+**Console and performance:**
+
+![image-20240701163057754](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701163057754.png)
+
+The console and performance monitoring interface is similar to the debug window.
+
+The console and performance monitoring in scenario debugging are mainly for client information.
+
+Starting monitoring in performance monitoring allows you to observe the number of entities, network data throughput and memory usage in real time.
+
+![image-20240701163251647](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/05-Debug/image-20240701163251647.png)

@@ -1,161 +1,188 @@
-# Script - User Manual
+# Scripts
 
-Scripts are used to control the game process, operating on specific objects under appropriate conditions to achieve logic that cannot be easily accomplished with built-in objects.
+Scripts are used to control the game's progress by manipulating specific objects under the right conditions, and thus realizing logic that is not possible or difficult to achieve by relying on self-contained objects.
 
-## Distinction of Script Types
+## Distinction between script types 
 
-### Visual and Code Scripts
+## Block and code scripts 
 
-We offer two ways to edit scripts: Visual and Code.
+We provide two ways to edit scripts: block scripts and code.
 
-![image-20240718182931412](./img/image-20240718182931412.png)
+![image-20240718182931412](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240718182931412.png) 
 
-Visual scripts use visual elements for script editing, making it more intuitive and easier to operate. However, complexity increases rapidly when writing complex logic, making maintenance difficult.
+Block scripts are more intuitive and easy to use with visual blocks for script editing. But the complexity rises faster and the script is more difficult to maintain when writing complex logic.
 
-![image-20240718183124409](./img/image-20240718183124409.png)
+![image-20240718183124409](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240718183124409.png) 
 
-Code scripts use code for script editing, offering high flexibility and strong maintainability when handling complex logic.
+Code Scripting Script editing using code is more free and maintainable when dealing with complex logic.
 
-### Server and Client Scripts
+## Server and Client Scripts 
 
-Regardless of visual or code, scripts need to distinguish the running platform: server and client.
-Server scripts can only use server-supported events and interfaces, and the same applies to the client.
+Regardless of block or code, scripts need to differentiate between running platforms: server or client.
+Server scripts can only use events and interfaces supported by the server, and the same applies to clients.
 
-![image-20240718183255210](./img/image-20240718183255210.png)
+![image-20240718183255210](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240718183255210.png) 
 
-> Events that can only run on the server platform
+> Events that can only be run under the server platform 
 
-### **Static Scripts**
+## **Static Scripts**
 
-Scripts can be configured as static scripts:
+A static script refers to a script that is automatically attached to the **global** entity by default.
 
-![image-20240719152909186](./img/image-20240719152909186.png)
+It is a property of a script file and can be enabled or disabled on a client/server script.
 
-Static scripts always run under the global module.
+For **Primitive (graph-based)** scripts, when selected in the **FE Project**, you will find a "Static" checkbox in the **Inspector** panel.
 
-![image-20240719153023952](./img/image-20240719153023952.png)
+For **code-based** scripts, simply add the `static` keyword before the `graph` declaration, like this:
 
-Static scripts can also be mounted on other entities, but be cautious of conflicts with the logic on global entities.
+```go
+static graph Test {
+}
+```
 
-![image-20240722180436604](./img/image-20240722180436604.png)
+After editing the code, remember to go back to **FE** and save.
 
-> Mounting a static script New ECA.eca on a global entity will trigger internal events twice. (Not recommended)
+In the **Global** module of **FE**, you can browse all static scripts.
 
-![image-20240722180506048](./img/image-20240722180506048.png)
+Using static scripts makes visual scripting easier. You can focus on editing them in the script editor without manually opening the global module and attaching them.
 
-![image-20240722180749960](./img/image-20240722180749960.png)
+There is also an extra benefit for **code scripts**—a convenient syntax sugar available for static scripts:
 
-> Configuring New ECA.eca on both Global and Player will trigger internal events once on each entity if supported.
+```go
+// GlobalManager.fcg
+static graph GlobalManager {
+    func MyFunc1() {
+    }
+    func MyFunc2() {
+    }
+}
 
-## Creating Scripts
+// In another file
+import "./GlobalManager.fcg" as GlobalManager
+graph Test {
+    event OnAwake() {
+        GlobalManager.MyFunc1() // Call static script functions directly via dot notation
+        GlobalManager.MyFunc2() // Equivalent to globalEntity<GlobalManager>.MyFunc2(), saves some typing
+    }
+}
+```
 
-Right-click in the editable assets area to create a new script.
+Because static scripts are automatically attached to the global entity, their functions can be directly called by using the script name, without needing to reference `globalEntity`.
 
-![image-20240719143643018](./img/image-20240719143643018.png)
+**Note:** A script attached to the global entity is **not** automatically considered a static script.
+If you want to access `GlobalManager.MyFunc2` directly without specifying the entity, you **must** manually set the script as static.
 
-![image-20240719143706370](./img/image-20240719143706370.png)
+![image-20240719152909186](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719152909186.png)
 
-Select "Create New" when mounting a script:
+# Create a script 
 
-![image-20240719144041369](./img/image-20240719144041369.png)
+Right click in the editable assets area to create a new script 
 
-![image-20240719144112007](./img/image-20240719144112007.png)
+![image-20240719143643018](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719143643018.png) 
 
-![image-20240719144219525](./img/image-20240719144219525.png)
+![image-20240719143706370](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719143706370.png) 
 
-![image-20240719144236787](./img/image-20240719144236787.png)
+Select New when mounting the script: 
 
-![image-20240719144248170](./img/image-20240719144248170.png)
+![image-20240719144041369](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719144041369.png) 
 
-Scripts created this way will automatically mount on the corresponding entity and be named after the current entity.
+![image-20240719144112007](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719144112007.png) 
 
-When creating a script, you need to choose/configure the script type:
+![image-20240719144219525](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719144219525.png) 
 
-1. Server or client script, which affects the events and interfaces available for use.
-2. Visual or code script, which affects the editing method.
+![image-20240719144236787](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719144236787.png) 
 
-## Editing Scripts
+![image-20240719144248170](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719144248170.png) 
 
-Double-click the script file to open it for editing. For editing visual and code scripts, please refer to the following documents:
+New scripts created in this way will be automatically mounted on the corresponding entity and will be automatically named with the name of the current entity.
 
-[Visual Script - User Manual.md](Visual Script - User Manual.md) 
+When creating a script, you need to select/configure the category of the script: 
 
-[Code Script - User Manual.md](Code Script - User Manual.md) 
+1. server script or client script, which affects the events and interfaces that can be used by this script.
+2. block script or code script, this affects how the script is edited.
 
-## Mounting Scripts
+# Editing Scripts 
 
-**Mounting on Modules**:
+Double click on the script file to open it for editing, for block and code scripts please refer to the following documentation: 
 
-![image-20240719145730470](./img/image-20240719145730470.png)
+[Block Scripts-User Manual](/en/tutorial/fe/1-8/)
 
-![image-20240719145743950](./img/image-20240719145743950.png)
+[Code Scripts-User Manual](/en/tutorial/fe/1-9/)
 
-**Mounting on Objects**:
+# Mounting Scripts 
 
-Select the object you want to add a script to, then choose "Add Script" in its inspector panel:
+**Mounting to a Module**: 
 
-<img src="./img/image-20240719151733528.png" alt="image-20240719151733528" style="zoom:67%;" />
+![image-20240719145730470](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719145730470.png) 
 
-![image-20240719151758399](./img/image-20240719151758399.png)
+![image-20240719145743950](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719145743950.png) 
 
-You can choose an existing script or create a new one.
+**Mount to object**: 
 
-**Adding Scripts via Scripts**:
+Select the object you want to add script to, and choose Add Script in its inspector panel: 
 
-We provide an interface for mounting scripts on entities:
+<img src="https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240929154213472.png" alt="image-20240929154213472" style="zoom:67%;" />
 
-Add a script:
+![image-20240719151758399](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719151758399.png) 
 
-![image-20240719151930002](./img/image-20240719151930002.png)
+Again, you can select an existing script or create a new one.
 
-We recommend using the "Check if Script Exists" interface before adding a script to confirm whether the entity already has the same script.
+**Adding scripts using scripts**: 
 
-![image-20240719152647755](./img/image-20240719152647755.png)
+We provide an interface that can mount scripts for entities: 
 
-## Unmounting Scripts
+Adding scripts: 
 
-To statically unmount scripts before game launch, simply find the mounting location and click the minus sign:
+![image-20240719151930002](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719151930002.png) 
 
-![image-20240719152520504](./img/image-20240719152520504.png)
+It is recommended that you use the Existing Scripts interface to confirm that the entity already has the same script before adding it.
 
-To dynamically unmount scripts after game launch, use the "Delete Script" interface:
+![image-20240719152647755](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719152647755.png) 
 
-![image-20240719152550242](./img/image-20240719152550242.png)
+# Uninstalling Scripts 
 
-Similarly, we recommend confirming that the entity indeed has the script you want to delete before proceeding:
+To statically uninstall a script before starting the game, simply find the mount and click the minus sign: 
 
-![image-20240719152717738](./img/image-20240719152717738.png)
+![image-20240719152520504](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719152520504.png) 
 
-## Managing Script Files
+To uninstall the script dynamically after the game has started, use the Delete Script interface: 
 
-When creating a new script while adding one, an ECA folder will automatically be created under Assets to store new scripts:
+![image-20240719152550242](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719152550242.png) 
 
-![image-20240719153237929](./img/image-20240719153237929.png)
+Again, we recommend confirming that the entity does indeed mount the script to be deleted before deleting: 
 
-> We also recommend using folders for categorizing created scripts
+![image-20240719152717738](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719152717738.png) 
 
-### Deleting
+# Managing Script Files 
 
-Use the Delete shortcut key or right-click on assets to delete scripts:
+If you create a new script when adding a script, it will automatically create a new ECA folder under the Assets folder to hold the new script: 
 
-![image-20240719153352815](./img/image-20240719153352815.png)
+![image-20240719153237929](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719153237929.png) 
 
-Entities that have this script mounted will show a yellow exclamation error:
+> We also recommend that you use folders to categorize the scripts you create 
 
-![image-20240719153705926](./img/image-20240719153705926.png)
+## Delete 
 
-### Copying
+Scripts can be deleted by using the shortcut Delete, or by right-clicking on the script in the asset: 
 
-Use Ctrl+C, Ctrl+V shortcuts or right-click menu to copy scripts. The copied script name will be the original name plus (X), where X is copy number -1.
+![image-20240719153352815](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719153352815.png) 
 
-![image-20240719153524358](./img/image-20240719153524358.png)
+For entities that already have this script mounted, an error with a yellow exclamation point will appear: 
 
-### Renaming
+![image-20240719153705926](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719153705926.png) 
 
-Use F2 shortcut key or right-click menu to rename scripts.
+## Copy 
 
-![image-20240719153932338](./img/image-20240719153932338.png)
+Using the shortcut keys Ctrl+C, Ctrl+V, or using the right-click menu, you can copy the script. The copied script name is the name of the original script plus (X), and X is the number of copies - 1. 
 
-Scripts cannot have duplicate names; if you attempt to rename with an existing name, an error will occur and cancel the renaming:
+![image-20240719153524358](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719153524358.png) 
 
-![image-20240719154032997](./img/image-20240719154032997.png)
+## Rename 
+
+Using the shortcut F2, or using the context menu, you can rename the script.
+
+![image-20240719153932338](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719153932338.png) 
+
+Scripts cannot be renamed, naming a script with the same name as an existing script will result in an error and cancel the renaming: 
+
+![image-20240719154032997](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/04-Scripts/image-20240719154032997.png)

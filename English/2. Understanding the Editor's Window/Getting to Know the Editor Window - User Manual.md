@@ -1,346 +1,527 @@
-# Understanding the Editor Window
+# Getting to Know the Editor Window
 
-## Project Management Interface
+# Project Management Interface
 
-### Layout
+## Layout
+![image-20240626160842706](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626160842706.png)
 
-### Layout Introduction
+## Layout introduction
 
-#### 1. Projects and Other Interfaces
+### 1. Projects and other interfaces
 
-In the project manager window, there are four tabs:
+![image-20240626175709636](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626175709636.png)
 
-1. Project Management: Manage local projects.
-2. Data Center: Data of maps published by the current account.
-3. Resource Store: Provides various resources needed for game development.
-4. My Resources: Resource management for purchases made by the current account.
+In the Project Manager window, there are four tabs:
 
-This section mainly introduces the content in **1. Project Management**.
+**1. Project Management**, which manages local projects.
+**2. Data Center**, where the data for the currently published maps of the current account is stored.
+**3. Asset Store**, where various resources required for game development are provided.
+**4. My Assets**, where the assets purchased by the current account are managed.
 
-#### 2. Create/Open Project
+This article mainly introduces the content in **1. Project Management**.
 
-##### Create Project
+### 2. Create/Open Project
 
-Clicking the Create Project button opens the new project interface.
+#### Create Project
+
+![image-20240626161853982](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626161853982.png)
+
+Tap the New Project button to open it.
+
+![image-20240626170033082](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626170033082.png)
 
 1. **Template Type**: We have prepared several template categories for you, including:
 
-   Basic Templates: These are templates without code. We provide some initial maps with different sizes and preset scenes that you can choose based on your needs.
+   Basic Templates, which are templates without code. We provide some initial maps, which will differ in size and preset scenes, and can be selected according to your needs.
 
-   Gameplay Templates: These templates come with gameplay code and offer some popular game extensions that you can use directly or customize.
+   Gameplay templates are templates with code for gameplay. They provide some popular game extensions for you to use directly or customize and modify based on them.
 
-2. **Template Selection**: After selecting a template category, you can choose a specific template, and view its brief description in section 3.
+2. **Template selection**: After selecting the general category of the template, you can select the specific template. The template introduction can be viewed in 3.
 
-3. **Template Description**: A brief introduction of the template.
+3. **Template introduction**: A brief introduction to the template.
 
-4. **Project Name and Storage Path**: You can freely name and modify the path, but ensure no projects with the same name exist in the same path (regardless of using the same template), otherwise, you'll get a prompt.
+4. **Project Name and Location**: You can name and modify the path freely, but make sure that there is no project with the same name in the same path, otherwise you will get the following tips:
 
-5. **Cancel and Create**: Cancel closes this window without saving any edits. Create will set up a new project with the current settings and open it automatically.
+![image-20240626170944870](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626170944870.png)
 
-##### Open Project
+5.**Cancel and Create**: Cancel will close this window and any edits you have made will not be saved. Create will create a new project with the current settings and open it automatically.
 
-Opening a project will load an existing local project and add it to your project management list. Clicking the **Open Project** button will expand the system's file selection interface, where you need to choose the project folder, usually named after the project, with subfolders and files inside it.
+#### Open Project
 
-For example, this "My project" folder is a project folder:
+![image-20240626171327988](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626171327988.png)
 
-Its subdirectory should be:
+Open Project will open an existing project on your local PC and add it to your project management list.
+Tap Button **Open Project** will open the system file selection window, where you need to select the project folder, which is named after the project name, and the next level is the folders and files in your project.
+For example, this My project folder below is a project folder:
 
-> This is a newly created blank project; edited projects may have different structures.
+![image-20240626175128685](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626175128685.png)
 
-Selecting "My project" or not choosing any files or folders after expanding its hierarchy will successfully open the project. If the hierarchy is incorrect or incomplete, you'll receive a prompt.
+Its files should be:
 
-In some cases, additional prompts may appear; these won't prevent you from opening the project but may cause issues when modifying it.
+![image-20240626175151635](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626175151635.png)
 
-#### 3. Project Sorting
+> This is a blank project that has just been created. 
 
-All projects you've created or opened are saved on the main interface of the project management screen, where you can sort them.
+Select My project to open the project. If the wrong folder is opened or the project is incomplete, Tips:
 
-Sort by project name to toggle between ascending and descending order.
+![image-20240626175222387](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626175222387.png)
 
-Sort by modification time to toggle between ascending and descending order.
+In some cases, you may also get some tips like below. The tips will not prevent you from opening the project, but you may encounter some problems with the modifications to the project.
 
-Sort by project version to toggle between ascending and descending order.
+![image-20240626175438377](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626175438377.png)
 
-You can click the star button in a project to favorite it:
+### 3. Project sorting
 
-Activating favorites in the menu will pin favorited projects to the top.
+![image-20240626175852577](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626175852577.png)
 
-Favorited and non-favorited projects are sorted separately in descending order of modification time.
+All the open projects you have created are saved on the main screen of the project management interface, and you can sort them.
 
-> Only one sorting rule can be used at a time.
-> Favoriting is also a sorting rule and cannot be used simultaneously with other sorts.
+**Sort by Project Name**, you can switch between ascending and descending order.
 
-#### 4. Search Existing Projects
+**Sort by Modification Time**, you can switch between ascending and descending order.
 
-You can search saved projects; searches match both project names and paths. Only projects containing input from the search box in their name or path will appear.
+**Sort by Project Version**, you can switch between ascending and descending order.
 
-Search results are sorted by modification time in descending order, with the most recently modified at the top.
+You can favorite projects by tapping the Star button in the project:
 
-> Other sorting settings do not apply during searches.
+![image-20240626180846474](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626180846474.png)
 
-#### 5. Settings and User
+Activating Favorites in the menu will show your favorite projects at the top
 
-##### Settings
+![image-20240626181207940](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626181207940.png)
 
-​	**Language**: Change language display in real-time for both project management and editing interfaces. However, real-time changes do not affect custom fields.
+Sorted projects and unsorted projects are sorted in reverse chronological order of modification
 
-​	**Check for Updates**: Check if there's a newer version of the editor available.
+> Only one sorting rule can be used at a time
+> Bookmarking is also a sorting rule and cannot be used in conjunction with other sorting rules
 
-​	**Update Log**: View update details.
+### 4. Search for existing projects
 
-​	**About**: Coming soon.
+![image-20240626181449833](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626181449833.png)
 
-##### User
+Right-click on a saved project to search for it. The search will match both the project name and the project path. Only projects whose name or path contains the content in the search box will be displayed.
 
-You can manage logged-in users; login is required to use the project editor properly.
+![image-20240626182059114](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626182059114.png)
 
-### Operate Projects
+The searched projects are sorted in reverse chronological order, i.e. the last modified ones are at the top.
 
-Right-clicking a project opens the operation panel:
+Other sorting settings do not take effect when searching
 
-**Open in Explorer:** Browse projects in local explorer.
+### 5. Settings and users
 
-**Rename:** Rename a project.
+![image-20240626182339880](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626182339880.png)
 
-> Project names cannot contain special characters as indicated by prompts.
+#### Settings
 
-**Delete:** Delete a project
+![image-20250121163211644](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20250121163211644.png)
 
-Clicking delete prompts a secondary confirmation screen:
+**Language**: You can change the language shown in the project management and project editing interfaces in real time. However, the language that is changed in real time will not take effect on custom fields.
 
-Selecting **Delete Local Files as Well** removes the project's folder from your local storage.
-Not selecting **Delete Local Files as Well** keeps the folder locally, allowing you to re-add it to your management panel anytime by opening it again.
+**Update and About**, you can view the editor version and check whether an update is needed.
 
-### Multiple Project Instances
+**Log of Updates** allows you to view the content of the update.
 
-Clicking a project opens it; multiple projects can be opened simultaneously.
+#### Users
 
-> When working on multiple projects, ensure you're editing the intended one.
-## Engineering Edit Interface
+can operate on logged-in users. You need to log in to use the project editor normally.
 
-### Layout
+## Manipulate Projects
 
-![image-20240627104624600](./img/image-20240627104624600.png)
+Right-tap on a project to open the Manipulate Project Panel
 
-> Elements 3-7 are unique to scene editing and will be explained in detail in other articles.
+![image-20240626182703418](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626182703418.png)
+
+**Show in resources:** Browse the project in the Local Explorer
+
+**Rename:** Rename the project.
+
+![image-20240626182814319](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626182814319.png)
+
+> Project names cannot contain special characters as per Tips
+
+**Delete:** Delete project
+
+Tap to delete will bring up a second confirmation UI
+
+![image-20240626182909758](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626182909758.png)
+
+Clicking **Delete the local file as well** will also delete the project folder from your local storage.
+If you do not select **Delete the local file as well**, the project folder will still exist locally on your device, and you can add it back to the Management Panel at any time by opening the project.
+
+## Open multiple projects
+
+Tap on a project to open it. You can open multiple projects at the same time.
+
+![image-20240626183210281](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240626183210281.png)
+
+> When opening multiple projects, you need to pay attention to whether the project you are editing is the project that needs to be edited
+
+# Project editing interface
+
+## Layout
+
+![image-20240627104624600](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627104624600.png)
+
+> Of these, 3-7 are elements specific to scene editing and will be explained in detail in other articles
 >
-> All windows support resizing by dragging the edges, which helps you focus more on specific aspects during editing.
+> All windows support dragging the border to change the size, which helps you focus more on editing in a certain area.
 
-### Layout Introduction
+## Layout introduction
 
-#### 1. Menu
+### 1. Menu
 
-The menu is used for operations on the entire project and is categorized as follows:
+The menu is used to operate on the entire project and is divided into several categories:
 
-1. File: Operate on project files, configure system settings, and exit project editing.
-2. Edit: Save, undo, redo operations on the entire project, and edit operations on selected objects.
-3. Assets: Import/export assets and perform online purchase-related operations.
-4. Tools: Tools provided for developers, which can be used as needed.
-5. Help: Provides user manuals, instructions, and other assistance.
+1. File: Operate on project files, make system settings, and Exit project editing.
+2. Edit: Save, undo, and restore the entire project, and edit selected objects.
+3. Assets: Operations related to asset import/export and online purchase.
+4. Tools: Tools provided to developers for optional use.
+5. Help: Provides user manuals, instructions, and other help.
 
-#### 2. File Tabs
+### 2. File tab
 
-All opened files, regardless of type, are arranged sequentially in the tabs.
+All open files, regardless of category, are arranged in order on the tab.
 
-![image-20240627112411582](./img/image-20240627112411582.png)
+![image-20240627112411582](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627112411582.png)
 
-Files that have been modified but not saved are marked with an "*". Only modifications to file content (or file deletion) will be marked; changes to file location or tab order will not be marked.
+Unsaved modified files are marked with an asterisk. Only changes to the Content (or removing files) are marked, not changes to the Position of the files or the order of the tabs.
 
-![image-20240627112526768](./img/image-20240627112526768.png)
+![image-20240627112526768](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627112526768.png)
 
-The currently selected file is highlighted with a yellow underline.
+The file that is being selected is marked in yellow with an underline.
 
-![image-20240627165756074](./img/image-20240627165756074.png)
+![image-20240627165756074](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627165756074.png)
 
-Depending on the type of file selected, the main page will switch to the corresponding file type's editing interface. This includes but is not limited to:
+Depending on the selected file type, the main page will change to the editing interface for the corresponding file type. Including but not limited to:
 
-1. Scene Editing
-2. Element Script Editing
-3. Behavior Tree Editing
+1. Scene Editor
+2. Primitive Script Editor
+3. Behavior Tree Editor
 4. Animation Controller
 5. Player Data
-6. UI Files
+6. UI File
 
-You can rearrange the order of tabs by dragging them.
+You can drag the tabs to change their order.
 
-![image-20240627113542674](./img/image-20240627113542674.png)
+![image-20240627113542674](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627113542674.png)
 
-![image-20240627113603982](./img/image-20240627113603982.png)
+![image-20240627113603982](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627113603982.png)
 
-When the number of open files reaches a certain limit, you can scroll through the tab directory using the mouse wheel. Quick jump buttons to the first/last tab will also appear at the ends of the tab row.
+When a certain number of files have been opened, you can scroll through the tab list using the scroll wheel. There are also buttons at the beginning and end of the tabs for quickly jumping to the first/last tab.
 
-![image-20240627114139363](./img/image-20240627114139363.png)
+![image-20240627114139363](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627114139363.png)
 
-Right-clicking on a file tab opens an operation menu.
+Right-click on a file on a tab to open the context menu.
 
-![image-20240627115602279](./img/image-20240627115602279.png)
+![image-20240627115602279](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627115602279.png)
 
-Closing tabs to the right will close all tabs to the right of that file; closing other tabs will close all tabs except for that one.
+Close the right tab to close all tabs on the right side of the file, and close other tabs to close all tabs except this one.
 
-> The main scene cannot be closed.
-> If there are unsaved changes, prompts will appear sequentially.
+> The main scene will not be closed.
+> Tips will pop up in sequence for files that have not been saved.
 
-Viewing file location will locate the file in section 9: Project Assets.
+View File Position will locate the file in the 9. Project Assets interface.
 
-Opening local file location will locate the file on your local system.
+Open Local File Position will locate the file in your Local Position.
 
-#### 3. Object Selector
+### 3. Object selector
 
-![image-20240627143250860](./img/image-20240627143250860.png)
+![image-20240920103510439](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240920103510439.png)
 
-The Object Selector is an editor for scene files where you can choose objects to place in your scene.
+The object selector is the editor for the scene file, where you can select the objects to be laid out in the scene.
 
-We offer several categories:
+We offer several categories, which are
 
-![image-20240627145604290](./img/image-20240627145604290.png)
+![image-20240920103528508](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240920103528508.png)
 
-Functional Objects:
+Basic Structures:
 
-Objects with inherent logic that can be used to build gameplay.
+basic structure, sound or vision effect.
 
-![image-20240627145623399](./img/image-20240627145623399.png)
+![image-20240920103548570](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240920103548570.png)
 
-Structures and Decorations:
+Functional objects:
 
-Standalone structures or decorations without logic.
+objects with their own logic that can be used to build gameplay.
 
-![image-20240627145643635](./img/image-20240627145643635.png)
+![image-20240920103603585](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240920103603585.png)
 
-Building Related:
+Modular Component:
 
-Complete buildings or furniture without logic.
+The structure or decoration of various themes, classified by theme.
 
-![image-20240627145657786](./img/image-20240627145657786.png)
+![image-20240920103621217](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240920103621217.png)
 
-Themed Objects:
+Architecture:
 
-Various themed structures or decorations categorized by theme, used to create specific thematic atmospheres without logic.
+The complete building.
 
-Common Objects:
+![image-20240920103637449](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240920103637449.png)
 
-You can right-click to set some objects as common and view them under Common Objects:
+Scene items:
 
-![image-20240627153355934](./img/image-20240627153355934.png)
+furniture, decorations, props, and other decorative parts.
 
-![image-20240627153413890](./img/image-20240627153413890.png)
+![image-20240920103647455](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240920103647455.png)
 
-Objects set as common can have this setting removed.
+Nature:
 
-![image-20240627153459630](./img/image-20240627153459630.png)
+decorated with trees, rocks, etc.
 
-![image-20240627153521199](./img/image-20240627153521199.png)
 
-Objects support search functionality.
+Frequently used objects:
 
-![image-20240627153249793](./img/image-20240627153249793.png)
+You can right-click to mark some items as frequently used, and then view them in the frequently used items:
 
-> Detailed instructions on how to place objects in scenes will be provided in other articles.
+![image-20240627153355934](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627153355934.png)
 
-#### 4. Terrain Editor
+![image-20240627153413890](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627153413890.png)
 
-Allows editing of scene terrain, such as creating mountains and valleys.
+has been set as a frequently used object. You can cancel this setting.
 
-> Detailed instructions will be provided in other articles.
+![image-20240627153459630](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627153459630.png)
 
-#### 5. Scene Editor
+![image-20240627153521199](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627153521199.png)
 
-The Scene Editor visually displays elements within the current scene.
-You can modify scenes using the Object Selector (3) and Terrain Editor (4).
+Object support search.
 
-> Detailed instructions will be provided in other articles.
+![image-20240627153249793](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627153249793.png)
 
-#### 6. Hierarchy
+> How to arrange objects in Scene is explained in detail in a separate article.
 
-The hierarchy displays all custom objects in a scene and their hierarchical relationships. You can build parent-child relationships through the hierarchy menu.
+### 4. Landscape Editor
 
-> Detailed instructions will be provided in other articles.
+The Landscape Editor allows you to edit the landscape, for example to create mountains and valleys.
 
-#### 7. Inspector
+> More information can be found in a separate article.
 
-Selecting an object in the Scene Editor (5) displays all components of that entity in the Inspector panel.
+### 5. Scene Editor
 
-![image-20240627154035031](./img/image-20240627154035031.png)
+The Scene Editor provides a visual representation of the elements in the current scene.
+You can modify the scene using the 3. Object Selector and 4. Landscape Editor.
 
-Here you can modify component parameters and add or remove custom components.
+> More information can be found in a separate article.
 
-> Detailed instructions will be provided in other articles.
+### 6. Hierarchy
 
-#### 8. Overview
+The Hierarchy shows all the Custom Objects in the scene and their hierarchical relationships. You can use the Layer menu to set up the parent-child relationships between objects.
 
-The Overview displays a certain type of file within your project, depending on the file type selected in File Tabs (2). The image shows an Element Script file selection:
+> This will be explained in detail in a separate article.
 
-![image-20240627154516765](./img/image-20240627154516765.png)
+### 7. Inspector
 
-Double-clicking any file in the Overview opens it for editing. If it's not already open in File Tabs (2), it will open; if it's open but not selected, it will switch to it.
+Select an object in the 5. Scene Editor and the Inspector Panel will display all the components of this Entity.
 
-Editing any file in a tab automatically highlights its corresponding file in the Overview more brightly than manual selection:
+![image-20240627154035031](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627154035031.png)
 
-![image-20240627155141328](./img/image-20240627155141328.png)
+Here you can modify component parameters and add or delete custom components.
 
-Currently editing New ECA(12).eca while New ECA(11).eca is selected in the Overview.
+> This will be explained in detail in other articles.
 
-Right-clicking any file in the Overview allows these operations:
+### 8. Overview
 
-![image-20240627155300899](./img/image-20240627155300899.png)
+The overview shows a certain type of file in your project, depending on the file type you selected on the 2. Files tab. The figure shows the case where the metafile script file is selected:
 
-Save, rename, delete, or browse this file resource locally.
+![image-20240627154516765](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627154516765.png)
 
-The Overview supports search functionality mainly for locking onto a specific file when there are many files of that type.
+Double-clicking on any file in the overview will open it for editing. If the file is not open in the Files tab, it will open. If it is open and not selected, it will be selected.
 
-![image-20240627155408257](./img/image-20240627155408257.png)
+Editing any file in the tab will automatically highlight the corresponding file in the overview. This highlighting will be slightly brighter than if you manually select it in the overview:
 
-Clicking the plus button creates a new file of that type stored in its designated folder:
+![image-20240627155141328](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627155141328.png)
 
-| File Type     | Extension   | Folder              |
-| ------------- | ----------- | ------------------- |
-| Element Script| .eca        | Assets/ECA          |
-| Behavior Tree | .xbt        | Assets/XBT          |
-| Scene         | .scene      | Assets/Scene        |
-| Animation Controller | .ac  | Assets              |
-| Player Data   | .playerdata | Not supported for new creation |
-| UI Files      | .ui         | Assets/UI           |
+The file being edited is New ECA(12).eca, and the file selected in the overview is New ECA(11).eca.
 
-#### 9. Project Assets
+Right-click on any file in the overview to perform the following operations:
 
-Project Assets display your project's asset files. You can categorize files here for easier resource location.
+![image-20240627155300899](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627155300899.png)
 
-![image-20240627160513593](./img/image-20240627160513593.png)
+Save, rename, remove or browse the file resource locally.
 
-Content within the Assets folder is customizable; other folders are not modifiable. You can view these unmodifiable official assets.
-The editor only recognizes corresponding folders within local files; other folders won't appear in the editor.
+The overview supports search, which is mainly used to locate a specific file when there are too many of this type.
 
-A newly created blank project's Assets folder looks like this:
+![image-20240627155408257](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627155408257.png)
 
-![image-20240627161500473](./img/image-20240627161500473.png)
+Tap the Plus button in the overview to create a new file of this type. The new file will be saved in the corresponding specified folder:
 
-The left area shows folder structure; only folders appear here. The right shows specific files; both folders and files appear here. You can zoom display on the right using Ctrl+mouse wheel. We added an ECA file and minimized it here:
+| File Type | Extension | Folder |
+| ---------- | ----------- | ------------------ |
+| Entity Script | .eca | Assets/ECA |
+| Behavior Tree | .xbt | Assets/XBT |
+| Scene | .scene | Assets/Scene |
+| Animation Controller | .ac | Assets |
+| Player Data | .playerdata | Not supported in the overview when creating new ones |
+| UI Files | .ui | Assets/UI |
 
-![image-20240627161657357](./img/image-20240627161657357.png)
+### 9. Project Assets
 
-In folder structure, you can create new content using the New button or import local assets using Import button.
+Project Assets shows the asset files in your project. You can right-click on the file name to sort the files by their position, so that you can find the Resource files you need more easily.
 
-![image-20240627161910006](./img/image-20240627161910006.png)
+![image-20240627160513593](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627160513593.png)
 
-For new creation operations, right-click a folder in folder structure or right-click blank space in file area to create content within specified folder:
+The content of the Assets folder can be customized, while the content of other folders cannot be modified. You can view these official assets that cannot be modified.
+The editor will only recognize the corresponding folders in the Local file, and other folders in the project will not appear in the editor.
 
-![image-20240627162040085](./img/image-20240627162040085.png)
+The Assets folder in a new, blank project is shown in the figure
 
-> This is based on version v1.9.0's new content list; supported file types may vary by version
+![image-20240627161500473](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627161500473.png)
 
-#### 10. Console
+The left side of the image shows the folder structure. Only folders will appear on the left. The right side shows the specific files, and both folders and files will be displayed on the right. You can use Ctrl + wheel to zoom in and out on the right side. Let's add a new ECA file and scale it down.
 
-Used to display overall game prompts, warnings, and errors. There's also a console under Debug (12) mainly for displaying information during a single game run.
+![image-20240627161657357](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627161657357.png)
 
-![image-20240627163503336](./img/image-20240627163503336.png)
+In the folder structure, you can create new content using the New button or import your local assets using the Import button.
 
-Using Console provides time points for each node occurrence along with warning/error information aiding debugging efforts:
+![image-20240627161910006](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/ image-20240627161910006.png)
 
-![image-20240627170236511](./img/image-20240627170236511.png)
+For new operations, right-click the folder in the folder structure to select New, or right-click in the empty space in the file area to create new content in the specified folder.
 
-Clicking categories toggles their display:
+![image-20240627162040085](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627162040085.png)
 
-![image-20240627170218872](./img/image-20240627170218872.png)
+> This is a list of new content based on version 1.9.0. The supported file types may differ depending on the version
 
-Using search matches prompt information containing search content within displayed categories; right-side category display also changes according to search results' category situation:
+### 10. Console
 
-![image-20240627170444083](./img/image-20240627270444083.png)
+Used to display Tips, Warnings and Wrongs for the entire game. There is also a console in 12. Debug, which is mainly used to display information during a single run of the game.
+
+![image-20240627163503336](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627163503336.png)
+
+Using the console, you can obtain the time points at which each node occurs, as well as warnings and error messages, which is helpful for debugging.
+
+![image-20240627170236511](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627170236511.png)
+
+Tap a category to show or hide the category
+
+![image-20240627170218872](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627170218872.png)
+
+Use the search function to display tips that match the content of the search in the displayed categories. The category display on the right will also change to show the categories of the search results.
+
+![image-20240627170444083](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627170444083.png)
+
+### 11. Modules
+
+The modules tab allows you to manage the modules of your project. Some key modules are pre-loaded, and some optional modules are available for selection as needed.
+
+![image-20240627163904567](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627163904567.png)
+
+Right-click on the module to load it if it is not already loaded. Refresh the page categories by switching between tabs.
+
+![image-20240627164249422](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627164249422.png)
+
+![image-20240627164215467](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627164215467.png)
+
+Some of the loaded modules cannot be uninstalled. Modules that can be uninstalled can be uninstalled using the uninstall button. Page categories will refresh when switching tabs.
+
+![image-20240627164400288](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627164400288.png)
+
+![image-20240627164446047](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627164446047.png)
+
+When uninstalling a module, you need to pay attention to whether the API, event, or asset of the module has been used. Directly uninstalling the module may cause unexpected behavior.
+
+![image-20240627164420492](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627164420492.png)
+
+> Important module content will be described in other articles.
+
+### 12. Debug
+
+Debug is a way to visually inspect the content of the game and verify that the performance meets expectations. Using Debug will open at least one game process, and you can see if the game is running as expected.
+
+The entire project is automatically saved when using Debug.
+
+Debug supports multiple clients debugging at the same time. Select the count of clients, and the corresponding number of clients will be opened. They will be treated as different Players participating in the game. Up to eight clients can run simultaneously.
+
+![image-20240627164958392](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627164958392.png)
+
+Debugging has some configuration items that can be modified to achieve the debugging environment you need.
+
+![image-20240627165037550](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20240627165037550.png)
+
+> Debugging is described in detail in other articles.
+
+### 13. Basic information 
+
+Basic information shows the current project name and project ID.
+
+## System Settings
+
+You can open the system settings by clicking on the right side of the debug button or through the system menu
+
+![image-20250122171740789](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20250122171740789.png)
+
+![image-20250122171806443](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20250122171806443.png)
+
+The system settings are divided into the following three parts:
+
+1. Project Settings
+
+2. Map Performance Optimization
+
+3. Debug Settings
+
+### Project Settings
+
+![image-20250122163919541](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20250122163919541.png)
+
+#### Basic Information Info
+
+The basic information contains the relevant settings of your map, which can be used to publish the map.
+
+#### Build Settings
+
+Build settings are the relevant settings for your build.
+
+#### Localization
+
+Localization determines the language display of your map in different language environments. By default, a key.csv form has been created for you to manage texts that need to be displayed in multiple languages.
+
+![image-20250122165520818](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20250122165520818.png)
+
+### Map Performance Optimization
+
+![image-20250122174719954](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20250122174719954.png)
+
+#### Streaming
+
+Improve performance by dividing the scene into grids and dynamically loading and unloading resources based on grid distance.
+
+Only objects with static selected will participate in streaming.
+
+![image-20250122171317023](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20250122171317023.png)
+
+#### Server Loading Settings
+
+Enabling server loading area will create an area in the current scene. Only objects in the area will have collisions, which is used to save performance.
+
+![image-20250122170057150](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20250122170057150.png)
+
+#### Auto LOD Simplification
+
+You can manage your Auto LOD models. It only applies to imported models.
+
+### Debug Settings
+
+![image-20250122174737439](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/02-EditorWindow/image-20250122174737439.png)
+
+#### Starting Language
+
+The starting language determines your debugging client language (not the language of the Craftland Studio PC editor). Different starting languages ​​use different values ​​returned by the "Get Client Language" API.
+
+#### Team Up
+
+Determines how to team up during debugging, whether to automatically assign or assign teams according to settings.
+
+#### Debugging Tool
+
+##### Strict Mode
+
+In strict mode, once an error occurs in the process, debug mode will be exited. This allows for more accurate location of the problem.
+
+##### Debug Mode
+
+Breakpoints will only take effect in debug mode.
+
+##### Performance
+
+Shows how much local storage space the current UI image cache uses. You can free up space by clearing the cache, but the UI image will need to be reloaded the next time it is used.
+
+It is recommended to clean up the cache when there are many projects opened and there is a large amount of content that will no longer be used.

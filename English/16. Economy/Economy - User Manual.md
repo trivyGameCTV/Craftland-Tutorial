@@ -1,252 +1,276 @@
-# Economy - User Manual
+# Economy
 
-## Using the Economy Module
+# Use the economy module
 
-The economy module allows players to purchase items with currency. It's commonly used in built-in HUD templates to quickly set up an in-game store.
+The economy module allows players to purchase items with currency. A built-in HUD template is often used to quickly set up an in-game shop.
 
-![image-20240828152243244](./img/image-20240828152243244.png)
+![image-20240828152243244](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240828152243244.png)
 
-The economy module is optional. To use currency, stores, and related features, you need to load the economy module.
+The economy module is an optional module. To use currency, shops, and other content, you need to load the economy module.
 
-![image-20240827165606183](./img/image-20240827165606183.png)
+![image-20240827165606183](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240827165606183.png)
 
-Once the economy module is loaded, you can use economy-related elements in the script's module category.
+After the economy module has been loaded, you can use economy-related blocks in the Script module category.
 
-![image-20240827185355659](./img/image-20240827185355659.png)
+![image-20240827185355659](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240827185355659.png)
 
-![image-20240903142435204](./img/image-20240903142435204.png)
+![image-20240903142435204](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903142435204.png)
 
-When unloading the economy module, be aware that previously used economy elements will become invalid, which may affect your project.
+You can also add currencies and custom shops using the Economy module.
 
-![image-20240827185437279](./img/image-20240827185437279.png)
+![image-20241114170544374](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114170544374.png)
 
-## Currency and Wallets
+When uninstalling the economy module, please note that all previously used economy module blocks will become invalid, and all custom shops and currencies will be cleared, which may affect your project.
 
-By default, there is only one default currency in the game. Without additional settings, all scenarios using currency will use this default currency.
+![image-20240827185437279](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240827185437279.png)
 
-![image-20240827185019720](./img/image-20240827185019720.png)
+# Currencies and wallets
 
-> 100 default currency
+By default, there is only one default currency in the game. Without additional settings, all Scenes that use currencies are using this default currency.
 
-### Creating New Currency
+![image-20240827185019720](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240827185019720.png)
 
-You can create custom currencies within the economy module.
+> 100 default currencies
 
-![image-20240827185850772](./img/image-20240827185850772.png)
+## New currency
 
-You can name the new currency, choose its icon, and change its color.
+You can create custom currencies in the Economy module.
 
-Currency icons can be selected from built-in images or imported images. Imported images will appear at the bottom of the image selector.
+![image-20240827185850772](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240827185850772.png)
 
-![image-20240827191301715](./img/image-20240827191301715.png)
+You can name the new currency, select an icon for it and change its color.
+
+The currency icon can be selected from the pictures included with the project or imported externally.
+
+![image-20240827191301715](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240827191301715.png)
 
 > Custom image
 
-To use newly created currency, set the item properties and player-given currency to this type. See related content below.
+To use the new currency, you need to set the property of the shop item and the currency given to the player to the currency type. See the relevant content below.
 
-### Adding and Removing Currency
+## Add or delete currencies
 
-Currency must be stored in a wallet, so you need to create a wallet for the player first.
+Currencies must be stored in the wallet, so you need to create a wallet for the player first.
 
-![image-20240828151137222](./img/image-20240828151137222.png)
+![image-20241114173612703](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114173612703.png)
 
-> Creating multiple wallets is pointless; only the initially created wallet will be effective.
+> There is no point in creating multiple wallets, only the wallet created initially will take effect.
 >
-> Players initially have no wallet, but any wallet-related operations, such as purchasing, opening the built-in store UI, or displaying currency amounts, will create a wallet for that player.
+> Players initially do not have a wallet, but any operation related to the wallet, such as purchasing, opening the built-in shop UI, and displaying the amount of currency, will create a wallet for that player.
 
-You can add or remove default or custom currencies from a player's wallet.
+Default or custom currencies can be added or removed from the player's wallet.
 
-![image-20240828151500938](./img/image-20240828151500938.png)
+![image-20241114175126212](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114175126212.png)
 
-## Store
+# Shop
 
-### Store Composition
+## Shop composition
 
-![image-20240828152243244](./img/image-20240828152243244.png)
+![image-20241114175200910](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114175200910.png)
 
-A store interface displays a store entity composed of shelves, which are made up of items created as products.
+The shop UI shows a shop entity, which is made up of shelves, which are made up of shop items, which are created.
 
-![image-20240903144305251](./img/image-20240903144305251.png)
+![image-20241114175659172](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114175659172.png)
 
-#### Products
+### Shop items
 
-To use items as products, add them to the product list to make them usable as products.
+To use an item as a shop item, add it to the shop items.
 
-![image-20240828152412538](./img/image-20240828152412538.png)
+![image-20241114175734265](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114175734265.png)
 
-For products, you can adjust properties by setting elements.
+For shop items, you can adjust the properties by setting blocks
 
-![image-20240828152513466](./img/image-20240828152513466.png)
+![image-20241114175807957](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114175807957.png)
 
-You can adjust product price, currency type, purchase limits, product name, icon, and other attributes when used as a product.
+You can adjust the selling price, currency type, purchase restrictions, product name, icon, and other properties of the shop item.
 
-The currency type can be set to default or custom. If custom currency is chosen, purchasing the product requires that currency in the buyer's wallet.
+You can choose between the default currency and a custom currency. If you choose a custom currency, the buyer must have that currency in their wallet before they can purchase the item.
 
-#### Shelves
+### Shelf
 
-Shelves are collections of several products.
+A shelf is a collection of shop items.
 
-![image-20240828152835055](./img/image-20240828152835055.png)
+![image-20241114175837005](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114175837005.png)
 
-> Two shelves in this store
+After creating a number of shop items, they need to be placed on the shelves:
 
-After creating several products, place them on shelves:
+![image-20241114180008073](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114180008073.png)
 
-![image-20240828153035117](./img/image-20240828153035117.png)
+Shelves can be created and then have their properties modified using blocks.
 
-Shelf properties can also be modified after creation.
+![image-20241114180029440](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114180029440.png)
 
-![image-20240828153325349](./img/image-20240828153325349.png)
+### Shop
 
-#### Store
+A shop is a collection of shelves.
 
-A store is a collection of shelves.
+After creating a number of shelves, they are placed in the created shop, and the shop entity can then execute the selling logic normally.
 
-After preparing several shelves, place them into the created store. The store entity can then execute sales logic normally.
+![image-20241114180200725](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114180200725.png)
 
-![image-20240828153500270](./img/image-20240828153500270.png)
+Properties of the shop:
 
-Store properties:
+![image-20241114180215997](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114180215997.png)
 
-![image-20240828153543096](./img/image-20240828153543096.png)
+Below the shop, the amount of the currency type bound to the shop that the player has in their wallet is displayed
 
-Below the store, it will display the amount of store-bound currency type owned by the player's wallet.
+![image-20240828155631068](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240828155631068.png)
 
-![image-20240828155631068](./img/image-20240828155631068.png)
+> By default, only the quantity of the default currency owned by default is displayed
 
-> By default, only the amount of default-owned default currency is displayed.
+## Quickly create a shop
 
-### Creating a Store
+You can quickly create a shop in the Economy module, which is more intuitive and faster.
 
-In sequence, first create the product, then the shelf, and finally the store. This gives us a store entity. However, it cannot yet be displayed in the game.
+![image-20241114170846319](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114170846319.png)
 
-We can display the store in the game using the following methods.
+![image-20241114171344238](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114171344238.png)
 
-#### Vending Machine
+A shelf has already been created for you in the custom shop, and below it you can select the objects that will be your shop items.
+Drag an object into the product grid to create a shop item on that shelf.
 
-There is a functional object in the level objects: the vending machine. Using it can open a specified store entity.
+![image-20241114180704290](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114180704290.png)
 
-![image-20240828153921490](./img/image-20240828153921490.png)
+On the right, you can edit the properties of the selected shop item, including the item's cover image, name, and selling price.
 
-The vending machine has two default configurations:
+![image-20241114180719177](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114180719177.png)
 
-![image-20240828154220013](./img/image-20240828154220013.png)
+Under Settings, you can add multiple items to individual shop items so that players get all the items in a group when they buy. For example, when buying a weapon, you can also get the ammunition.
 
-1. Trigger Range: Activates the store button within a certain distance from the vending machine.
-2. Display Vending Machine: Determines whether the vending machine model is shown on the map.
+![image-20241114181054784](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114181054784.png)
 
-To use a created store entity, you need to add a script to the vending machine.
 
-We encapsulate the logic of creating a store into a function that returns the created store. In the vending machine script, set the store created by this function as the vending machine's store.
 
-![image-20240828154815437](./img/image-20240828154815437.png)
+## Using shops
 
-When approaching the vending machine, a store icon will first be activated. Clicking this icon will open the store interface.
+There are several ways to display shops in the game.
 
-![image-20240828154712119](./img/image-20240828154712119.png)
+### Vending machines
 
-![image-20240828155110498](./img/image-20240828155110498.png)
+There is a function object in the level object: Vending machine. Using the vending machine will open the specified shop entity.
 
-If you need to open the store with a button, it's recommended to use the vending machine object directly. You can achieve button-triggered stores within a fixed range by hiding this object.
+![image-20240828153921490](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240828153921490.png)
 
-#### Built-in Store UI
+The vending machine comes with three default configurations:
 
-If you need to open the store UI directly, such as at the start of a game round or when entering a specific area, use the built-in store UI.
+![image-20241114181117915](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114181117915.png)
 
-The built-in store UI can be created by making an in-game UI element:
+1. Bound shop: The shop used by this vending machine. The shop can be viewed in the economy module, or created or changed at a specified time after entering the game using blocks.
+2. Trigger range: The shop button will be activated within a certain distance from the vending machine.
+3. Show vending machine: Whether the model of the vending machine is displayed on the map.
 
-![image-20240828160536207](./img/image-20240828160536207.png)
+To use the shop in the block, you need to add a script to the vending machine.
 
-![image-20240828160620814](./img/image-20240828160620814.png)
+We encapsulate the logic of creating the shop as a function that returns the created shop, and set the shop created by the function as the shop of the vending machine in the vending machine script.
 
-After creating a built-in store UI, bind its properties to the created store entity.
+![image-20241114181336724](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20241114181336724.png)
 
-### Public and Private Stores
+When you approach a vending machine, a shop icon will be activated first, and tapping on it will open the shop UI.
 
-By default, a public store is created, which requires no extra handling. All players can purchase from it, but once items are sold out, others can't buy them anymore.
+![image-20240828154712119](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240828154712119.png)
 
-If each player needs their own instance of the same store, create one for each player.
+![image-20240828155110498](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240828155110498.png)
 
-> It's strongly recommended to encapsulate store creation into a method or save created store entities into a public variable.
+If you need to use a button to open the shop, it is recommended to use the vending machine object directly. You can achieve this by hiding the object's display and triggering the button shop within a fixed range.
 
-For example, in a global script, open a store UI for each player joining the game:
+### Built-in shop UI
 
-![image-20240828162519430](./img/image-20240828162519430.png)
+If you need to directly open the shop UI, for example, opening the shop UI directly at the beginning of a game round, or opening the shop immediately after entering a certain area, you need to use the built-in shop UI.
 
-This way, each player's UI uses different instances of the same store entity, allowing everyone to have their own exclusive store.
+The built-in shop UI can be created by creating a built-in game UI block:
 
-## Example
+![image-20240828160536207](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240828160536207.png)
 
-Selling an invincibility buff in a store.
+![image-20240828160620814](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240828160620814.png)
 
-First, create a script under the player module to manage player buffs:
+After creating the built-in shop UI, you can set the property of the UI to bind the shop to the created shop entity.
 
-![image-20240903155517212](./img/image-20240903155517212.png)
+## Public and private shops
 
-In this script, write an invincibility buff that grants 5 seconds of invincibility to the current player:
+By default, a public shop is created. No additional processing is required, and all players can purchase from this shop. Once all the shop items have been purchased, other players will no longer be able to purchase items from this shop.
 
-![image-20240903155534993](./img/image-20240903155534993.png)
+If each player needs to use the same shop individually, you can create a shop for each player.
 
-Place a vending machine in the scene and add a script to it:
+It is highly recommended to encapsulate the creation of a shop as a method or to store the created shop entity in a public variable.
 
-![image-20240903155748790](./img/image-20240903155748790.png)
+For example, in the global script, open a shop UI for each player who joins the game:
 
-In the vending machine's script, write a method to create a store:
+![image-20240828162519430](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240828162519430.png)
 
-![image-20240903155847418](./img/image-20240903155847418.png)
+This way, each player's UI uses a different instance created from the same shop entity, which achieves the goal of each person having their own shop.
 
-In this store, there is only one shelf with one product that doesn't correspond to any actual item.
+# Example
 
-Choose an exclamation mark or any icon you like for the product icon:
+Sell an invincible buff in the shop.
 
-![image-20240903155958935](./img/image-20240903155958935.png)
+First, we create a script under the player module that manages the player's buff:
 
-Set the product price at 100 and save it into a script variable for later use.
+![image-20240903155517212](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903155517212.png)
 
-![image-20240903160038460](./img/image-20240903160038460.png)
+In this script, write a script for an invincible buff that will give the current player invincibility for 5 seconds:
 
-When creating the vending machine, call this method to create a store entity and bind it to the vending machine:
+![image-20240903155534993](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903155534993.png)
 
-![image-20240903160257525](./img/image-20240903160257525.png)
+Place a vending machine in the Scene and add a script to it:
 
-At this point, there's already this product in the store but it can't trigger invincibility yet.
+![image-20240903155748790](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903155748790.png)
 
-Create an additional store script to monitor player purchase events:
+Add a method to the script of the vending machine that creates a shop:
 
-![image-20240903160356906](./img/image-20240903160356906.png)
+![image-20240903155847418](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903155847418.png)
 
-> Since we're using script variables for storing products above, here we use external links to access these variables. Alternatively, you can save product entities into global variables via component properties.
+In this shop, there is only one shelf with one item, which does not correspond to any actual item.
 
-Since this script handles purchase events and needs to be mounted on the store entity created during gameplay, it requires dynamic mounting.
+Use an exclamation mark for the shop item icon, or any icon you like:
 
-Go back to the vending machine script and mount this store script onto the created store entity:
+![image-20240903155958935](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903155958935.png)
 
-![image-20240903160615415](./img/image-20240903160615415.png)
+The price of the shop item is set to 100 and the created item is stored in a script variable for later use.
 
-Now that the store is complete but players don't have money for purchases yet, create a global script adding 500 default currency for each player.
+![image-20240903160038460](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903160038460.png)
 
-![image-20240903160713451](./img/image-20240903160713451.png)
+This method is called when the vending machine is created to create the shop entity and bind it to the vending machine:
 
-![image-20240903160702615](./img/image-20240903160702615.png)
+![image-20240903160257525](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903160257525.png)
 
-Run the game:
+At this time, the shop already has this shop item, but the invincible buff cannot be triggered.
 
-Initially, neither player has invincibility:
+Create an additional shop script to monitor player purchase events:
 
-![image-20240903160804430](./img/image-20240903160804430.png)
+![image-20240903160356906](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903160356906.png)
 
-Open the store; products are available and players' wallets have expected amounts:
+> The variable that stores the shop item is a script variable, and here an external link is used to obtain this variable. You can also obtain the shop item entity by setting a global variable.
 
-![image-20240903160813727](./img/image-20240903160813727.png)
+Because the event of purchasing an item requires the script to be attached to the shop entity, and the shop is created after the game starts, it needs to be dynamically attached.
 
-Purchase successful; buying player gains invincibility effect:
+Back to the vending machine script, attach the shop script to the created shop entity:
 
-![image-20240903160822669](./img/image-20240903160822669.png)
+![image-20240903160615415](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903160615415.png)
 
-5 seconds later, invincibility ends:
+This way the shop is already built, but the player doesn't have the money to buy the shop items. Create a global script that adds 500 default currency to each player.
 
-![image-20240903160829176](./img/image-20240903160829176.png)
+![image-20240903160713451](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903160713451.png)
 
-Reopen the store and notice 100 currency has been deducted correctly:
+![image-20240903160702615](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903160702615.png)
 
-![image-20240903161018595](./img/image-20240903161018595.png)
+Running the game:
+
+Initially, neither of the first two players is invincible:
+
+![image-20240903160804430](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903160804430.png)
+
+The shop is open, the shop items are there, and the amount of currency in the player's wallet is as expected:
+
+![image-20240903160813727](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903160813727.png)
+
+The purchase was successful, and the player who made the purchase gained invincibility:
+
+![image-20240903160822669](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903160822669.png)
+
+After 5 seconds, the invincibility effect ends:
+
+![image-20240903160829176](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903160829176.png)
+
+When you open the shop again, you notice that the money has been reduced by 100 as normal:
+
+![image-20240903161018595](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/16-Economy/image-20240903161018595.png)

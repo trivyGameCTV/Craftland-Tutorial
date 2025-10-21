@@ -1,322 +1,333 @@
-# BehaviourTree - Behavior Tree
+# Behavior Tree
 
-A behavior tree is a decision-making model used to define the behavior of any object that can mount a behavior tree entity component, such as monsters or custom NPCs. The tree structure of behavior trees aligns with human thinking, making behavior design more intuitive. Its modularity also aids developers in making modifications and adjustments. In this tutorial, you will learn the operating principles of behavior trees and how to create one. The example will demonstrate how to create a behavior tree for a zombie that can patrol and chase players.
+A Behavior Tree is a behavior decision model that can be used to set the behavior of any object that can mount a Behavior Tree entity component, such as a monster or a custom NPC.
+The tree structure used by the Behavior Tree conforms to the way humans think, making behavior design more intuitive. Modularity also helps developers make modifications and adjustments.
+In this tutorial, you will learn how behavior trees work and how to create one. In the example, you will learn how to create a behavior tree for a zombie that can patrol and chase the player.
 
-## Structure and Logic of Behavior Trees
+## Structure and logic of behavior trees
 
-A behavior tree consists of logic nodes, leaf nodes, and a special root node.
+A behavior tree consists of logical and leaf nodes and a special root node.
 
-The behavior tree traverses all executable nodes in the defined order every Tick (one or more frames, adjustable in the properties of the behavior tree) and eventually stops at a node.
+The behavior tree will traverse all executable nodes in the behavior tree in the defined order at each Tick (one or more frames, which can be modified in the properties of the behavior tree) and finally stop at a node.
 
-The behavior tree starts from the root node and executes sequentially from left to right, top to bottom, until it reaches a stop node or traverses all connected behavior tree nodes.
+The behavior tree will start from the root node and execute in order from left to right and top to bottom until it stops at a node or traverses all connected behavior tree nodes.
 
-> The behavior tree always starts execution from the root node, so only nodes directly or indirectly connected to the root node will be executed.
-> Node execution order is marked with numerical labels in the editor; nodes that won't be executed have no labels.
-> Each Tick, when the behavior tree stops at a certain node, nodes after that point in the execution order will not be executed.
+The behavior tree always starts execution from the root node, so only nodes directly or indirectly connected to the root node will be executed.
+The execution order of the nodes is indicated by a numerical sequence in the editor, and nodes that will not be executed have no sequence number.
+Every Tick, when the behavior tree stops at a node, the nodes whose execution order is after this node will not be executed.
 
-## Nodes of Behavior Trees
+## Behavior tree nodes
 
-Root Node: The initial node every tree has; all logic begins running from the root node. The root node is automatically created and cannot be deleted.
+Root node: the initial node of each tree. All logic starts running from the root node. The root node is automatically created and cannot be deleted.
 
-Logic Nodes: Classified as Composite or Decorator nodes. Logic nodes determine the execution logic of child nodes. They cannot be used as the last node in a branch.
+Logic node: nodes classified as Composite or Decorator. Logic nodes determine the logic of the child nodes. Logic nodes cannot be used as the last node of a branch.
 
-Leaf Nodes: Classified as Condition or Action nodes. Leaf nodes determine the actual behavior of entities. They must be used as the last node in a branch.
+Leaf node: nodes classified as Condition or Action. Leaf nodes determine the actual behavior of entities. Leaf nodes must be used as the last node of a branch.
 
 ## Creating a Behavior Tree
 
-You can right-click in the Assets window to create a behavior tree file and manage it there. The file extension for a behavior tree is .xbt.
+You can create a Behavior Tree file by right-clicking in the Assets window. You can also manage Behavior Tree files in the Assets window. Behavior Tree files have the extension .xbt.
 
-![image-20240620150729511](.\img\create)
+![image-20240620150729511](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/create.png)
 
 ## Mounting a Behavior Tree
 
-Before mounting a behavior tree to any entity, you must first add the "Mountable Behavior Tree Entity" component in the inspector panel.
-After adding the "Mountable Behavior Tree" component, you can quickly mount a behavior tree file.
+Before you can mount a behavior tree for any entity, you must first add the “Mountable Behavior Tree Entity” component to the inspector panel.
+After you have added the “Mountable Behavior Tree” component, you can quickly mount the behavior tree file.
 
-![image-20240620152117511](./img/image-20240620152117511.png)
+![image-20240620152117511](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240620152117511.png)
 
-![image-20240620152208478](./img/image-20240620152208478.png)
+![image-20240620152208478](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240620152208478.png)
 
-Each entity can only mount one behavior tree.
+Only one behavior tree can be attached to each entity.
 
-## Editing a Behavior Tree
+## Editing a behavior tree
 
-Opening a behavior tree file opens the edit panel for that behavior tree.
+Opening a behavior tree file opens the edit behavior tree panel.
 
-![image-20240624141119080](./img/image-20240624141119080-1719209480654-1.png)
+![image-20241024151910366](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20241024151910366.png)
 
-The behavior tree edit panel is divided into three parts:
+The behavior tree editing panel is divided into three parts:
 
-1. Node List
+1. Node list
+
 2. Canvas
-3. Inspector Panel
 
-![image-20240620155309426](./img/image-20240620155309426.png)
+3. Inspector
 
-### Node List
+![image-20240620155309426](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240620155309426.png)
 
-All official, custom, and imported nodes are displayed here.
-Drag nodes onto the canvas to create new corresponding nodes.
+### Node list
+
+All officially provided, custom and imported nodes are displayed here.
+Drag and drop nodes into the canvas to create a new corresponding node.
 Node search is supported.
-The button in the upper right corner allows you to create custom nodes or import nodes.
+The buttons in the upper right corner can be used to create custom nodes or import nodes.
 
-#### Custom Nodes
+#### Custom nodes
 
-![image-20240624141406556](./img/image-20240624141406556.png)
+![image-20241024151959771](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20241024151959771.png)
 
-Clicking "+" in the upper right corner opens the Create Node panel, where you can customize the following attributes:
+Click the “+” in the upper right corner to open the Create Node panel. In the Create Node panel, you can customize the following properties of the node:
 
-1. Node Name
-2. Node Type: Currently supports custom Action and Condition types only.
-3. Node Script: Only existing scripts can be added to custom nodes during creation; they can be edited afterward.
-4. Node Variable Type: Allows creating custom attributes for script calls.
-5. Node Description
+1. Node name.
+2. Node type. Currently, only custom Action and Condition nodes are supported.
+3. Node script. Currently, in the Create Node panel, only existing scripts can be added to custom nodes, and editing is supported after creation.
+4. Node variable type. You can create custom properties for the node to facilitate script invocation.
+5. Node description.
 
-All content except for 2. Node Type can be modified after creation.
+Among the above, except for 2. Node type, all support modification after creation.
 
-#### Import Nodes
+#### Import node
 
-Clicking the import button in the upper right corner opens the file selection interface for importing.
-You can import nodes from other projects; their extension is .xbttemp.
-Note that imported nodes may contain scripts not present in this project.
+Click the Import button in the upper right corner to open the import file selection UI.
+You can import nodes from other projects, with a .xbttemp extension.
+When importing, be aware that the imported nodes may have scripts that do not exist in this project.
 
-> Important! Modifying nodes in the Node List does not affect those already dragged onto the canvas.
+
+
+> Important! Modifying nodes in the node list will not affect nodes that have already been dragged into the canvas.
 
 ### Canvas
 
-The canvas is where you primarily edit your behavior tree. By dragging nodes from the Node List onto it, you can arrange them freely and connect any two nodes using lines from "out" to "in" to edit their execution order. The canvas always contains a fixed root node.
+The canvas is the main area for editing the behavior tree. After dragging nodes from the node list into the canvas, you can arrange the behavior tree nodes in any order and edit their execution order by connecting any two nodes with a connection line from “out” to “in”. The canvas always contains a fixed root node.
 
-When connecting an "out" tab from one node to an "in" tab on another, we call the connected "out" node the parent (output node), and the connected "in" node is called the child (input node).
-Depending on their type, nodes may have one or more "out," but only one "in." (Except for root nodes, which have no input.)
+When connecting from the “out” tab of one node to the “in” tab of another node, we call the “out” connected node the parent node (output node), and the “in” connected node the child node (input node).
+Depending on the node type, nodes can have one or more “outs”, but only one “in” (except for the root node, which has no corresponding input node).
 
-A behavior tree only executes nodes directly or indirectly connected to its root node, known as active nodes. The canvas automatically identifies active nodes and orders them from left to right, top to bottom; gray numbers in their upper right corners indicate their call order—inactive nodes show no numbers.
-![image-20240624142617006](./img/image-20240624142617006.png)
+The behavior tree will only execute nodes that are directly or indirectly connected to the root node, which are called activated nodes. The canvas will automatically identify the activated nodes and sort them in the order from left to right and top to bottom. The gray number in the upper right corner of the node is the order in which it is called. Nodes that are not activated will not display a number.
+![image-20240624142617006](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240624142617006.png)
 
-> You can drag panels with left or middle mouse buttons.
-> Use Ctrl + mouse wheel to zoom panels.
+> You can drag the panel by pressing and holding down the left or middle mouse button.
+> Zoom in and out of the panel by pressing Ctrl and scrolling the mouse wheel.
 
-### Node Inspector Panel
+### Node view panel
 
-Each node on the canvas contains some or all of these details: basic information, scripts, and variable lists.
+Each node in the canvas contains the following information or part of it: basic node information, script, and node variable list.
 
-Basic Information: Includes Node ID, Name, Type, Description.
-Scripts: The script attached to this behavior tree node; each can only have one script controlling its execution when reached.
-Variable List: Variables required for this node's operation; some are provided officially while others are added by creators during creation.
+Node basic information: includes the node ID, node name, node type, and node description.
+Script: the script attached to this behavior tree node. A behavior tree node can only be attached to one script. The script controls the behavior that the behavior tree needs to execute when it runs to this node.
+Node variable list: some variables required for the node to run, some provided by the official, and some added by the creator when creating the node.
 
-> IDs are auto-assigned; other info can be fully edited in Node List but only names on dragged canvas ones.
-> Scripts can be added during creation or edited on canvas—each node holds just one script.
-> Variable lists are settable both during creation and on canvas.
-> Always remember that variable lists' data differs from canvas data—use canvas data for specific trees' operations.
+The ID is automatically assigned in the basic information of the node, and the other information can be fully modified in the node list on the left. However, only the node name can be modified for nodes dragged into the canvas.
+Scripts can be added when creating a node or edited in the canvas, but only one script can be attached to a node.
+The node variable list can be set when creating or in the canvas.
+>Always remember that the node in the variable list is not the same as the node in the canvas. The specific behavior tree uses the data of the node in the canvas as the standard.
 
-## Types of Behavior Tree Nodes
+## Behavior tree node types
 
-Behavior trees have four types of nodes: Action, Condition, Composite, Decorator.
+There are four types of behavior tree nodes: Action, Condition, Composite, and Decorator.
 
-Composite and Decorator are logic categories that cannot end branches.
-Action and Condition are leaf categories that must end branches.
+The nodes in the Composite and Decorator categories are logic nodes and cannot be used as the last node on a branch.
+The Action and Condition nodes are leaf nodes and can only be used as the last node on a branch.
 
 ### Action
 
-Action-type nodes represent behaviors for execution by trees; except for "Wait @ms," all others are creator-defined. They're often used for specific actions by entities or their owners like moving somewhere specific or activating effects.
-Action results are either Complete or Running.
+Action nodes represent the “actions” that need to be performed by the behavior tree. Except for the official node “Wait @ms”, all other actions are created and defined by the creator. Actions are often used to make behavior tree entities or their parent entities perform specific actions. Action nodes can be used to create modular custom actions, such as going to a specific location, releasing a specific skill, and activating a specific effect.
+There are only two possible results of executing an Action node: Complete and Running.
 
-- Wait @ms: Contains "WaitTime" variable for waiting specific milliseconds during execution—returns Running until time ends then Complete afterward.
+- Wait @ms: This node contains a variable “WaitTime” that is used to wait for a specific period of time (in milliseconds, the specific waiting time is the value of the “WaitTime” variable) during the execution of the behavior tree. While the waiting time has not expired, this node will always return “Running”, and after the waiting time node, this node will return “Complete”.
 
-> Note: Since trees execute per Tick using wait primitives may cause repeated waits each Tick leading freezes—use Wait @ms instead within scripts' waiting actions instead!
+> Note: Since the behavior tree is executed once per Tick, using the “wait” block in the behavior tree node may cause the behavior tree to freeze due to repeated waiting at each Tick. Therefore, it is recommended to use the Wait @ms node instead of the “wait” behavior in the behavior tree script.
 
 ### Condition
 
-Condition-type represents conditional checks needed by trees—all creator-defined too! They're often used checking conditions met/not met status-wise!
-Condition results are True/False only!
+Nodes of the Condition type represent conditional judgments that need to be performed by the behavior tree. All Condition nodes are created and defined by the creator. Condition nodes are often used to determine whether a specific condition is true.
+The execution result of the Condition node has only two possibilities: true and false.
 
 ### Composite
 
-Composite-type has four official ones mainly controlling child execution orders:
+There are only four nodes of the Composite type, and they are all official nodes. This type of node is mainly used to control the execution order of child nodes.
 
-- Priority: Implements OR relation among children stopping when any returns true else false if none do! Doesn't store single-run results next time!
-- Sequence: Implements AND relation among children stopping when any returns false else true if none do! Doesn't store single-run results next time!
-- MemPriority: Same as Priority but stores single-run results next time!
-- MemSequence: Same as Sequence but stores single-run results next time!
+- Priority: implements child nodes or relationships, traverses child nodes in the defined order until one of the child nodes returns true, and then stops and returns true. If all child nodes return false, false is returned. Does not support storing the result of a single execution to the next execution.
+- Sequence: implements child nodes and relationships, traverses child nodes in the defined order until one node returns false, stops, and returns false. If all child nodes return true, it returns true. Does not support storing the result of a single execution to the next execution.
+- MemPriority: same as Priority, but supports storing the result of a single execution to the next execution.
+- MemSequence: same as Sequence, but supports storing the result of a single execution to the next execution.
 
-> Note: Composite control over child orders applies solely towards its connected children!
-> Customization unsupported here!
+> Note: The Composite control subnode execution order function is only valid for all “subnodes” connected to the Composite node.
+> Customization of the Composite node is not supported.
 
 ### Decorator
 
-Decorator-type mainly controls execution logic currently having five official ones:
+Decorator nodes are mainly used to control the execution logic of the behavior tree. There are currently only five official Decorator nodes.
 
-- Repeat @X: Contains "MaxLoop" variable repeating direct child's executions max times returning last result!
-- Repeat Until Failure: Repeats direct child's executions until failure (false)!
-- Repeat Until Success: Repeats direct child's executions until success (true)!
-- Max @Ms: Contains "MaxTime" variable checking timeout during direct child's executions returning false if timed out!
-- Inverter: Inverts direct child's result e.g., false becomes true!
+- Repeat @X: This node contains a variable “MaxLoop”. Its main function is to make the directly connected child node repeat the execution of “MaxLoop” times and return the result of the last execution.
+- Repeat Until Failure: This node makes the directly connected child node execute repeatedly until the returned result is “Failure”, that is, “false”.
+- Repeat Until Success: This node makes the directly connected child node execute repeatedly until the returned result is “Success”, that is, “true”.
+- Max @Ms: This node contains a variable “MaxTime”. When executing the directly connected child node, the node will determine whether a timeout has occurred, and if so, return “false”.
+- Inverter: This node will take the opposite value of the execution result of the child node directly connected to it. For example, it will invert “false” to “true”.
 
-> Customization unsupported here!
+> Customization of the Decorator node is not supported.
 
-## Basic Rules for Behavior Tree Node Scripts
+## Basic rules for Behavior Tree node scripts
 
-Each editable node supports adding up-to-one script! Editable ones include Actions/Conditions whose scripts must return specific values based upon type differences!
+Each editable node in the behavior tree supports the addition of a maximum of one script.
+Editable nodes are of the Action or Condition type, and depending on the type, the node script must return a specified return value.
 
-Condition scripts return Bool values!
-Action scripts return "Node Running Status" values i.e., Complete/Running!
+The script of a Condition node must return a Bool value.
+The script of an Action node must return a value of the type “Behavior tree node running state”, i.e. “completed” or “in progress”.
 
-> If multiple values returned within scripts towards trees they'll default first returned value as result here!
-> Official base ones preset return values—see types section details!
-> Logic ones judge based upon leaf returns too—see types section details!
+> If the script returns multiple return values to the behavior tree, the behavior tree will use the first return value as the result of the node.
+> The return values of the basic nodes provided by the manufacturer are predefined.
+> The logic nodes will make logical judgments based on the return values of the leaf nodes.
 
-Nodes need special functions specifying input/output parameters allowing calls via trees themselves!
-Special function requirements explained below!
+A node needs to have a special function, which must specify the types of input and output parameters, so that the behavior tree can call it.
+The requirements for special functions are explained below.
 
-![image-20240624151408391](./img/image-20240624151408391.png)
+![image-20240624151408391](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240624151408391.png)
 
-Use "On Node Enter" events recommended initializing work writing logic into special functions themselves instead!
-This way when returning Running results each tick directly executes special functions without repeated initialization needed instead!
+It is recommended to use the “when the node enters” event to initialize the work and write the node logic into a special function.
+This way, when the node returns the “in progress” result, the special function can be executed directly every tick without having to repeatedly initialize.
 
-### How to Return Execution Results in Nodes
+![image-20240624145846031](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240624145846031.png)
 
-Behavior trees determine return values by reading the value of a special function, which can only exist once in the script of the same node.
+### How to return the result of running in a node
 
-The syntax for this function differs between Condition scripts and Action scripts.
+The behavior tree determines the return value by reading the value of a special function. There can be only one function of this type in the script of the same node.
 
-In a Condition node, the syntax is as shown:
+The function is written differently in the Condition script and the Action script.
 
-![image-20240620163207149](./img/image-20240620163207149.png)
+The writing under the Condition node is as follows:
 
-Input parameter: Mountable behavior tree entity (Owner, i.e., the entity to which we have attached the corresponding behavior tree file).
+![image-20240620163207149](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240620163207149.png)
 
-Return value: Bool (the execution result of this node).
+Its input parameters are: mountable behavior tree entity (Owner, the entity to which we have mounted the corresponding behavior tree file).
 
-In an Action node, the syntax is as shown:
+The return value is: Bool (the result of running this node).
 
-![image-20240620163354803](./img/image-20240620163354803.png)
+The Action node is written as follows:
 
-Input parameter: Mountable behavior tree entity (Owner, i.e., the entity to which we have attached the corresponding behavior tree file).
+![image-20240620163354803](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240620163354803.png)
 
-Return value: The running status of the behavior tree node (the execution result of this node).
+Its input parameters are: the entity that can be mounted as a behavior tree (Owner, that is, the entity to which we have mounted the corresponding behavior tree file).
 
-> The behavior tree automatically reads this type of function in the node script (ensuring there is only one function of this format) and calls it every Tick to obtain a return value. There is no need to call this special type of function separately.
-> Each time a behavior tree node runs, the sequence of events triggered is: when entering the node, calling the special function, and when exiting the node.
-> This special function can only exist once per script. Do not design functions with the same input and return value types. You can incorporate other logic you wish to execute within this function, as long as it ultimately returns a corresponding type of return value.
-> Non-special format functions can exist in unlimited numbers within a script and will not affect the normal operation and logic judgment of the behavior tree.
-> Asynchronous functions are not currently supported in this special function; results must be returned immediately per tick.
+The return value is the running status of the behavior tree node (the result of running the node).
+
+> The behavior tree will automatically read this type of function from the node script (make sure there is only one function of the same format), and call this function every Tick to get a return value. There is no need to call this special type of function separately.
+> Each time a behavior tree node runs, the triggering order of each event is as follows: node entry, calling the special function, and node exit.
+> There can only be one of these special functions in each script. Do not design a function with the same type of return value as its input value. You can program other block logic that you want to execute in this function, as long as you ensure that the function can eventually return a return value of the corresponding type.
+> There can be an unlimited number of functions in the script that are not in a special format, and this will not affect the normal operation of the behavior tree or logical judgments.
+> In this special function, calling an asynchronous function is not supported for the time being, and the result must be returned immediately when the tick occurs.
 
 ## Example
 
-For a simple requirement, create and apply a behavior tree.
+Create and apply a behavior tree using a simple requirement as an example.
 
-> The actual script writing will not be covered in this example.
+> The actual writing of the script will not be included in this example
 
-Suppose there is a scenario with a zombie and two coconut trees. Use a behavior tree to make the zombie patrol between the coconut trees continuously, chase players when nearby, and return to patrolling after losing sight of them.
-![image-20240621165320034](./img/image-20240621165320034.png)
+Let's assume a requirement:
+In the Scene there is: a zombie and two coconut trees. Using a Behavior Tree, the zombie is to be made to patrol constantly between the coconut trees, to chase after the player if it is nearby, and to continue back to patrol if it loses the player as a target.
+![image-20240621165320034](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240621165320034.png)
 
 First, create a behavior tree file and edit it:
 
-![image-20240621171320047](./img/image-20240621171320047.png)
+![image-20240621171320047](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240621171320047.png)
 
-Analyze the requirements; possible actions for the zombie include:
+Analyze the requirements. The possible actions of the zombie are:
 
-1. Patrolling
-2. Chasing players
-3. Returning to patrol path
+1. Patrol
+2. Chase the player
+3. Return to the patrol path
 
-Conditions for changing actions include:
+The conditions for the zombie to change its actions are:
 
-1. Spotting a player
-2. Losing sight of a player
-3. Realizing it's off the patrol path
-4. Realizing it's on the patrol path
+1. It has found the player
+2. It has lost the player
+3. It has found that it is not on the patrol path
+4. It has found that it is on the patrol path
 
-Conditions 1 and 2 are opposites, as are 3 and 4. Therefore, only two Condition nodes are needed.
+where 1 and 2 and 3 and 4 are the positive and negative sides of the same condition. Therefore, only two Condition nodes need to be created.
 Create all custom nodes:
 
 Action nodes:
 
-1. Patrolling
-2. Chasing players
-3. Returning to patrol path
+1. Patrol
+2. Chase player
+3. Return to patrol path
 
 Condition nodes:
 
-1. Has spotted a player
-2. Is on patrol path
+1. Did the player get spotted?
+2. Am I on the patrol route?
 
-![image-20240621165631677](./img/image-20240621165631677-1718960193582-1.png)
+![image-20240621165631677](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240621165631677-1718960193582-1.png)
 
-Analyze conditions for Action nodes:
+Analysis of the conditions of the Action node:
 
-| Action Node     | Condition 1        | Condition 2      |
-| --------------- | ------------------ | ---------------- |
-| Patrolling      | Zombie hasn't spotted player | On patrol path   |
-| Chasing players | Zombie has spotted player   |                  |
-| Returning to patrol path | Zombie hasn't spotted player | Off patrol path |
+| Action node           | Execution condition 1          | Execution condition 2 |
+| --------------------- | ------------------------------ | --------------------- |
+| Patrol                | Zombie has not detected player | On patrol path        |
+| Chase player          | Zombie has detected player     |                       |
+| Return to patrol path | Zombie has not detected player | Not on patrol path    |
 
-Extract actions requiring minimal conditions: chasing players, and use Sequence nodes with their condition nodes to form a group:
+The behavior that will require the fewest conditions: Chase player is taken out and used with its condition node to form a group with the Sequence node:
 
-![image-20240621170020302](./img/image-20240621170020302-1718960421910-3.png)
+![image-20240621170020302](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240621170020302-1718960421910-3.png)
 
-> Sequence Node: Executes child nodes in order until one returns false, then stops and returns false; if all return true, it returns true.
+> Sequence node: the child nodes are executed sequentially until the child node returns false and stops, and returns false; if all child nodes return true, it returns true.
 
-In this group, chasing must execute after "Has spotted a player" returns true.
+In this group, the pursuit behavior must be executed after the node that determines whether the player is found returns true.
 
-If the zombie hasn't spotted a player, another condition—whether it's on the patrol path—determines its action. We need a logic node to connect previous groups with new conditions.
-Since we're dealing with logic where the zombie hasn't spotted a player, previous Sequence nodes will return false, so our new logic node needs to continue running even when receiving false.
+If the zombie does not find the player, then the actual behavior of the zombie depends on the result of another condition: whether it is on the patrol path. Therefore, we need a logical node to connect the previous group with the new condition.
+And because we are dealing with the logic of the zombie not finding the player at this time, the return value of the Sequence node in the previous group must be false, so our new logical node needs a node that can continue to run even if it receives false.
 
-Enter Priority Node:
+It is the Priority node:
 
-![image-20240621170637325](./img/image-20240621170637325.png)
+![image-20240621170637325](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240621170637325.png)
 
-> Priority Node: Executes child nodes in order until one returns true, then stops and returns true; if all return false, it returns false.
+> Priority node: child nodes are executed sequentially until they return true, at which point execution stops and true is returned. If all child nodes return false, false is returned.
 
-This group checks whether it's on patrol when the zombie hasn't spotted a player. Based on Priority Node's characteristics, we can directly connect actions for when "Is on patrol path" returns false: returning to patrol path.
+This group determines whether the zombie is on the patrol route, assuming that the zombie has not found the player. According to the characteristics of the Priority node, we can directly connect the behavior of the zombie when the “on the patrol route” node returns false: return to the patrol route
 
-![image-20240621170945343](./img/image-20240621170945343.png)
+![image-20240621170945343](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240621170945343.png)
 
-When "Is on patrol path" returns true, Priority Node stops running due to receiving true and returns true. We need a logic node that continues executing when its child nodes return true for the final action: patrolling.
+So, when the “is on the patrol route” node returns true, the Priority node will terminate its operation because it receives true, and return a true value. We need a logic node that continues to execute the zombie's last behavior: patrolling, when its child node returns true.
 
-![image-20240621171216518](./img/image-20240621171216518.png)
+![image-20240621171216518](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240621171216518.png)
 
-Thus, a behavior tree is complete.
+This completes the creation of the behavior tree.
 
-Next, mount this behavior tree onto the zombie entity:
+Next, we need to attach the behavior tree to the zombie entity:
 
-Select zombie and add "Mountable Behavior Tree Entity" component
+Select the zombie and add the “Attachable Behavior Tree Entity” component
 
-![image-20240621171952560](./img/image-20240621171952560-1718961595352-5.png)
+![image-20241024153049973](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20241024153049973.png)
 
-Add the newly edited behavior tree:
+and add the behavior tree you just edited to it:
 
-![image-20240621172220195](./img/image-20240621172220195.png)
+![image-20241024153150763](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20241024153150763.png)
 
-All done!
+You're done
 
-> This example demonstrates one method for creating; it's for reference only.
-> The same logic can be drawn differently based on personal preference.
-> After adding a behavior tree to an entity, you can continue editing it without following this example's process exactly.
+> The example is only a demonstration of one method of creation and is for reference only.
+> There are different ways to draw the behavior tree canvas with the same logic, which can be handled according to your own preferences.
+> You can continue editing the behavior tree after adding it to the entity, and it does not have to be edited in the same way as in the example.
 
-## Supplementary Information
+## Additional
 
-### Preconditions
+### prerequisites
 
-When Behavior X must execute after meeting Condition A, Condition A is called Behavior X's precondition. Use Sequence nodes to build logical units.
-Preconditions satisfy if-then logic needs; e.g., doors must open before entering:
+When behavior X must be executed after condition A is met, we call condition A the prerequisite for behavior X. You can use the Sequence node to build logical units.
+Prerequisites are used to meet logical requirements similar to if-then, for example, you must open the door to enter the house:
 
-![image-20240624161142760](./img/image-20240624161142760.png)
+![image-20240624161142760](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240624161142760.png)
 
-### Postconditions
+### Postcondition
 
-After executing Behavior X, Condition B inevitably holds true; thus Condition B is Behavior X's postcondition. Use Priority nodes for logical units.
-Postconditions ensure that when logical blocks execute successfully, conditions are met; e.g., if entering succeeds, units are inside:
+Condition B must be true after the execution of behavior X. At this time, we call condition B the postcondition of behavior X. You can use the Priority node to construct logic units.
+A postcondition is used to ensure that the condition is met when the logical block is executed successfully as a whole. For example, if the Animation of entering the house is successfully executed, the unit must be in the house:
 
-![image-20240624162430364](./img/image-20240624162430364.png)
+![image-20240624162430364](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240624162430364.png)
 
-### PPA Pattern (Postcondition-Precondition-Action)
 
-Combining both conditions allows using PPA Pattern—a widely used design method.
+### PPA mode (Postcondition-Precondition-Action)
 
-![image-20240624162916061](./img/image-20240624162916061.png)
+Combining the two conditions above, we can use a widely used design method, PPA mode.
 
-The advantage of this pattern is viewing entire trees as logic under postconditions' premise—supporting layered design better; e.g., doors may have locked states:
+![image-20240624162916061](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240624162916061.png)
 
-![image-20240624164111760](./img/image-20240624164111760.png)
+The advantage of this mode is that the entire behavior tree can be viewed as logic that is conditional on the postconditions, which better supports hierarchical designs, such as doors that may have a locked state:
 
-New logic mainly affects whether doors open—edit extended logic by setting door opening as postcondition.
+![image-20240624164111760](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/25-BehaviorTree/image-20240624164111760.png)
+
+The new logic mainly affects whether the door is open or not. You can edit the extended logic by making the opening of the door a postcondition.

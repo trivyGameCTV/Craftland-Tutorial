@@ -1,73 +1,73 @@
-# AVATAR-User Manual
+# Avatar
 
-# Appearance Group
+# Appearance groups
 
-The Appearance Group is a concept for categorizing and managing the appearance meshes in a model.
+Appearance groups are a concept for categorizing and managing the appearance meshes in a model.
 
-![image-20241011143752628](./img/image-20241011143752628.png)
+![image-20241011143752628](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011143752628.png)
 
-Add a model with a skeleton as a prefab to enter appearance editing:
+Add models with rigs as prefabs to access appearance editing:
 
-![image-20241011144305585](./img/image-20241011144305585.png)
+![image-20241011144305585](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011144305585.png)
 
-In the Appearance Group settings, you can set this group as part of a mutually exclusive set:
+In the appearance group settings, you can set the appearance group to be one of a set of mutually exclusive appearances:
 
-![image-20241011153210375](./img/image-20241011153210375.png)
+![image-20241011153210375](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011153210375.png)
 
-Appearance groups set in the same exclusive group will not display simultaneously, facilitating operations like skin switching.
+All appearance groups that are set to the same mutually exclusive group are mutually exclusive and will not be displayed at the same time. This is handy for things like switching skins.
 
-Within an appearance group, parts are based on meshes. The number of meshes a model has is determined during its creation.
+Within an appearance group are parts in meshes, how many meshes a model has is determined when the model is created.
 
-![image-20241011153357270](./img/image-20241011153357270.png)
+![image-20241011153357270](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011153357270.png)
 
-In the mesh settings, you can modify its binding points and methods with the skeleton, as well as adjust rendering methods:
+In the mesh settings, you can modify its binding point to the rig, the binding method; modify the rendering method and other operations:
 
-![image-20241011153506396](./img/image-20241011153506396.png)
+![image-20241011153506396](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011153506396.png)
 
-You can add new meshes to the model by creating a new appearance:
+You can add a new mesh to a model by creating a new appearance:
 
-![image-20241011163120786](./img/image-20241011163120786.png)
+![image-20241011163120786](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011163120786.png)
 
-You can select existing mesh resources within the project:
+You can select an existing mesh resource within the project:
 
-![image-20241011163249400](./img/image-20241011163249400.png)
+![image-20241011163249400](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011163249400.png)
 
-If the new mesh does not match the original skeleton, choose "Connect" as the binding method:
+If the added mesh is not a match to the original rig, select the binding method to connect:
 
-![image-20241011163331947](./img/image-20241011163331947.png)
+![image-20241011163331947](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011163331947.png)
 
-![image-20241011163417536](./img/image-20241011163417536.png)
+![image-20241011163417536](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011163417536.png)
 
 # Using Appearance Groups
 
-Scripts can control the visibility or switch of specified appearance groups.
+Scripts can be used to control the appearance of a given appearance group or to toggle the appearance group.
 
-![image-20241011144706308](./img/image-20241011144706308.png)
+![image-20241011144706308](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011144706308.png)
 
-> Switching appearance groups will hide the original group and display the new one.
+> Switching appearance groups hides the original appearance group and shows the new one.
 
-The alien pet has two meshes: the alien body and the UFO:
+There are two meshes in the alien pet, the alien body and the flying saucer:
 
-![image-20241011153600498](./img/image-20241011153600498.png)
+![image-20241011153600498](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011153600498.png)
 
-We can create a new appearance group to separate them:
+We create a new appearance group that can separate the two:
 
-![image-20241011153629170](./img/image-20241011153629170.png)
+![image-20241011153629170](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011153629170.png)
 
-By default, we hide the UFO and display it after the game round starts:
+By default, we make the flying saucer hidden and show the saucer after the start of the game round:
 
-![image-20241011153714874](./img/image-20241011153714874.png)
+![image-20241011153714874](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011153714874.png)
 
-![image-20241011153746239](./img/image-20241011153746239.png)
+![image-20241011153746239](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011153746239.png)
 
-> Global Script
+> Global Scripts
 
-During the game preparation phase, only the alien is visible:
+In the game preparation phase, you can see that there are only aliens:
 
-![image-20241011153918797](./img/image-20241011153918797.png)
+![image-20241011153918797](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011153918797.png)
 
-After the round starts, the UFO appears:
+After the round starts, the flying saucer is shown:
 
-![image-20241011153933339](./img/image-20241011153933339.png)
+![image-20241011153933339](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/26-Avatar/image-20241011153933339.png)
 
-By flexibly using scripts to control appearance groups, you can switch part displays, change skins, transform, and more under specific conditions.
+Flexible use of scripts to control the appearance group can be accomplished while switching the display of parts, changing Skins, transforming, etc. under specific conditions.

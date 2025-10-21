@@ -1,38 +1,38 @@
-# Data Storage - User Manual
+# Data Storage
 
-Data storage allows for saving data outside the game process and can be used for features like save files, leaderboards, statistics, and storing game settings.
+Data Storage can store data outside the game process and can be used for functions such as archiving, rankings, statistics, and storing game settings.
 
-The purpose of data storage is to enable data sharing between different sessions on the same map.
+Data Storage can also share data between different games on the same map.
 
-## Loading the Data Storage Module
+# Load the Data Storage Module
 
-To use data storage, you need to load the data storage module first. This is an optional module, and uninstalling it will render previously used related elements, code, and configurations invalid.
+To use Data Storage, you need to load the Data Storage module first. This is an optional module, and unloading it will cause the previously used related primitives, code, and configurations to become invalid.
 
-![image-20240902154318437](./img/image-20240902154318437.png)
+![image-20240902154318437](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240902154318437.png)
 
-## Categories
+# Categories
 
-After loading the data storage module, you will see three configurations: leaderboard data storage, statistics data storage, and regular data storage.
+After loading the data storage module, you will see three configurations: ranking data storage, statistical data storage, and general data storage.
 
-![image-20240902155047574](./img/image-20240902155047574.png)
+![image-20240902155047574](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240902155047574.png)
 
-The tables created by data storage are not directly viewable, but this document will provide a description of the table format.
+Tables created by the data storage cannot be viewed directly, but the table styles are described in this document.
 
-### Regular Data Storage
+## Normal data storage
 
-#### Parameter Description
+### Parameter description
 
-![image-20240903161258145](./img/image-20240903161258145.png)
+![image-20240903161258145](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240903161258145.png)
 
-Add parameters in regular data storage; each parameter represents a data table with the following configurable items:
+Add parameters to the normal data storage. Each parameter represents a data table. Each parameter has the following configurable items:
 
-**Table Name**: The name of the created table.
+**Table name**: the name of the created table
 
-**Data Type**: The type of data accepted by the table.
+**Data type**: the data type accepted in the table
 
-Each data table accepts only one type of input.
+It can be found that each data table only accepts input of one data type.
 
-#### Table Format
+### Table format
 
 DataSheetName
 
@@ -40,61 +40,61 @@ DataSheetName
 | ---- | ---- | ----- |
 |      |      |       |
 
-**DataSheetName**: The table name added in the data storage module.
+**DataSheetName**: The name of the table added in the data storage module.
 
-**UUID**: The player's unique ID. When writing data, you need to enter the current player's UUID.
+**UUID**: The unique ID of the player. When writing data, the UUID of the current player needs to be entered.
 
-**Key**: The index created by the script during a data storage operation.
+**Key**: The index created by the script when performing data storage operations.
 
-**Value**: The value entered by the script during a data storage operation, only accepting types set within the data storage module.
+**Value**: The value filled in by the script when performing data storage operations, which only accepts the types set in the data storage module.
 
-#### Use Cases
+### Usage scenarios
 
-Used for player save files.
+Used for player archiving.
 
-Used in other scenarios where this table's data can be utilized.
+For other scenarios where the data in this table can be used.
 
-### Leaderboard Data Storage
+## Ranking datastore
 
-#### Parameter Description
+### Parameter description
 
-![image-20240903162353099](./img/image-20240903162353099.png)
+![image-20240903162353099](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240903162353099.png)
 
-Similar to regular data storage structure, but leaderboard data storage only accepts Int type input and provides an additional sorting feature. The table will be sorted according to your configured sorting method.
+Similar to the structure of a normal data storage, but the ranking data storage only accepts Int type input and provides an additional sorting function. The data in the ranking data storage table will be arranged in the order you configure.
 
-**Table Name**: The name of the created table.
+**Table name**: the name of the table created.
 
-**Sorting Method**: Choose whether to sort input Int values in ascending or descending order.
+**Sorting method**: select whether to sort the entered Int values in ascending or descending order.
 
-#### Table Format
+### Table style
 
 **DataSheetName**
 
-| Ranking | Key  | Value (Only Int) |
-| ------- | ---- | ---------------- |
-| 1       |      |                  |
-| 2       |      |                  |
-| 3       |      |                  |
+| Ranking | Key  | Value(Only Int) |
+| ------- | ---- | --------------- |
+| 1       |      |                 |
+| 2       |      |                 |
+| 3       |      |                 |
 
-Leaderboard data storage does not have a UUID but supports custom keys, and values only accept Int type input. The entire table will be sorted based on the values in this column.
+The ranking data storage does not have a UUID, but supports a custom KEY, and only accepts Int-type input for the value. The ranking data storage will sort the entire table based on the data in the value column.
 
-#### Use Cases
+### Usage scenarios
 
-Player leaderboards, such as kill rankings, score rankings, speedrun rankings.
+Player rankings, such as kill rankings, point rankings, and racing rankings.
 
-### Statistics Data Storage
+## Statistics storage
 
-#### Parameter Description
+### Parameter description
 
-![image-20240903163809392](./img/image-20240903163809392.png)
+![image-20240903163809392](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240903163809392.png)
 
-Similar to regular data storage structure, but statistics data storage also only accepts Int type input and requires preset keys.
+Similar to the structure of a normal data storage, but the statistics data storage also only accepts Int input and must have a preset Key.
 
-**Table Name**: The name of the created table.
+**Table name**: the name of the table to be created.
 
-**Key Management**: Preset key list.
+**Key management**: a list of predefined keys.
 
-#### Table Format
+### Table format
 
 DataSheetName
 
@@ -103,177 +103,203 @@ DataSheetName
 | **KEY1** |                      |
 | **KEY2** |                      |
 
-Statistics data storage does not have a UUID; all information with the same key is stored under one entry.
+The statistics data storage does not have a UUID, and all information with the same key is stored under the same data.
 
-**Key**: Preset index.
+**Key**: the default index.
 
-**Value**: Value, only accepting Int type data.
+**Value**: the value, which can only be Int data.
 
-#### Use Cases
+### Usage scenarios
 
-Server-wide statistics, such as total boss kills or total money spent.
+Statistics for the entire service, such as the total number of bosses killed and the total amount of money spent.
 
-## Usage Methods
+# Usage
 
-### Add and Modify
+## Adding and modifying
 
-Adding a piece of data to a data storage table and modifying it are done using write elements.
+Adding a data entry to a data storage table is the same as modifying a data entry, and both use the write primitive.
 
-![image-20240903182410828](./img/image-20240903182410828.png)
+![image-20240903182410828](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240903182410828.png)
 
-For leaderboard and statistics data storage, use the corresponding elements.
+For ranking data storage and statistical data storage, you need to use the corresponding elements.
 
-![image-20240903182534045](./img/image-20240903182534045.png)
+![image-20240903182534045](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240903182534045.png)
 
-### Delete
+## Delete
 
-To delete a piece of data, use delete elements.
+Delete a data record using the delete element.
 
-![image-20240903183709409](./img/image-20240903183709409.png)
+![image-20240903183709409](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240903183709409.png)
 
-Different types of data storage use different indexes for their operations.
+Different types of data storage use different data indexes.
 
-![image-20240903184115941](./img/image-20240903184115941.png)
+![image-20240903184115941](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240903184115941.png)
 
-Statistics data storage does not support deleting entire rows due to preset keys; only values corresponding to keys can be modified.
+Statistical data storage does not support deleting entire rows because the keys are set in advance. Only the values corresponding to the keys can be modified.
 
-### Query
+## Query
 
-Querying data requires using read elements; different types of data storage use different indexes for their operations.
+To query data, you need to use the read operation. Different types of data stores use different indexes.
 
-![image-20240903184158672](./img/image-20240903184158672.png)
+![image-20240903184158672](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240903184158672.png)
 
-![image-20240903184225595](./img/image-20240903184225595.png)
+![image-20240903184225595](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240903184225595.png)
 
-In leaderboard data storage, multiple rows can be retrieved at once based on ranking, with results returned as a list.
+In the ranking data storage, multiple rows of data can be retrieved at once based on the ranking, and the data is returned in a list format.
 
-![image-20240905155430325](./img/image-20240905155430325.png)
+![image-20240905155430325](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240905155430325.png)
 
-## Usage Limitations
+## Batch query
 
-Data storage has some usage limitations:
+We provide a batch query API to read more data at one time.
 
-1. There is a limit on read/write operations per minute. You can read 60 times and write 75 times per minute. Try to minimize read/write frequency and check if operations succeed.
-2. The maximum value size for one key is 4k.
-3. Each leaderboard table can store up to 150 rows; any additional rows will not be recorded.
-4. Statistics data storage supports creating up to 120 tables only.
+![image-20250121160153530](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20250121160153530.png)
 
-## Data Center
+You must fill in the same number of Account IDs and Keys to return the data of the corresponding entries.
 
-If a published custom map has enabled data storage, you can view it in the Data Center:
+For the following table
 
-![image-20240904142856003](./img/image-20240904142856003.png)
+| UUID | Key | Value |
+| ---- | ---- | ------ |
+| 111 | key1 | value1 |
+| 222 | key2 | value2 |
+| 333 | key3 | value3 |
 
-Open the corresponding map's data storage to browse stored data:
+Required input:
 
-![image-20240904143215503](./img/image-20240904143215503.png)
+![image-20250121160922575](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20250121160922575.png)
 
-In the Data Center, data is displayed in table format for easy viewing:
+Result returned: {value1, value2, value3}
 
-![image-20240904143742323](./img/image-20240904143742323.png)
+If the number or order of input parameters does not match, unexpected results may be returned.
 
-![image-20240904143759543](./img/image-20240904143759543.png)
+# Usage restrictions
 
-In leaderboard and statistics data storages, you can set periodic cleaning of the data:
+The data storage has some usage restrictions.
 
-![image-20240904143845497](./img/image-20240904143845497.png)
+1. There is a limit on read and write operations per minute, supporting 60 read operations and 75 write operations per minute. When using the data storage, you need to minimize the frequency of read and write operations and check whether the read and write operations are successful.
+2. The maximum size of a key value stored in the data storage is 4k.
+3. The maximum number of rows that can be stored in each table in the ranking data storage is 150, and no additional data will be recorded at all.
+4. The maximum number of tables that can be created in the statistical data storage is 120.
 
-![image-20240904145512656](./img/image-20240904145512656.png)
+# Data center
 
-In the Data Center, you can search leaderboard and statistics by entering Key or Value:
+Published custom maps with data storage enabled can be viewed in the data center:
 
-![image-20240905155637099](./img/image-20240905155637099.png)
+![image-20240904142856003](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904142856003.png)
 
-However, for regular tables, both UID and Key must be entered for queries:
+Open the data storage for the corresponding map to view the data currently stored for the map:
 
-![image-20240905155720217](./img/image-20240905155720217.png)
+![image-20240904143215503](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904143215503.png)
 
-Queries in the Data Center do not support fuzzy search.
+In the data center, the data is displayed in tabular form, allowing you to visually view the various data stores:
 
-You can also directly modify stored data in the Data Center:
+![image-20240904143742323](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904143742323.png)
 
-![image-20240905155912501](./img/image-20240905155912501.png)
+![image-20240904143759543](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904143759543.png)
 
-## Example
+In the Ranking Data Storage and Statistics Data Storage, you can set up regular data deletion:
 
-Next, we'll demonstrate how to use data storage for player save files through a simple example.
+![image-20240904143845497](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904143845497.png)
 
-We plan to create a simple mini-game where players earn 1 point each time they hit a target cylinder.
+![image-20240904145512656](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904145512656.png)
 
-In save files, we will record player position, orientation, and score. When players re-enter this map, they will inherit their saved game state.
+In the data center, ranking data and statistics can be queried by entering Key or Value:
 
-### Creating the Game
+![image-20240905155637099](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240905155637099.png)
+
+However, to query a normal data table, you must enter both the UID and the Key:
+
+![image-20240905155720217](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240905155720217.png)
+
+Fuzzy search is not supported for queries in the data center.
+
+Changes can also be made directly to stored data in the data center:
+
+![image-20240905155912501](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240905155912501.png)
+
+# Example
+
+The following is a simple example of how to use data storage to archive player data.
+
+We plan to create a simple mini-game where the player gets 1 point for each time they hit the target cylinder.
+
+In the archive, we will record the player's position, orientation, and points, and the player will inherit the data in the archive when they enter the map again.
+
+## Creating the game
 
 First, create a simple game:
 
-Place a target cylinder in the scene with three decorative items for positioning:
+Place a target cylinder in the scene and add three decorations for positioning:
 
-![image-20240904145226220](./img/image-20240904145226220.png)
+![image-20240904145226220](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904145226220.png)
 
-Each time players hit this white cylinder, they earn 1 point. Their current score is displayed on a custom UI:
+The player gains 1 point for each hit on the white cylinder, and the player's current points are displayed on the custom UI:
 
-![image-20240904152614172](./img/image-20240904152614172.png)
+![image-20240904152614172](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904152614172.png)
 
-### Creating Save Files
+## Creating an archive
 
-In this example, we only store player position, orientation, and score.
+In this example, we only store the player's position, orientation and the player's score.
 
-The score is already set as a custom player attribute; all three pieces of information can be obtained from player entities.
+The points have been set as a custom attribute of the player, and all three pieces of data can be obtained from the player entity.
 
-Position and orientation are Vector3 types; score is an Int type. Avoid using multiple tables for player data as much as possible since each additional table increases read/write operations proportional to player count. To avoid exceeding usage limits, we store different types of information as an arbitrary type list in one save file table.
+The data types of the position and orientation are Vector3, and the data type of the points is Int. Try to avoid using multiple tables to store player data, because each additional table will increase the number of data reads and writes for the player. To avoid exceeding the usage limit, we store two different types of data in the archive table as a list of any type.
 
-Choose regular data storage and set accepted value type as an arbitrary type list for storing save files.
+Select Normal data storage for data storage and set the accepted value type to List of any type.
 
-> You could also use arbitrary types with three separate keys for storing information. However, since position and orientation are often used together here we store them as lists representing initial position/orientation info together with player scores.
+You can also store data using any type and separate it into three keys, but position and orientation are often used together. Here, a list is used to store both data as the player's initial position and orientation information.
 
-![image-20240904160024238](./img/image-20240904160024238.png)
+![image-20240904160024238](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904160024238.png)
 
-In global scripts:
+In the global script:
 
-Save player state at end-of-rounds or upon exit:
+Save the player at the end of each game round and when the player quits:
 
-![image-20240904162233250](./img/image-20240904162233250.png)
+![image-20240904162233250](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904162233250.png)
 
-Upon joining set player's score/position/orientation based on saved game state while displaying current scores via UI:
+When the player joins, set their points, position and orientation as the archived data, and display the current player's points in the UI that displays the points.
 
-![image-20240905163436774](./img/image-20240905163436774.png)
+![image-20240905163436774](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240905163436774.png)
 
-If reading fails due any reason handle failure by logging error message here:
+If the data fails to be read for some reason, a read failure handling needs to be added, and here only the failure error is printed:
 
-![image-20240905163445878](./img/image-20240905163445878.png)
+![image-20240905163445878](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240905163445878.png)
 
-Run game using two debug clients:
+Run the game with two debug clients:
 
-![image-20240904162520514](./img/image-20240904162520514.png)
+![image-20240904162520514](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904162520514.png)
 
-![image-20240904162502315](./img/image-20240904162502315.png)
+![image-20240904162502315](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904162502315.png)
 
-After earning points exit then re-enter game notice player's score/position remain unchanged from before exiting session ends naturally saves progress ensuring consistency between sessions without losing progress made previously!
+After gaining a certain number of points, exit the game, then re-enter, and you will find that the exiting player's points and position are the same as before exiting.
 
-## Local Data Storage Viewing
+At the end of the round, the player data is normally saved, so if you wait until the game naturally ends, and then turn on debugging, the player's points and position before the game is closed will be the same.
 
-Data storage applies to published maps and is typically viewable only in the data center.
+# Locally view data storage
+
+Data storage is used for published maps and can normally only be viewed in the data center.
 
 However, we provide a developer tool for local testing:
 
-![image-20240904164139928](./img/image-20240904164139928.png)
+![image-20240904164139928](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904164139928.png)
 
-After your project uses data storage and data has been stored, clicking this option will open the local file browser, where a generated .json file will be available:
+After you have used data storage in your project and have already stored data, clicking this option will open a local file browser with a generated .jason file:
 
-![image-20240904164246223](./img/image-20240904164246223.png)
+![image-20240904164246223](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904164246223.png)
 
-If data storage is not used or no data has been stored, a prompt will indicate that the file does not exist:
+If no data storage has been used or no data has been stored in the data storage, a message will be displayed saying that the file does not exist:
 
-![image-20240904165514472](./img/image-20240904165514472.png)
+![image-20240904165514472](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904165514472.png)
 
-This .json file is exported from data storage and can be used to verify the stored data:
+This .jason file is exported from the data storage and can be used to check the stored data:
 
-![image-20240904164357173](./img/image-20240904164357173.png)
+![image-20240904164357173](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904164357173.png)
 
-> Part of the player's saved game data stored in the above example
+> A part of the player's saved game stored in the example above
 
-The data in this .json file serves as the data source during local debugging. Legally modifying the .json file will directly change the data read by the in-game data storage:
+This .jason file's data is the data source for local debugging. Legitimately modifying the .jason file will directly change the data stored in the data storage read in the game.
 
-![image-20240904164653457](./img/image-20240904164653457.png)
+![image-20240904164653457](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904164653457.png)
 
-![image-20240904164734872](./img/image-20240904164734872.png)
+![image-20240904164734872](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/29-DataStorage/image-20240904164734872.png)

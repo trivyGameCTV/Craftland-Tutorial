@@ -1,33 +1,33 @@
-# Voice Channel - User Manual
+# Chat Channel
 
-When players use voice communication, only those in the same voice channel can communicate with each other.
+When players use voice communication, only players in the same chat channel can communicate with each other.
 
-We provide 6 custom voice channels by default for you to use when editing custom maps.
+By default, we provide 6 custom chat channels for you to use when editing custom maps.
 
-![image-20240923112747359](./img/image-20240923112747359.png)
+![image-20240923112747359](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/19-ChatChannel/image-20240923112747359.png)
 
-## Changing a Player's Voice Channel
+# Changing the player's chat channel
 
-Through scripting, you can assign players to a specific voice channel during the game:
+You can use a script to switch the player to a specific chat channel during gameplay:
 
-![image-20240923112415171](./img/image-20240923112415171.png)
+![image-20240923112415171](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/19-ChatChannel/image-20240923112415171.png)
 
-You can also remove players from a voice channel:
+You can also make the player leave the chat channel:
 
-![image-20240923112438262](./img/image-20240923112438262.png)
+![image-20240923112438262](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/19-ChatChannel/image-20240923112438262.png)
 
-When players join a new voice channel, they automatically leave their previous one.
+After joining a new chat channel, the player will be automatically logged out of the previous chat channel.
 
-## Voice Channel Related Events
+# Events related to chat channels
 
-Using events, you can monitor when players enter or exit voice channels in the game, allowing you to implement other logic.
+Events allow you to monitor when players enter and leave chat channels in the game, and implement other logic accordingly.
 
-[Image Placeholder]
+[Stay tuned]
 
-## Quick Chat Status
+# Quick massage status
 
-Quick Chat allows players to send preset chat messages rapidly.
+Quick chat is a function that allows players to quickly send some pre-set chat content.
 
-Through scripting, you can adjust whether players have permission to use this feature during the game:
+You can use scripts to adjust whether players can use this function during gameplay:
 
-![image-20240923112624120](./img/image-20240923112624120.png)
+![image-20240923112624120](https://dl.dir.freefiremobile.com/common/OB46/CSH/OfficialWeb/19-ChatChannel/image-20240923112624120.png)
