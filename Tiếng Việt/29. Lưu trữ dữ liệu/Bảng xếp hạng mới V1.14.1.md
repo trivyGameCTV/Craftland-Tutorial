@@ -1,5 +1,3 @@
-
-
 # Bảng xếp hạng mới - Nội bộ
 
 ## Tài liệu liên quan
