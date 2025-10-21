@@ -67,6 +67,8 @@ Example:
 
 https://github.com/user-attachments/assets/e4879d23-0738-40a9-81e3-7ee8b16ccdf0
 
+---
+
 ### **Step 5: Import into Craftland Studio**
 
 Finally, bring your character into **Craftland Studio**:
