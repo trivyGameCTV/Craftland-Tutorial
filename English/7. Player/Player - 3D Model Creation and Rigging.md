@@ -31,7 +31,10 @@ Next, upload your generated 2D image to [**Tripo AI**](https://tripo.ai). It wil
 * Adjust custom tris count. For low poly game assets, use around 1000-2000  
 * Download the resulting 3D model
 
-Example: [https://drive.google.com/file/d/1AehToMISiN3\_aHnUYr14mNSh2DeU6Gd2/view?usp=sharing](https://drive.google.com/file/d/1AehToMISiN3_aHnUYr14mNSh2DeU6Gd2/view?usp=sharing)
+Example:
+
+
+https://github.com/user-attachments/assets/4a3e617f-0090-4466-a105-848d12073ecc
 
 ---
 
@@ -47,7 +50,9 @@ Now that you have a 3D mesh, head over to [**Mixamo**](https://www.mixamo.com/) 
 
 4. Download the rigged and animated model
 
-Example: [https://drive.google.com/file/d/1yX0kxsTGH86eQq66AoXoovYxeOBp5xwl/view?usp=sharing](https://drive.google.com/file/d/1yX0kxsTGH86eQq66AoXoovYxeOBp5xwl/view?usp=sharing)
+Example:
+
+https://github.com/user-attachments/assets/c572a796-a786-4e57-aec0-e6d8db6c460c
 
 ---
 
@@ -60,7 +65,9 @@ Because Craftland Studio can’t read mat file, so we need to extract the textur
 3. Select UV editing tab  
 4. Save the texture.
 
-Example: [https://drive.google.com/file/d/1spVf5\_0s5iDRO5wA7pxTzLUriS-XigkN/view?usp=sharing](https://drive.google.com/file/d/1spVf5_0s5iDRO5wA7pxTzLUriS-XigkN/view?usp=sharing)
+Example:
+
+https://github.com/user-attachments/assets/e4879d23-0738-40a9-81e3-7ee8b16ccdf0
 
 ### **Step 5: Import into Craftland Studio**
 
@@ -73,4 +80,6 @@ Finally, bring your character into **Craftland Studio**:
 5. Create a playerdata file and select the prefab, add any animation you want.  
 6. Add the playerdata file to the player module.
 
-Example: [https://drive.google.com/file/d/1UnlZLHS6TjQQtWLN1EGKdFc9QtTB2x-7/view?usp=sharing](https://drive.google.com/file/d/1UnlZLHS6TjQQtWLN1EGKdFc9QtTB2x-7/view?usp=sharing)
+Example:
+
+https://github.com/user-attachments/assets/bbeaa72c-1f77-425c-850b-c95278ddfc2e
