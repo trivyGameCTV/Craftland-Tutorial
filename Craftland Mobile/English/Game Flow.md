@@ -1,4 +1,4 @@
-# GameFlow
+# Game Flow
 
 In CraftLand, the specific GameFlow is hidden, but you can still change the gameplay and time of the map by setting or modifying the parameters and processes in the GameFlow.
 
