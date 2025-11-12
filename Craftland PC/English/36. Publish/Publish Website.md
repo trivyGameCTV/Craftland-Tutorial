@@ -28,3 +28,15 @@ Please wait so that the map can be published successfully.
 
 Afterward, click on the `Detail` option in the Publish Record section to find the map's Map Code.  
 ![result-map-code](./imgs/resulting_map_code.png)
+
+# Publishing to multiple servers
+Before doing so, please check if you have a Free Fire account on each server. 
+> After binding, the account currently cannot be changed. 
+If this page does not show your account on other region, please click the bind option to connect to your Free Fire account on other region. 
+![bind-account](./imgs/bind-account.png)
+
+The final result of the process should look similar to this.  
+![bind-account-result](./imgs/bind-account-result.png)
+
+During the publishing process, simply choose the region that you would like to publish by clicking on the account UID. Then follow the steps similarly to the instruction above to publish your map.  
+![publish-choose-region](./imgs/publish-choose-region.png)
